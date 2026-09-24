@@ -1,0 +1,34 @@
+# Core
+pandas==2.2.2
+numpy==1.26.4
+polars==1.44.0
+duckdb==1.5.5
+pyarrow==20.0.0
+PyYAML==6.0.1
+requests==2.34.2
+tqdm
+
+# Spatial
+h3>=4.0
+s2sphere
+geopandas==1.1.1
+shapely==2.1.1
+
+# Modelling
+scikit-learn==1.5.1
+lightgbm==4.7.0
+optuna==4.9.0
+holidays==0.103
+
+# Phase 6 only (install when you get there)
+# torch==2.7.1
+# pytorch-forecasting
+# torch-geometric
+
+# App / serving (used by app/server.py)
+fastapi==0.115.0
+pydantic==2.9.2
+uvicorn==0.30.6
+
+# Dev
+pytest

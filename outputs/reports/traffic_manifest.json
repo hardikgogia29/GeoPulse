@@ -1,0 +1,3657 @@
+{
+  "2024-06-03": {
+    "rows": 34226,
+    "unparsed": 0,
+    "seconds": 5.4
+  },
+  "2024-06-04": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2024-06-05": {
+    "rows": 34364,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2024-06-06": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-06-07": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-06-08": {
+    "rows": 34843,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-06-09": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-01-01": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 6.3
+  },
+  "2023-01-02": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-01-03": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.8
+  },
+  "2023-01-04": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-01-05": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-01-06": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-01-07": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-01-08": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-01-09": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-01-10": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-01-11": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.1
+  },
+  "2023-01-12": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.7
+  },
+  "2023-01-13": {
+    "rows": 16974,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2023-01-14": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-01-15": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2023-01-16": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2023-01-17": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2023-01-18": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2023-01-19": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-01-20": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-01-21": {
+    "rows": 22509,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-01-22": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.3
+  },
+  "2023-01-23": {
+    "rows": 35423,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-01-24": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-01-25": {
+    "rows": 35373,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-01-26": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2023-01-27": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2023-01-28": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-01-29": {
+    "rows": 35417,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-01-30": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2023-01-31": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2023-02-01": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-02-02": {
+    "rows": 35423,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-02-03": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.5
+  },
+  "2023-02-04": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2023-02-05": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-02-06": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-02-07": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-02-08": {
+    "rows": 35450,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-02-09": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-02-10": {
+    "rows": 34785,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-02-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-02-12": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-02-13": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-02-14": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2023-02-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-02-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2023-02-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-02-18": {
+    "rows": 35014,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-02-19": {
+    "rows": 35014,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2023-02-20": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2023-02-21": {
+    "rows": 30745,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-02-22": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-02-23": {
+    "rows": 29792,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-02-24": {
+    "rows": 24278,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-02-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2023-02-26": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2023-02-27": {
+    "rows": 35132,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-02-28": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2023-03-01": {
+    "rows": 35135,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2023-03-02": {
+    "rows": 35132,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2023-03-03": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2023-03-04": {
+    "rows": 35129,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2023-03-05": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-03-06": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2023-03-07": {
+    "rows": 35110,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2023-03-08": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2023-03-09": {
+    "rows": 34995,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-03-10": {
+    "rows": 35127,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-03-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-03-12": {
+    "rows": 33672,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-03-13": {
+    "rows": 35014,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-03-14": {
+    "rows": 35010,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2023-03-15": {
+    "rows": 35054,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2023-03-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-03-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-03-18": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-03-19": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-03-20": {
+    "rows": 35099,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-03-21": {
+    "rows": 35045,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-03-22": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2023-03-23": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-03-24": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-03-25": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2023-03-26": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-03-27": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-03-28": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2023-03-29": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-03-30": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 6.3
+  },
+  "2023-03-31": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-04-01": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-04-02": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-04-03": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-04-04": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2023-04-05": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2023-04-06": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 9.1
+  },
+  "2023-04-07": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-04-08": {
+    "rows": 34364,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-04-09": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 5.3
+  },
+  "2023-04-10": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-04-11": {
+    "rows": 34847,
+    "unparsed": 0,
+    "seconds": 4.9
+  },
+  "2023-04-12": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2023-04-13": {
+    "rows": 34823,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-04-14": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-04-15": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-04-16": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-04-17": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-04-18": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-04-19": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-04-20": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-04-21": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-04-22": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-04-23": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-04-24": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-04-25": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-04-26": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-04-27": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-04-28": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-04-29": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-04-30": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 11.4
+  },
+  "2023-05-01": {
+    "rows": 34568,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-05-02": {
+    "rows": 34485,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-05-03": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-05-04": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-05-05": {
+    "rows": 34847,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-05-06": {
+    "rows": 34772,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-05-07": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.8
+  },
+  "2023-05-08": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-05-09": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2023-05-10": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-05-11": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-05-12": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-05-13": {
+    "rows": 33992,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-05-14": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-05-15": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-05-16": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2023-05-17": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-05-18": {
+    "rows": 34821,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-05-19": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-05-20": {
+    "rows": 17424,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-05-21": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-22": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-23": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-24": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-25": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-26": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-27": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-28": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-29": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-30": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-05-31": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-01": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-02": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-03": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-04": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-05": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-06": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2023-06-07": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-06-08": {
+    "rows": 18271,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-06-09": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2023-06-10": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-06-11": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-06-12": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-06-13": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-06-14": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-06-15": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2023-06-16": {
+    "rows": 34841,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2023-06-17": {
+    "rows": 34730,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2023-06-18": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-06-19": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-06-20": {
+    "rows": 34783,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-06-21": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-06-22": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2023-06-23": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-06-24": {
+    "rows": 34217,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2023-06-25": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2023-06-26": {
+    "rows": 34846,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-06-27": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-06-28": {
+    "rows": 34842,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-06-29": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-06-30": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-07-01": {
+    "rows": 34847,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-07-02": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-07-03": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2023-07-04": {
+    "rows": 34843,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-07-05": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 5.2
+  },
+  "2023-07-06": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-07-07": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-07-08": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2023-07-09": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-07-10": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2023-07-11": {
+    "rows": 34588,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-07-12": {
+    "rows": 24471,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-07-13": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-07-14": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2023-07-15": {
+    "rows": 18625,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-07-16": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-07-17": {
+    "rows": 35915,
+    "unparsed": 0,
+    "seconds": 4.9
+  },
+  "2023-07-18": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-07-19": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-07-20": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-07-21": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2023-07-22": {
+    "rows": 11750,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-07-23": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2023-07-24": {
+    "rows": 21125,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-07-25": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2023-07-26": {
+    "rows": 35990,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2023-07-27": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-07-28": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-07-29": {
+    "rows": 35994,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2023-07-30": {
+    "rows": 35979,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2023-07-31": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-08-01": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-08-02": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-08-03": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-08-04": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-08-05": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2023-08-06": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 4.3
+  },
+  "2023-08-07": {
+    "rows": 35997,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-08-08": {
+    "rows": 35997,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-08-09": {
+    "rows": 36000,
+    "unparsed": 0,
+    "seconds": 6.1
+  },
+  "2023-08-10": {
+    "rows": 36801,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2023-08-11": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-08-12": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2023-08-13": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-08-14": {
+    "rows": 36338,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-08-15": {
+    "rows": 36819,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-08-16": {
+    "rows": 36862,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-08-17": {
+    "rows": 30818,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-08-18": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-08-19": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2023-08-20": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-08-21": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-08-22": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2023-08-23": {
+    "rows": 36736,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2023-08-24": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-08-25": {
+    "rows": 36858,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-08-26": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 6.2
+  },
+  "2023-08-27": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-08-28": {
+    "rows": 36736,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-08-29": {
+    "rows": 36863,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-08-30": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2023-08-31": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-09-01": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-09-02": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2023-09-03": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-09-04": {
+    "rows": 36736,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-09-05": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2023-09-06": {
+    "rows": 33664,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-09-07": {
+    "rows": 36694,
+    "unparsed": 0,
+    "seconds": 6.0
+  },
+  "2023-09-08": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-09-09": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-09-10": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-09-11": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-09-12": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-09-13": {
+    "rows": 36863,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-09-14": {
+    "rows": 36810,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-09-15": {
+    "rows": 36736,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2023-09-16": {
+    "rows": 36844,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2023-09-17": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-09-18": {
+    "rows": 36819,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-09-19": {
+    "rows": 36684,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-09-20": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-09-21": {
+    "rows": 36332,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-09-22": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-09-23": {
+    "rows": 36859,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2023-09-24": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-09-25": {
+    "rows": 32384,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-09-26": {
+    "rows": 22770,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-09-27": {
+    "rows": 35277,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2023-09-28": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-09-29": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-09-30": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-10-01": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-10-02": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-10-03": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-10-04": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2023-10-05": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2023-10-06": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-10-07": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-10-08": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2023-10-09": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2023-10-10": {
+    "rows": 36682,
+    "unparsed": 0,
+    "seconds": 5.6
+  },
+  "2023-10-11": {
+    "rows": 36537,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-10-12": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 14.6
+  },
+  "2023-10-13": {
+    "rows": 36736,
+    "unparsed": 0,
+    "seconds": 8.0
+  },
+  "2023-10-14": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2023-10-15": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-10-16": {
+    "rows": 36873,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2023-10-17": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-10-18": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-10-19": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2023-10-20": {
+    "rows": 36266,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-10-21": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-10-22": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-10-23": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2023-10-24": {
+    "rows": 36621,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2023-10-25": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 6.0
+  },
+  "2023-10-26": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-10-27": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-10-28": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-10-29": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2023-10-30": {
+    "rows": 36637,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-10-31": {
+    "rows": 36613,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2023-11-01": {
+    "rows": 36736,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2023-11-02": {
+    "rows": 36854,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-11-03": {
+    "rows": 36864,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-11-04": {
+    "rows": 36844,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-11-05": {
+    "rows": 36953,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2023-11-06": {
+    "rows": 34541,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-11-07": {
+    "rows": 35712,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2023-11-08": {
+    "rows": 35712,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2023-11-09": {
+    "rows": 35563,
+    "unparsed": 0,
+    "seconds": 6.4
+  },
+  "2023-11-10": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-11-11": {
+    "rows": 35419,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-11-12": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-11-13": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-11-14": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2023-11-15": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.4
+  },
+  "2023-11-16": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2023-11-17": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 6.2
+  },
+  "2023-11-18": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-11-19": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2023-11-20": {
+    "rows": 35407,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-11-21": {
+    "rows": 34798,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-11-22": {
+    "rows": 35398,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-11-23": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-11-24": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-11-25": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-11-26": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2023-11-27": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2023-11-28": {
+    "rows": 31980,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2023-11-29": {
+    "rows": 18927,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2023-11-30": {
+    "rows": 35340,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-12-01": {
+    "rows": 35411,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2023-12-02": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-12-03": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2023-12-04": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2023-12-05": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-12-06": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-12-07": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2023-12-08": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2023-12-09": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.2
+  },
+  "2023-12-10": {
+    "rows": 35205,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2023-12-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-12-12": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-12-13": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2023-12-14": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-12-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2023-12-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2023-12-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.2
+  },
+  "2023-12-18": {
+    "rows": 34940,
+    "unparsed": 0,
+    "seconds": 5.2
+  },
+  "2023-12-19": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-12-20": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-12-21": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2023-12-22": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2023-12-23": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2023-12-24": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2023-12-25": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.9
+  },
+  "2023-12-26": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2023-12-27": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-12-28": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2023-12-29": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2023-12-30": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2023-12-31": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-01-01": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-01-02": {
+    "rows": 34913,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-01-03": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-01-04": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-01-05": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-01-06": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.1
+  },
+  "2024-01-07": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-01-08": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-01-09": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-01-10": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-01-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2024-01-12": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-01-13": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 12.7
+  },
+  "2024-01-14": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 6.8
+  },
+  "2024-01-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2024-01-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-01-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2024-01-18": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-01-19": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-01-20": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-01-21": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2024-01-22": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-01-23": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.4
+  },
+  "2024-01-24": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-01-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-01-26": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-01-27": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-01-28": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-01-29": {
+    "rows": 13420,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-01-30": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-01-31": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2024-02-01": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-02": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-03": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.7
+  },
+  "2024-02-04": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-05": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-06": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-07": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.7
+  },
+  "2024-02-08": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-09": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-10": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-11": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-02-12": {
+    "rows": 15738,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-02-13": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2024-02-14": {
+    "rows": 35113,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-02-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-02-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-02-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-02-18": {
+    "rows": 35014,
+    "unparsed": 0,
+    "seconds": 8.1
+  },
+  "2024-02-19": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-02-20": {
+    "rows": 29036,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-02-21": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-02-22": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-02-23": {
+    "rows": 35071,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-02-24": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.6
+  },
+  "2024-02-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-02-26": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-02-27": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2024-02-28": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2024-02-29": {
+    "rows": 35251,
+    "unparsed": 0,
+    "seconds": 4.9
+  },
+  "2024-03-01": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-03-02": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-03-03": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2024-03-04": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-03-05": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-03-06": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-03-07": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-03-08": {
+    "rows": 35422,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-03-09": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 6.8
+  },
+  "2024-03-10": {
+    "rows": 33948,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-03-11": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-03-12": {
+    "rows": 12915,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-03-13": {
+    "rows": 17958,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-03-14": {
+    "rows": 35416,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-03-15": {
+    "rows": 35402,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2024-03-16": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-03-17": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-03-18": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.0
+  },
+  "2024-03-19": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-03-20": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-03-21": {
+    "rows": 35411,
+    "unparsed": 0,
+    "seconds": 4.8
+  },
+  "2024-03-22": {
+    "rows": 35421,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-03-23": {
+    "rows": 34317,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-03-24": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-03-25": {
+    "rows": 34686,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-03-26": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.1
+  },
+  "2024-03-27": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-03-28": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2024-03-29": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-03-30": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-03-31": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-04-01": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2024-04-02": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-04-03": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-04-04": {
+    "rows": 33858,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-04-05": {
+    "rows": 34176,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-04-06": {
+    "rows": 34686,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-04-07": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-04-08": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-04-09": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2024-04-10": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-04-11": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-04-12": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2024-04-13": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-04-14": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2024-04-15": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 11.3
+  },
+  "2024-04-16": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 9.9
+  },
+  "2024-04-17": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-04-18": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 5.4
+  },
+  "2024-04-19": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2024-04-20": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-04-21": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-04-22": {
+    "rows": 35314,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2024-04-23": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-04-24": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-04-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2024-04-26": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-04-27": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2024-04-28": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-04-29": {
+    "rows": 35243,
+    "unparsed": 0,
+    "seconds": 5.4
+  },
+  "2024-04-30": {
+    "rows": 35046,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-05-01": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-05-02": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-05-03": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-05-04": {
+    "rows": 35301,
+    "unparsed": 0,
+    "seconds": 4.9
+  },
+  "2024-05-05": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2024-05-06": {
+    "rows": 35424,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-05-07": {
+    "rows": 35418,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-05-08": {
+    "rows": 35018,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-05-09": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-05-10": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-05-11": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-05-12": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-05-13": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-05-14": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-05-15": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2024-05-16": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-05-17": {
+    "rows": 34847,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-05-18": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 6.6
+  },
+  "2024-05-19": {
+    "rows": 34705,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-05-20": {
+    "rows": 34844,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-05-21": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 5.1
+  },
+  "2024-05-22": {
+    "rows": 34326,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-05-23": {
+    "rows": 34701,
+    "unparsed": 0,
+    "seconds": 4.3
+  },
+  "2024-05-24": {
+    "rows": 34485,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-05-25": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2024-05-26": {
+    "rows": 34723,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-05-27": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-05-28": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-05-29": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-05-30": {
+    "rows": 34688,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-05-31": {
+    "rows": 34723,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2024-06-01": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-06-02": {
+    "rows": 34828,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-06-10": {
+    "rows": 34847,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-06-11": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-06-12": {
+    "rows": 34243,
+    "unparsed": 0,
+    "seconds": 6.4
+  },
+  "2024-06-13": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-06-14": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-06-15": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.3
+  },
+  "2024-06-16": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-06-17": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-06-18": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-06-19": {
+    "rows": 34680,
+    "unparsed": 0,
+    "seconds": 4.9
+  },
+  "2024-06-20": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 6.8
+  },
+  "2024-06-21": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-06-22": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-06-23": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2024-06-24": {
+    "rows": 34600,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-06-25": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.0
+  },
+  "2024-06-26": {
+    "rows": 34832,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-06-27": {
+    "rows": 34601,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-06-28": {
+    "rows": 34019,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-06-29": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-06-30": {
+    "rows": 34847,
+    "unparsed": 0,
+    "seconds": 4.8
+  },
+  "2024-07-01": {
+    "rows": 34846,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2024-07-02": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-07-03": {
+    "rows": 34795,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-07-04": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-07-05": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-07-06": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-07-07": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-07-08": {
+    "rows": 34773,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-07-09": {
+    "rows": 34692,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-07-10": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2024-07-11": {
+    "rows": 34790,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-07-12": {
+    "rows": 34844,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2024-07-13": {
+    "rows": 34827,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-07-14": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-07-15": {
+    "rows": 34705,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-07-16": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2024-07-17": {
+    "rows": 34842,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-07-18": {
+    "rows": 34806,
+    "unparsed": 0,
+    "seconds": 14.4
+  },
+  "2024-07-19": {
+    "rows": 33990,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-07-20": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-07-21": {
+    "rows": 34805,
+    "unparsed": 0,
+    "seconds": 9.5
+  },
+  "2024-07-22": {
+    "rows": 26725,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-07-23": {
+    "rows": 19104,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-07-24": {
+    "rows": 34196,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-07-25": {
+    "rows": 34800,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-07-26": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-07-27": {
+    "rows": 34840,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-07-28": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2024-07-29": {
+    "rows": 34642,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-07-30": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-07-31": {
+    "rows": 34534,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-08-01": {
+    "rows": 34727,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-08-02": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-08-03": {
+    "rows": 34834,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-08-04": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-08-05": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 8.1
+  },
+  "2024-08-06": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-08-07": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-08-08": {
+    "rows": 31190,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-08-09": {
+    "rows": 34744,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-08-10": {
+    "rows": 34612,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-08-11": {
+    "rows": 34674,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-08-12": {
+    "rows": 34551,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-08-13": {
+    "rows": 34606,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-08-14": {
+    "rows": 33952,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-08-15": {
+    "rows": 34725,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-08-16": {
+    "rows": 34949,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-08-17": {
+    "rows": 34738,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-08-18": {
+    "rows": 34664,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-08-19": {
+    "rows": 34545,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-08-20": {
+    "rows": 34372,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-08-21": {
+    "rows": 34447,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-08-22": {
+    "rows": 34572,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-08-23": {
+    "rows": 34558,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-08-24": {
+    "rows": 32764,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-08-25": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-08-26": {
+    "rows": 20984,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-08-27": {
+    "rows": 31232,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-08-28": {
+    "rows": 23912,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-08-29": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-08-30": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-08-31": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.9
+  },
+  "2024-09-01": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.6
+  },
+  "2024-09-02": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-09-03": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-09-04": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-09-05": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.3
+  },
+  "2024-09-06": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-09-07": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2024-09-08": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-09-09": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-09-10": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-09-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-09-12": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-09-13": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-09-14": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2024-09-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-09-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-09-17": {
+    "rows": 34956,
+    "unparsed": 0,
+    "seconds": 3.2
+  },
+  "2024-09-18": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-09-19": {
+    "rows": 34848,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-09-20": {
+    "rows": 35036,
+    "unparsed": 0,
+    "seconds": 1.7
+  },
+  "2024-09-21": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-09-22": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2024-09-23": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-09-24": {
+    "rows": 34718,
+    "unparsed": 0,
+    "seconds": 10.5
+  },
+  "2024-09-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.3
+  },
+  "2024-09-26": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 6.4
+  },
+  "2024-09-27": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-09-28": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.5
+  },
+  "2024-09-29": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-09-30": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.8
+  },
+  "2024-10-01": {
+    "rows": 34892,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-10-02": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-10-03": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-10-04": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-10-05": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2024-10-06": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-10-07": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-10-08": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-10-09": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-10-10": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-10-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-10-12": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.6
+  },
+  "2024-10-13": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-10-14": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.5
+  },
+  "2024-10-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-10-16": {
+    "rows": 35123,
+    "unparsed": 0,
+    "seconds": 2.1
+  },
+  "2024-10-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2024-10-18": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-10-19": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-10-20": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-10-21": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-10-22": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-10-23": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2024-10-24": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-10-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-10-26": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 4.3
+  },
+  "2024-10-27": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 7.0
+  },
+  "2024-10-28": {
+    "rows": 35171,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2024-10-29": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.5
+  },
+  "2024-10-30": {
+    "rows": 34738,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2024-10-31": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2024-11-01": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-11-02": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-11-03": {
+    "rows": 35707,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2024-11-04": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-11-05": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-11-06": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.2
+  },
+  "2024-11-07": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-11-08": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-11-09": {
+    "rows": 35094,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-11-10": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-11-11": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 5.6
+  },
+  "2024-11-12": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.6
+  },
+  "2024-11-13": {
+    "rows": 35089,
+    "unparsed": 0,
+    "seconds": 5.9
+  },
+  "2024-11-14": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.7
+  },
+  "2024-11-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.3
+  },
+  "2024-11-16": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-11-17": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2024-11-18": {
+    "rows": 35012,
+    "unparsed": 0,
+    "seconds": 4.1
+  },
+  "2024-11-19": {
+    "rows": 35014,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-11-20": {
+    "rows": 35046,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-11-21": {
+    "rows": 35056,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-11-22": {
+    "rows": 34986,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-11-23": {
+    "rows": 34940,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2024-11-24": {
+    "rows": 35014,
+    "unparsed": 0,
+    "seconds": 1.8
+  },
+  "2024-11-25": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-11-26": {
+    "rows": 34958,
+    "unparsed": 0,
+    "seconds": 4.2
+  },
+  "2024-11-27": {
+    "rows": 35116,
+    "unparsed": 0,
+    "seconds": 2.7
+  },
+  "2024-11-28": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-11-29": {
+    "rows": 35096,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2024-11-30": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-12-01": {
+    "rows": 35079,
+    "unparsed": 0,
+    "seconds": 3.9
+  },
+  "2024-12-02": {
+    "rows": 35088,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-12-03": {
+    "rows": 35124,
+    "unparsed": 0,
+    "seconds": 1.0
+  },
+  "2024-12-04": {
+    "rows": 35051,
+    "unparsed": 0,
+    "seconds": 3.1
+  },
+  "2024-12-05": {
+    "rows": 34977,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2024-12-06": {
+    "rows": 35071,
+    "unparsed": 0,
+    "seconds": 4.3
+  },
+  "2024-12-07": {
+    "rows": 35047,
+    "unparsed": 0,
+    "seconds": 1.3
+  },
+  "2024-12-08": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-12-09": {
+    "rows": 35124,
+    "unparsed": 0,
+    "seconds": 2.0
+  },
+  "2024-12-10": {
+    "rows": 27084,
+    "unparsed": 0,
+    "seconds": 3.4
+  },
+  "2024-12-11": {
+    "rows": 22326,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2024-12-12": {
+    "rows": 34958,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-12-13": {
+    "rows": 35017,
+    "unparsed": 0,
+    "seconds": 2.9
+  },
+  "2024-12-14": {
+    "rows": 35124,
+    "unparsed": 0,
+    "seconds": 2.8
+  },
+  "2024-12-15": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.4
+  },
+  "2024-12-16": {
+    "rows": 35001,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-12-17": {
+    "rows": 34973,
+    "unparsed": 0,
+    "seconds": 3.5
+  },
+  "2024-12-18": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 1.1
+  },
+  "2024-12-19": {
+    "rows": 34923,
+    "unparsed": 0,
+    "seconds": 1.2
+  },
+  "2024-12-20": {
+    "rows": 34924,
+    "unparsed": 0,
+    "seconds": 0.9
+  },
+  "2024-12-21": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.3
+  },
+  "2024-12-22": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-12-23": {
+    "rows": 20618,
+    "unparsed": 0,
+    "seconds": 3.0
+  },
+  "2024-12-24": {
+    "rows": 854,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2024-12-25": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.5
+  },
+  "2024-12-26": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-12-27": {
+    "rows": 0,
+    "unparsed": 0,
+    "seconds": 0.4
+  },
+  "2024-12-28": {
+    "rows": 488,
+    "unparsed": 0,
+    "seconds": 0.7
+  },
+  "2024-12-29": {
+    "rows": 33672,
+    "unparsed": 0,
+    "seconds": 4.7
+  },
+  "2024-12-30": {
+    "rows": 35136,
+    "unparsed": 0,
+    "seconds": 2.4
+  },
+  "2024-12-31": {
+    "rows": 35112,
+    "unparsed": 0,
+    "seconds": 1.1
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "model": "stgnn",
+  "tag": "s213",
+  "device": "cuda",
+  "gpu": "Tesla T4 15.6GB",
+  "parameters": 35432,
+  "epochs": 8,
+  "best_valid_mae": 2.1988353729248047,
+  "still_improving_at_last_epoch": true,
+  "history": [
+    {
+      "epoch": 1,
+      "valid_mae": 2.683002471923828,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 2,
+      "valid_mae": 2.519763469696045,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 3,
+      "valid_mae": 2.3934743404388428,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 4,
+      "valid_mae": 2.3116095066070557,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 5,
+      "valid_mae": 2.293377637863159,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 6,
+      "valid_mae": 2.2465710639953613,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 7,
+      "valid_mae": 2.2548606395721436,
+      "seconds": 11.3
+    },
+    {
+      "epoch": 8,
+      "valid_mae": 2.1988353729248047,
+      "seconds": 11.3
+    }
+  ]
+}

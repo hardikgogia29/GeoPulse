@@ -1,0 +1,86 @@
+[
+  {
+    "step": "B",
+    "family": "calendar_seasonal",
+    "target": "pickup_h1",
+    "delta_pct": 6.799
+  },
+  {
+    "step": "B",
+    "family": "calendar_seasonal",
+    "target": "dropoff_h1",
+    "delta_pct": 6.408
+  },
+  {
+    "step": "C",
+    "family": "rolling_trend",
+    "target": "pickup_h1",
+    "delta_pct": 0.613
+  },
+  {
+    "step": "C",
+    "family": "rolling_trend",
+    "target": "dropoff_h1",
+    "delta_pct": 0.665
+  },
+  {
+    "step": "D",
+    "family": "weather",
+    "target": "pickup_h1",
+    "delta_pct": -0.051
+  },
+  {
+    "step": "D",
+    "family": "weather",
+    "target": "dropoff_h1",
+    "delta_pct": -0.053
+  },
+  {
+    "step": "E",
+    "family": "events",
+    "target": "pickup_h1",
+    "delta_pct": 0.007
+  },
+  {
+    "step": "E",
+    "family": "events",
+    "target": "dropoff_h1",
+    "delta_pct": -0.036
+  },
+  {
+    "step": "F",
+    "family": "traffic",
+    "target": "pickup_h1",
+    "delta_pct": -0.004
+  },
+  {
+    "step": "F",
+    "family": "traffic",
+    "target": "dropoff_h1",
+    "delta_pct": -0.092
+  },
+  {
+    "step": "G",
+    "family": "spatial_neighbor",
+    "target": "pickup_h1",
+    "delta_pct": 0.175
+  },
+  {
+    "step": "G",
+    "family": "spatial_neighbor",
+    "target": "dropoff_h1",
+    "delta_pct": 0.432
+  },
+  {
+    "step": "H",
+    "family": "station_network",
+    "target": "pickup_h1",
+    "delta_pct": -0.06
+  },
+  {
+    "step": "H",
+    "family": "station_network",
+    "target": "dropoff_h1",
+    "delta_pct": -0.072
+  }
+]

@@ -1,0 +1,194 @@
+{
+  "total_rows": 1127270,
+  "null_counts": {
+    "ride_id": 0,
+    "rideable_type": 0,
+    "started_at": 0,
+    "ended_at": 0,
+    "start_station_name": 377,
+    "start_station_id": 377,
+    "end_station_name": 3001,
+    "end_station_id": 3305,
+    "start_lat": 377,
+    "start_lng": 377,
+    "end_lat": 3296,
+    "end_lng": 3296,
+    "member_casual": 0
+  },
+  "distinct_ride_ids": 1127270,
+  "duplicate_ride_id_extra_rows": 0,
+  "invalid_timestamps": {
+    "null_started_at": 0,
+    "null_ended_at": 0,
+    "end_le_start": 0,
+    "end_eq_start": 0
+  },
+  "duration_distribution_seconds": {
+    "min": 8,
+    "p01": 84.0,
+    "p25": 340.0,
+    "median": 600.0,
+    "p75": 1051.0,
+    "p99": 4438.0,
+    "p999": 26935.081999998074,
+    "max": 89996,
+    "mean": 910.7411738092915,
+    "under_60s": 12,
+    "over_24h": 313
+  },
+  "coordinate_ranges": {
+    "start_lat_min": 40.633385,
+    "start_lat_max": 40.8863,
+    "start_lng_min": -74.07195925712585,
+    "start_lng_max": -73.84672,
+    "end_lat_min": 0.0,
+    "end_lat_max": 40.8863,
+    "end_lng_min": -74.07145500183105,
+    "end_lng_max": 0.0
+  },
+  "coords_outside_bbox": 1,
+  "rides_per_month": [
+    {
+      "month": "2024-06",
+      "rides": 1127270
+    }
+  ],
+  "rides_per_day_summary": {
+    "n_days": 7,
+    "min": 144900,
+    "median": 167253.0,
+    "mean": 161038.57142857142,
+    "max": 172804,
+    "first_day": "2024-06-03",
+    "last_day": "2024-06-09"
+  },
+  "category_mix": {
+    "rideable_type": [
+      {
+        "rideable_type": "electric_bike",
+        "n": 712097
+      },
+      {
+        "rideable_type": "classic_bike",
+        "n": 415173
+      }
+    ],
+    "member_casual": [
+      {
+        "member_casual": "member",
+        "n": 871537
+      },
+      {
+        "member_casual": "casual",
+        "n": 255733
+      }
+    ]
+  },
+  "station_completeness": {
+    "null_start_station_id": 377,
+    "null_end_station_id": 3305,
+    "null_either_station_id": 3527,
+    "distinct_start_station_ids": 2241,
+    "distinct_end_station_ids": 2190
+  },
+  "dst_hour_profile": [
+    {
+      "utc_hour": "2023-03-12 07:00:00+00:00",
+      "rides": 0,
+      "expected_effect": "shifted_in"
+    },
+    {
+      "utc_hour": "2023-11-05 05:00:00+00:00",
+      "rides": 0,
+      "expected_effect": "over_filled"
+    },
+    {
+      "utc_hour": "2023-11-05 06:00:00+00:00",
+      "rides": 0,
+      "expected_effect": "empty"
+    },
+    {
+      "utc_hour": "2024-03-10 07:00:00+00:00",
+      "rides": 0,
+      "expected_effect": "shifted_in"
+    },
+    {
+      "utc_hour": "2024-11-03 05:00:00+00:00",
+      "rides": 0,
+      "expected_effect": "over_filled"
+    },
+    {
+      "utc_hour": "2024-11-03 06:00:00+00:00",
+      "rides": 0,
+      "expected_effect": "empty"
+    }
+  ],
+  "outside_project_window": 0,
+  "cleaning_waterfall": [
+    {
+      "rule": "duplicate_ride_id",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "null_ride_id",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "null_timestamp",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "outside_project_window",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "end_before_start",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "duration_too_short",
+      "rows_removed": 12,
+      "pct_of_raw": 0.0011
+    },
+    {
+      "rule": "duration_too_long",
+      "rows_removed": 313,
+      "pct_of_raw": 0.0278
+    },
+    {
+      "rule": "missing_coords",
+      "rows_removed": 3214,
+      "pct_of_raw": 0.2851
+    },
+    {
+      "rule": "coords_out_of_bbox",
+      "rows_removed": 1,
+      "pct_of_raw": 0.0001
+    },
+    {
+      "rule": "TOTAL REMOVED",
+      "rows_removed": 3540,
+      "pct_of_raw": 0.314
+    },
+    {
+      "rule": "KEPT",
+      "rows_removed": 1123730,
+      "pct_of_raw": 99.686
+    }
+  ],
+  "sort_verification": {
+    "rows": 1123730,
+    "row_groups": 2,
+    "rowgroup_stat_violations": 0,
+    "pairwise_inversions": 0,
+    "is_sorted": true,
+    "first_started_at": "2024-06-03 04:00:00.942000+00:00",
+    "last_started_at": "2024-06-10 03:59:59.093000+00:00",
+    "file_size_mb": 34.7
+  }
+}

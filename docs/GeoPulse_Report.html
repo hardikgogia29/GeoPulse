@@ -1,0 +1,1954 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>GeoPulse — Complete Project Report</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 20mm; }
+
+  :root {
+    --ink: #14181c;
+    --ink-2: #4a555e;
+    --ink-3: #77848d;
+    --line: #d8dee2;
+    --brand: #0b7a5a;
+    --brand-soft: #eef7f3;
+    --hot: #c2410c;
+    --hot-soft: #fdf0e8;
+    --warn-soft: #fdf6e6;
+    --warn-line: #e3b341;
+    --code-bg: #f4f6f7;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.62;
+    color: var(--ink);
+  }
+
+  h1, h2, h3, h4 { line-height: 1.25; margin: 0; font-weight: 700; }
+
+  h1 { font-size: 25pt; letter-spacing: -0.02em; }
+  h2 {
+    font-size: 15.5pt; margin: 26pt 0 9pt;
+    padding-bottom: 5pt; border-bottom: 2.5px solid var(--brand);
+    color: var(--brand); break-after: avoid; letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 12pt; margin: 17pt 0 6pt; break-after: avoid;
+    letter-spacing: -0.005em;
+  }
+  h4 {
+    font-size: 10.4pt; margin: 12pt 0 4pt; break-after: avoid;
+    color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.05em;
+  }
+
+  p { margin: 0 0 8pt; }
+  ul, ol { margin: 0 0 9pt; padding-left: 17pt; }
+  li { margin-bottom: 3.5pt; }
+  strong { font-weight: 650; }
+
+  code {
+    font-family: "Cascadia Mono", Consolas, "Courier New", monospace;
+    font-size: 8.9pt; background: var(--code-bg);
+    padding: 1px 4px; border-radius: 3px; color: #0f3d2e;
+  }
+  pre {
+    background: var(--code-bg); border-left: 3px solid var(--brand);
+    padding: 8pt 10pt; border-radius: 3px; overflow-x: auto;
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: 8.4pt; line-height: 1.45; margin: 0 0 9pt;
+    break-inside: avoid;
+  }
+  pre code { background: none; padding: 0; font-size: inherit; }
+
+  table {
+    width: 100%; border-collapse: collapse; margin: 0 0 11pt;
+    font-size: 9pt; break-inside: avoid;
+  }
+  th {
+    background: var(--brand-soft); color: #0a5c44; text-align: left;
+    padding: 5pt 7pt; font-weight: 650; border-bottom: 1.5px solid var(--brand);
+    font-size: 8.6pt;
+  }
+  td { padding: 4.5pt 7pt; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: #fafbfb; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .win { color: var(--brand); font-weight: 700; }
+  .lose { color: var(--hot); }
+
+  .cover {
+    height: 245mm; display: flex; flex-direction: column;
+    justify-content: center; break-after: page;
+  }
+  .cover .eyebrow {
+    font-size: 9.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--brand); font-weight: 650; margin-bottom: 10pt;
+  }
+  .cover h1 { font-size: 34pt; margin-bottom: 8pt; }
+  .cover .sub { font-size: 14pt; color: var(--ink-2); margin-bottom: 26pt; font-weight: 300; }
+  .cover .rule { height: 3px; background: var(--brand); width: 80pt; margin-bottom: 26pt; }
+  .cover dl {
+    display: grid; grid-template-columns: 120pt 1fr; gap: 5pt 14pt;
+    font-size: 10pt; margin: 0;
+  }
+  .cover dt { color: var(--ink-3); font-weight: 600; }
+  .cover dd { margin: 0; }
+
+  .callout {
+    background: var(--brand-soft); border-left: 3.5px solid var(--brand);
+    padding: 9pt 12pt; margin: 0 0 11pt; border-radius: 0 4px 4px 0;
+    break-inside: avoid;
+  }
+  .callout.warn { background: var(--warn-soft); border-left-color: var(--warn-line); }
+  .callout.bug  { background: var(--hot-soft); border-left-color: var(--hot); }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .tag {
+    display: block; font-size: 8pt; letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 700; color: var(--brand); margin-bottom: 4pt;
+  }
+  .callout.warn .tag { color: #8a6116; }
+  .callout.bug .tag  { color: var(--hot); }
+
+  .toc { columns: 2; column-gap: 22pt; font-size: 9.4pt; }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc .t-part {
+    font-weight: 700; color: var(--brand); margin-top: 7pt;
+    break-after: avoid; display: block;
+  }
+  .toc div { margin-bottom: 2pt; break-inside: avoid; }
+
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8pt; margin-bottom: 12pt; }
+  .kpi { border: 1px solid var(--line); border-radius: 5px; padding: 8pt 9pt; }
+  .kpi .v { font-size: 16pt; font-weight: 700; color: var(--brand); line-height: 1.1;
+            font-variant-numeric: tabular-nums; }
+  .kpi .k { font-size: 7.8pt; color: var(--ink-3); text-transform: uppercase;
+            letter-spacing: 0.05em; margin-top: 2pt; }
+
+  .flow { margin: 0 0 12pt; }
+  .flow-step {
+    display: grid; grid-template-columns: 20pt 1fr; gap: 9pt;
+    padding: 6pt 0; border-bottom: 1px dashed var(--line); break-inside: avoid;
+  }
+  .flow-step:last-child { border-bottom: 0; }
+  .flow-num {
+    width: 20pt; height: 20pt; border-radius: 50%; background: var(--brand);
+    color: #fff; font-size: 9pt; font-weight: 700; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .flow-body h4 { margin: 1pt 0 2pt; text-transform: none; letter-spacing: 0;
+                  color: var(--ink); font-size: 10pt; }
+  .flow-body p { margin: 0; font-size: 9.4pt; color: var(--ink-2); }
+
+  .page-break { break-before: page; }
+  .avoid-break { break-inside: avoid; }
+  figcaption { font-size: 8.4pt; color: var(--ink-3); margin-top: -6pt; margin-bottom: 11pt; }
+  .footnote { font-size: 8.6pt; color: var(--ink-3); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<section class="cover">
+  <div class="eyebrow">Machine Learning Research Project</div>
+  <h1>GeoPulse</h1>
+  <div class="sub">Forecasting New York City bike-share demand, and turning the forecast into something a person can actually use</div>
+  <div class="rule"></div>
+  <dl>
+    <dt>Data</dt><dd>79,410,195 Citi Bike trips · January 2023 – December 2024</dd>
+    <dt>Models</dt><dd>LightGBM, Temporal Fusion Transformer, Spatio-Temporal Graph Neural Network, Seasonal Naive</dd>
+    <dt>Spatial systems</dt><dd>Uber H3 hexagons · Google S2 quadrilaterals</dd>
+    <dt>Deliverable</dt><dd>Eight completed phases, a tested prediction interface, and a map-based assistant</dd>
+    <dt>Code</dt><dd>11,238 lines across <code>src/</code> and <code>scripts/</code> · 2,008 lines of tests · 166 tests passing</dd>
+    <dt>Repository</dt><dd>12 commits on <code>main</code>, one per completed phase or feature</dd>
+  </dl>
+</section>
+
+<!-- ═══════════════════════════ CONTENTS ═══════════════════════════ -->
+<h2>Contents</h2>
+<div class="toc">
+  <span class="t-part">Overview</span>
+  <div>1. What this project is, in plain words</div>
+  <div>2. The four questions we set out to answer</div>
+  <div>3. How the whole system fits together</div>
+
+  <span class="t-part">Building the dataset</span>
+  <div>4. Where the data came from</div>
+  <div>5. Cleaning it without hiding anything</div>
+  <div>6. The timezone problem nobody expects</div>
+  <div>7. Turning trips into a grid of numbers</div>
+
+  <span class="t-part">Teaching a model to forecast</span>
+  <div>8. The baseline that had to be beaten</div>
+  <div>9. Building features, and proving they don't cheat</div>
+  <div>10. Which features actually earned their place</div>
+  <div>11. Choosing the size of a map cell</div>
+  <div>12. Hexagons versus squares</div>
+
+  <span class="t-part">The models</span>
+  <div>13. LightGBM, tuned properly</div>
+  <div>14. The two deep-learning models</div>
+  <div>15. Training on a free GPU</div>
+  <div>16. The final exam: the test set</div>
+  <div>17. Where the model gets things wrong</div>
+
+  <span class="t-part">From forecast to decision</span>
+  <div>18. Estimating how many docks exist</div>
+  <div>19. Moving bikes around, and why it didn't help</div>
+  <div>20. The prediction interface</div>
+
+  <span class="t-part">The application</span>
+  <div>21. Architecture of the app</div>
+  <div>22. From a cell forecast to a station answer</div>
+  <div>23. Finding places without a maps API</div>
+  <div>24. The assistant and its tools</div>
+  <div>25. Walking directions with A*</div>
+  <div>26. The interface</div>
+
+  <span class="t-part">Reflection</span>
+  <div>27. Bugs worth remembering</div>
+  <div>28. Honest limitations</div>
+  <div>29. How to run everything</div>
+  <div>30. Glossary</div>
+</div>
+
+<!-- ═══════════════════════════ 1 ═══════════════════════════ -->
+<h2 id="s1">1. What this project is, in plain words</h2>
+
+<p>New York City runs a bike-share system called Citi Bike. There are roughly 2,400 docking
+stations scattered across Manhattan, Brooklyn, Queens and Jersey City. People take a bike from
+one dock and return it to another. Millions of times a year.</p>
+
+<p>This creates a problem that sounds simple and isn't. Bikes pile up where people ride
+<em>to</em>, and disappear from where people ride <em>from</em>. Every weekday morning, thousands
+of bikes flow from residential areas into Midtown. By 9:30am the residential docks are empty and
+the Midtown docks are full. Somebody has to drive a truck around and move them back.</p>
+
+<p><strong>GeoPulse tries to predict that flow before it happens.</strong> Given a place and a
+time, it forecasts how many bikes will be taken and how many will be returned over the next
+fifteen minutes to one hour. If you can predict it, you can act on it — either as an operator
+deciding where to send a truck, or as a rider deciding which dock to walk to.</p>
+
+<p>The project has two halves that are quite different in character:</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="flow-num">1</div>
+    <div class="flow-body">
+      <h4>A research project</h4>
+      <p>Eight phases of careful work: acquire the data, clean it, build features, train four
+      different kinds of model, and measure honestly which one wins and why. This half produces
+      numbers and conclusions.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">2</div>
+    <div class="flow-body">
+      <h4>A working application</h4>
+      <p>A map-based assistant where you type "will I find a bike near Times Square?" and get a
+      real answer from the trained models, with walking directions and an explanation. This half
+      makes the research usable.</p>
+    </div>
+  </div>
+</div>
+
+<div class="callout">
+  <span class="tag">The rule that shaped everything</span>
+  <p>One principle runs through the entire project: <strong>never claim more than the data
+  supports.</strong> Several times this made the result less impressive and the report longer.
+  Every one of those moments is written up here rather than quietly smoothed over, because a
+  forecast you can't trust is worse than no forecast at all.</p>
+</div>
+
+<!-- ═══════════════════════════ 2 ═══════════════════════════ -->
+<h2 id="s2">2. The four questions we set out to answer</h2>
+
+<p>The project was designed around four research questions. Each one was decided by an
+experiment, not by intuition.</p>
+
+<table>
+  <tr>
+    <th style="width:26pt">#</th>
+    <th style="width:150pt">Question</th>
+    <th>Answer</th>
+  </tr>
+  <tr>
+    <td><strong>RQ1</strong></td>
+    <td>How big should a map cell be?</td>
+    <td><strong>H3 resolution 8</strong> — cells of about 0.74 km². Chosen using a
+    <em>skill score</em>, because every ordinary accuracy metric is biased by cell size and the
+    three we tried disagreed with each other completely.</td>
+  </tr>
+  <tr>
+    <td><strong>RQ2</strong></td>
+    <td>Hexagons (H3) or squares (S2)?</td>
+    <td><strong>Almost a coin flip.</strong> S2 level 13 scores slightly better on skill, but its
+    cells are 47% larger, which plausibly explains the whole gap. The size of the cell matters;
+    the shape barely does.</td>
+  </tr>
+  <tr>
+    <td><strong>RQ3</strong></td>
+    <td>Do deep-learning models beat gradient boosting?</td>
+    <td><strong>No.</strong> A tuned LightGBM beat both the Transformer and the Graph Neural
+    Network at both cell sizes. Two apparent deep-learning wins at H3-8 reversed at S2-13, which
+    means they were noise. An important caveat about training budget is given in section 16.</td>
+  </tr>
+  <tr>
+    <td><strong>RQ4</strong></td>
+    <td>Do better forecasts produce better operations?</td>
+    <td><strong>Yes between forecasts, no in absolute terms.</strong> LightGBM out-performed even
+    a <em>perfect</em> forecast at rebalancing. But rebalancing itself didn't help at all, for a
+    structural reason explained in section 19.</td>
+  </tr>
+</table>
+
+<h3>The headline numbers</h3>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">1.14</div><div class="k">Best test MAE (bikes per 15 min)</div></div>
+  <div class="kpi"><div class="v">38%</div><div class="k">Better than the naive baseline</div></div>
+  <div class="kpi"><div class="v">0.72</div><div class="k">Hotspot F1 score</div></div>
+  <div class="kpi"><div class="v">166</div><div class="k">Automated tests passing</div></div>
+</div>
+
+<p class="footnote">MAE means "mean absolute error" — on average, the forecast for a cell is off by
+1.14 bikes in a 15-minute window. Hotspot F1 measures how well the model identifies the busiest
+10% of cells at each moment, which is what an operator actually cares about.</p>
+
+<!-- ═══════════════════════════ 3 ═══════════════════════════ -->
+<h2 id="s3" class="page-break">3. How the whole system fits together</h2>
+
+<p>Before the details, here is the shape of the whole thing. Data flows downward; each stage
+depends only on the ones above it.</p>
+
+<div class="flow">
+  <div class="flow-step">
+    <div class="flow-num">1</div>
+    <div class="flow-body">
+      <h4>Raw data → typed Parquet files</h4>
+      <p>90 CSV files (15 GB) of trip records, plus weather, public events, and traffic sensors.
+      Converted to a compressed columnar format that can be queried without loading it all into
+      memory.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">2</div>
+    <div class="flow-body">
+      <h4>Cleaning → 79.2 million usable trips</h4>
+      <p>Nine named rules remove impossible records. Every removal is counted and attributed, so
+      the numbers reconcile exactly.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">3</div>
+    <div class="flow-body">
+      <h4>Spatial indexing → a grid of cells</h4>
+      <p>Every trip start and end is assigned to a hexagonal cell. Cells with too little activity
+      are dropped.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">4</div>
+    <div class="flow-body">
+      <h4>The panel → 104 million rows of counts</h4>
+      <p>One row per cell per 15-minute interval, holding how many bikes were taken and returned.
+      This is the table everything else is built from.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">5</div>
+    <div class="flow-body">
+      <h4>Features → 168 columns describing each moment</h4>
+      <p>Recent demand, time of day, weather, events, traffic, neighbouring cells. Only features
+      that could genuinely be known at forecast time.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">6</div>
+    <div class="flow-body">
+      <h4>Models → four families trained and compared</h4>
+      <p>Seasonal Naive, LightGBM, Temporal Fusion Transformer, Spatio-Temporal Graph Neural
+      Network. Across two spatial systems.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">7</div>
+    <div class="flow-body">
+      <h4>Evaluation → one look at the test set</h4>
+      <p>November–December 2024 was never touched until every decision had been made.</p>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="flow-num">8</div>
+    <div class="flow-body">
+      <h4>Application → map, assistant, walking directions</h4>
+      <p>A web app that turns the trained models into answers a person can act on.</p>
+    </div>
+  </div>
+</div>
+
+<h3>Why the work was split into phases</h3>
+
+<p>Each phase had a written <em>Definition of Done</em> — a checklist that had to be satisfied
+before the next phase could start. Crucially, the checklists were verified <strong>by scripts
+reading the actual output files</strong>, not by me ticking boxes from memory. If a check said
+"the cleaned data is sorted by time", a script opened the file and checked all 79 million rows.</p>
+
+<p>This sounds bureaucratic. It caught several serious bugs that would otherwise have silently
+corrupted everything downstream — including two that are documented in section 27.</p>
+
+<!-- ═══════════════════════════ 4 ═══════════════════════════ -->
+<h2 id="s4">4. Where the data came from</h2>
+
+<p>Four separate sources, each with its own quirks.</p>
+
+<h3>4.1 Citi Bike trip records — the core dataset</h3>
+
+<p>Citi Bike publishes every trip taken, monthly, as a CSV file. Two years is 90 files and about
+15 GB uncompressed. Each row is one trip: a ride ID, start and end times, start and end station
+names and IDs, latitude and longitude for both ends, and whether the rider was a member or a
+casual user.</p>
+
+<div class="callout">
+  <span class="tag">Engineering decision</span>
+  <p>15 GB will not fit in this machine's 16 GB of RAM alongside anything else. Loading it with
+  pandas — the obvious first instinct — would fail. Instead the files were read with
+  <strong>Polars</strong> in streaming mode: select only the needed columns, cast types, and write
+  straight out to Parquet in a single pass. The result is <strong>2.5 GB</strong> instead of 15 GB,
+  and every later stage reads it lazily. The whole conversion took <strong>2 minutes</strong>.</p>
+</div>
+
+<p>Parquet matters here. It is a columnar format, so reading just the two columns you need doesn't
+touch the rest of the file, and it stores statistics per block that let a query skip whole sections.
+Everything downstream depends on that being fast.</p>
+
+<h3>4.2 Weather — hourly, from Open-Meteo</h3>
+
+<p>Fetched from the Open-Meteo historical archive: temperature, apparent temperature, humidity,
+precipitation, rain, snowfall, snow depth, wind speed and wind gusts, hourly, for the whole
+period. That is 17,544 rows — 731 days × 24 hours — with no gaps.</p>
+
+<p>One variable, <code>visibility</code>, came back 100% empty. Rather than keeping a dead column
+that might later be mistaken for real data, it was removed from the request entirely.</p>
+
+<h3>4.3 Public events — NYC permitted events</h3>
+
+<p>The city publishes every permitted street event: block parties, film shoots, parades,
+construction closures. 557,674 rows covering 75,729 distinct events.</p>
+
+<p><strong>The catch:</strong> these records have no coordinates. They have free-text location
+descriptions like "Astoria Park: Soccer-01" or "5 Avenue between 42 Street and 59 Street". To use
+them spatially, 19,011 distinct location strings had to be geocoded — converted into latitude and
+longitude — which is covered in section 10.</p>
+
+<h3>4.4 Traffic speeds — and a false start worth recording</h3>
+
+<p>The first attempt used a CSV downloaded from the NYC Open Data web interface. It looked
+correct. It was not: the web export had been <strong>silently capped</strong>, and contained only
+five days of data from July 2018 — zero overlap with the 2023–24 project window.</p>
+
+<div class="callout warn">
+  <span class="tag">Lesson</span>
+  <p>A file that downloads successfully and opens cleanly can still be the wrong data. The only
+  reason this was caught is that a sanity check compared the date range in the file against the
+  project window. Always check that the data you have covers the period you think it does.</p>
+</div>
+
+<p>The fix was to pull directly from the <strong>Socrata API</strong> (dataset <code>i4gi-tjb9</code>),
+requesting only the columns that change per reading, and paginating <em>by time window</em> rather
+than by row offset — offset-based pagination on a large dataset gets slower and slower and can
+skip records if the underlying data shifts.</p>
+
+<p>This returned <strong>23,758,184 readings</strong>. Completeness was then proved rather than
+assumed: before fetching, the server was asked for a <code>count(1)</code> over the same window.
+The two numbers matched exactly.</p>
+
+<!-- ═══════════════════════════ 5 ═══════════════════════════ -->
+<h2 id="s5" class="page-break">5. Cleaning it without hiding anything</h2>
+
+<p>Raw trip data contains records that are physically impossible: trips lasting three seconds,
+trips lasting four days, trips with no coordinates, trips ending before they started.</p>
+
+<p>The temptation is to filter them out with a few conditions and move on. The problem with that
+is you never learn <em>how much</em> you threw away or <em>why</em>, and a bug in one condition can
+silently delete a large fraction of the data without anyone noticing.</p>
+
+<h3>The waterfall approach</h3>
+
+<p>Instead, nine <strong>named rules</strong> are applied in a fixed order, and each removed row is
+attributed to the <strong>first</strong> rule it violates. The counts then sum exactly to the total
+removed — a self-checking arithmetic identity.</p>
+
+<table>
+  <tr><th>Rule</th><th class="num">Rows removed</th><th class="num">% of raw</th><th>What it catches</th></tr>
+  <tr><td><code>duplicate_ride_id</code></td><td class="num">0</td><td class="num">0%</td><td>The same trip recorded twice</td></tr>
+  <tr><td><code>null_ride_id</code></td><td class="num">0</td><td class="num">0%</td><td>A trip with no identifier</td></tr>
+  <tr><td><code>null_timestamp</code></td><td class="num">0</td><td class="num">0%</td><td>Missing start or end time</td></tr>
+  <tr><td><code>outside_project_window</code></td><td class="num">276</td><td class="num">0.0003%</td><td>Dated outside 2023–2024</td></tr>
+  <tr><td><code>end_before_start</code></td><td class="num">643</td><td class="num">0.0008%</td><td>Time travel</td></tr>
+  <tr><td><code>duration_too_short</code></td><td class="num">182</td><td class="num">0.0002%</td><td>Under 60 s — a failed undock</td></tr>
+  <tr><td><code>duration_too_long</code></td><td class="num">37,627</td><td class="num">0.047%</td><td>Over 24 h — likely stolen or lost</td></tr>
+  <tr><td><code>missing_coords</code></td><td class="num">206,222</td><td class="num">0.260%</td><td>No latitude/longitude</td></tr>
+  <tr><td><code>coords_out_of_bbox</code></td><td class="num">178</td><td class="num">0.0002%</td><td>Outside the New York area</td></tr>
+  <tr style="font-weight:700"><td>Total removed</td><td class="num">245,128</td><td class="num">0.309%</td><td></td></tr>
+  <tr style="font-weight:700"><td>Kept</td><td class="num">79,165,067</td><td class="num">99.691%</td><td></td></tr>
+</table>
+
+<p>A quality report is generated <em>before</em> anything is deleted, so the decision to drop a
+category of record is made with the numbers visible.</p>
+
+<p>Worth noting: <strong>not a single duplicate ride ID in 79.4 million rows across two years.</strong>
+The de-duplication step is kept anyway, so a future month can't slip one through unnoticed.</p>
+
+<h3>Sorting 79 million rows by time</h3>
+
+<p>Everything downstream — lag features, chronological splits, the panel — assumes the data is in
+time order. The 90 source files arrive as separate months, so the combined dataset is <em>not</em>
+sorted globally.</p>
+
+<div class="callout bug">
+  <span class="tag">Problem hit</span>
+  <p>A single <code>ORDER BY started_at</code> across 79 million wide rows spilled <strong>8 GB to
+  disk</strong> and had not finished after an hour.</p>
+  <p><strong>The fix</strong> uses a property of the data: it is already partitioned by month.
+  Sorting each month individually (about 3 million rows — comfortably in memory) and then
+  concatenating the parts in month order produces the <em>identical</em> global ordering. Total
+  time: about 90 seconds of sorting plus a streaming concatenation.</p>
+</div>
+
+<p>Rather than trusting that argument, the result is verified two independent ways: by reading the
+Parquet block statistics, and by scanning the entire timestamp column in file order looking for any
+inversion. Result: <strong>0 violations, 0 inversions across 79,165,067 rows.</strong></p>
+
+<!-- ═══════════════════════════ 6 ═══════════════════════════ -->
+<h2 id="s6">6. The timezone problem nobody expects</h2>
+
+<p>This section covers a subtle issue that would have quietly corrupted the model, and is the kind
+of thing that separates a working pipeline from a broken one.</p>
+
+<p>Citi Bike publishes times as <strong>local New York wall-clock time with no timezone attached</strong>.
+That seems harmless until daylight saving time.</p>
+
+<h3>What goes wrong in autumn</h3>
+
+<p>On the first Sunday in November, clocks go back one hour. The local hour from 1:00am to 2:00am
+<strong>happens twice</strong>. Both passes are written to the file as "01:xx" with nothing to
+distinguish them.</p>
+
+<p>If you bin those timestamps into 15-minute intervals using local time, both passes land in the
+same bins. You get one bin with roughly double the true demand, and the model learns a fictional
+annual spike.</p>
+
+<h3>What goes wrong in spring</h3>
+
+<p>In March, clocks go forward. The local hour from 2:00am to 3:00am <strong>does not exist</strong>.
+Any timestamp in it is impossible. In practice a handful of records land there anyway, through
+clock skew — 617 rides in 2023, 582 in 2024.</p>
+
+<h3>The fix</h3>
+
+<p>All timestamps are converted to <strong>UTC</strong>, which has no daylight saving and no
+repeated or missing hours, and stored that way. Local calendar features (hour of day, day of week)
+are derived by converting back when needed.</p>
+
+<pre><code>localized = expr.dt.replace_time_zone(tz, ambiguous="earliest", non_existent="null")
+shifted   = (expr + duration(hours=1)).dt.replace_time_zone(tz, ...)
+return coalesce(localized, shifted).dt.convert_time_zone("UTC")</code></pre>
+
+<p>For ambiguous times we take the earliest interpretation; for non-existent times we shift forward
+by an hour. This is deterministic and documented.</p>
+
+<h3>Measuring the damage rather than assuming it</h3>
+
+<p>Because the earliest interpretation is used, the <em>second</em> pass through the repeated hour is
+unreachable. That means those UTC hours contain only half their true demand. Rather than hoping this
+doesn't matter, it was measured directly in the data:</p>
+
+<table>
+  <tr><th>UTC hour</th><th class="num">Rides recorded</th><th>Interpretation</th></tr>
+  <tr><td>2023-11-05 05:00</td><td class="num">2,921</td><td>Both passes collapsed into one hour</td></tr>
+  <tr><td>2023-11-05 06:00</td><td class="num">0</td><td>The unreachable second pass</td></tr>
+  <tr><td>2024-11-03 05:00</td><td class="num">3,534</td><td>Same pattern, following year</td></tr>
+  <tr><td>2024-11-03 06:00</td><td class="num">0</td><td>Same</td></tr>
+</table>
+
+<p>Four affected hours were identified. Every row falling in them is flagged
+<code>dst_unreliable</code>, and every model excludes those rows from training. The models never see
+the artificial collapse, and the flag travels with the data so nobody downstream has to remember.</p>
+
+<!-- ═══════════════════════════ 7 ═══════════════════════════ -->
+<h2 id="s7" class="page-break">7. Turning trips into a grid of numbers</h2>
+
+<p>A model can't consume "a list of trips". It needs a rectangular table: for each place, at each
+time, how many bikes were taken and returned. Building that table is what this phase does.</p>
+
+<h3>7.1 Dividing the city into cells</h3>
+
+<p>We use <strong>Uber's H3</strong> system, which tiles the world in hexagons at a range of sizes.
+Hexagons are used rather than squares because every neighbour is the same distance away — with
+squares, diagonal neighbours are 41% further than edge neighbours, which distorts any
+neighbourhood calculation.</p>
+
+<p>At resolution 8, a cell is about 0.74 km² — roughly a large city block cluster, containing
+about eight Citi Bike stations on average.</p>
+
+<div class="callout">
+  <span class="tag">A 0.8-second optimisation</span>
+  <p>Assigning 79 million trip endpoints to cells looks like 158 million geometric calculations.
+  But Citi Bike <em>snaps every trip to a docking station</em>, so the whole dataset contains only
+  <strong>3,230 distinct coordinate pairs</strong>. Index those 3,230 once into a lookup table and
+  join. The operation takes <strong>0.8 seconds</strong> instead of the better part of an hour, and
+  it is exact — not an approximation. Tests confirm the fast path and the slow path agree on real
+  NYC points at three resolutions.</p>
+</div>
+
+<h3>7.2 Deciding which cells count</h3>
+
+<p>1,570 cells were touched by at least one trip. Many of those are noise — a single tourist ride
+into an area with no service. Cells are kept only if they had <strong>at least 500 trips and at
+least 180 active days</strong> across the two years.</p>
+
+<p>That keeps 1,483 cells at resolution 9, which carry <strong>99.98% of all trip endpoints</strong>.
+The rule discards 87 marginal cells and loses almost nothing.</p>
+
+<h3>7.3 Density is the contract</h3>
+
+<p>The panel has <strong>exactly one row per active cell per 15-minute interval</strong>, with no
+gaps. A cell with no trips in an interval gets a <strong>0</strong>, not a missing row.</p>
+
+<p>This matters more than it sounds. Lag features ask "what was demand one hour ago?" — which is
+"four rows back" only if there is guaranteed to be a row for every interval. With gaps, "four rows
+back" could mean four hours back, and every feature would be silently wrong for some cells.</p>
+
+<p>The grid is built as an explicit cross join of cells × timestamps, with counts joined onto it.</p>
+
+<table>
+  <tr><th style="width:120pt">Property</th><th>Value</th></tr>
+  <tr><td>Rows</td><td><strong>104,071,008</strong> = 1,483 cells × 70,176 intervals — exactly dense</td></tr>
+  <tr><td>Time range</td><td>2023-01-01 05:00 UTC to 2025-01-01 04:45 UTC, 15-minute bins, zero irregular gaps</td></tr>
+  <tr><td>Columns</td><td><code>region_id, ts, pickups, dropoffs, net_flow, dst_unreliable</code>, plus eight target columns</td></tr>
+  <tr><td>Reconciliation</td><td>Panel pickups total 79,150,890 — matches trips in active cells exactly</td></tr>
+  <tr><td>Sparsity</td><td>71.37% of cell-intervals have zero pickups at resolution 9</td></tr>
+  <tr><td>Storage</td><td>277 MB across 24 monthly partitions</td></tr>
+</table>
+
+<h3>7.4 What the model is asked to predict</h3>
+
+<p>Four horizons: 15, 30, 45 and 60 minutes ahead, for both pickups and dropoffs — eight targets
+in total. Each is computed by looking forward in the sorted series.</p>
+
+<p>These targets are <strong>not trusted, they are tested</strong>. A separate piece of code
+re-derives each target using an independent timestamp self-join and asserts the two agree — in unit
+tests on a small sample, and in the phase gate on 60 sampled cells covering 4.2 million rows.</p>
+
+<div class="callout">
+  <span class="tag">A deliberate choice about the end of the series</span>
+  <p>For the last few intervals there is no future to look at. Those targets are set to
+  <strong>NULL, never 0</strong>. A zero would teach the model that demand collapses at the end of
+  every series — a phantom pattern that doesn't exist. The count of NULLs is verified to be exactly
+  cells × horizon.</p>
+</div>
+
+<!-- ═══════════════════════════ 8 ═══════════════════════════ -->
+<h2 id="s8">8. The baseline that had to be beaten</h2>
+
+<p>Before building anything sophisticated, you need to know what "good" means. The baseline here is
+<strong>Seasonal Naive</strong>: to predict demand at a given time, just look up what happened at
+the same time in a previous cycle.</p>
+
+<p>Two variants were tested: same time yesterday, and same time last week.</p>
+
+<div class="callout warn">
+  <span class="tag">The subtle detail that makes this baseline honest</span>
+  <p>To forecast the interval at <code>t + h</code>, you need the value one season before
+  <em>that instant</em> — which is <code>lag(season − h)</code>, not <code>lag(season)</code>.</p>
+  <p>For one-day seasonality at a 15-minute horizon: <strong>lag 95, not lag 96.</strong></p>
+  <p>Using lag 96 would misalign the baseline by up to an hour and hand the real model an
+  unearned victory. Eight extra lag columns are materialised specifically for the baseline and
+  deliberately kept out of the model's feature list.</p>
+</div>
+
+<h3>Results of the gate</h3>
+
+<p>Phase 3 was a <strong>stop-and-verify gate</strong>: if LightGBM couldn't beat Seasonal Naive on
+every one of the eight targets, the project stopped and the problem got diagnosed. It passed 8 out
+of 8, on validation data (September–October 2024, 8.68 million rows).</p>
+
+<table>
+  <tr><th>Target</th><th class="num">Naive MAE</th><th class="num">LightGBM MAE</th><th class="num">Improvement</th><th class="num">Hotspot F1</th></tr>
+  <tr><td>pickup, 15 min</td><td class="num">0.8768</td><td class="num win">0.6945</td><td class="num">20.8%</td><td class="num">0.602</td></tr>
+  <tr><td>pickup, 30 min</td><td class="num">0.8768</td><td class="num win">0.7013</td><td class="num">20.0%</td><td class="num">0.600</td></tr>
+  <tr><td>pickup, 45 min</td><td class="num">0.8768</td><td class="num win">0.7049</td><td class="num">19.6%</td><td class="num">0.598</td></tr>
+  <tr><td>pickup, 60 min</td><td class="num">0.8768</td><td class="num win">0.7076</td><td class="num">19.3%</td><td class="num">0.598</td></tr>
+  <tr><td>dropoff, 15 min</td><td class="num">0.8673</td><td class="num win">0.6920</td><td class="num">20.2%</td><td class="num">0.595</td></tr>
+  <tr><td>dropoff, 30 min</td><td class="num">0.8673</td><td class="num win">0.6984</td><td class="num">19.5%</td><td class="num">0.592</td></tr>
+  <tr><td>dropoff, 45 min</td><td class="num">0.8673</td><td class="num win">0.7035</td><td class="num">18.9%</td><td class="num">0.590</td></tr>
+  <tr><td>dropoff, 60 min</td><td class="num">0.8672</td><td class="num win">0.7072</td><td class="num">18.5%</td><td class="num">0.589</td></tr>
+</table>
+
+<p>Between the two naive variants, <strong>same-week beat same-day</strong> (0.872 vs 0.899 mean
+MAE) on validation — weekly rhythm matters more than daily rhythm for commuter cycling. Section 17
+describes how this finding reversed on the test set, and why.</p>
+
+<h3>How the data is split</h3>
+
+<p>Splits are <strong>chronological</strong>, never random. Randomly shuffling time-series data lets
+the model see the future while training, which produces excellent scores and a useless model.</p>
+
+<table>
+  <tr><th>Split</th><th>Period</th><th>Purpose</th></tr>
+  <tr><td>Train</td><td>Jan 2023 – Aug 2024</td><td>Fitting the models</td></tr>
+  <tr><td>Validate</td><td>Sep – Oct 2024</td><td>Every comparison and choice</td></tr>
+  <tr><td><strong>Test</strong></td><td><strong>Nov – Dec 2024</strong></td><td><strong>Opened exactly once, at the very end</strong></td></tr>
+</table>
+
+<!-- ═══════════════════════════ 9 ═══════════════════════════ -->
+<h2 id="s9" class="page-break">9. Building features, and proving they don't cheat</h2>
+
+<p>A feature is a number describing the situation at forecast time. The model sees the features and
+predicts the target. The single most dangerous mistake in this kind of project is <strong>data
+leakage</strong> — accidentally giving the model information from the future.</p>
+
+<p>Leakage is dangerous because it doesn't look like a bug. It looks like success. Your accuracy
+improves, you ship the model, and it fails completely in production because that information isn't
+available in real life.</p>
+
+<h3>9.1 Pinning down exactly what "now" means</h3>
+
+<p>Everything depends on defining forecast time precisely. Consider the 15-minute bin from 17:00 to
+17:15. If you make a forecast "at" that bin, are you standing at 17:00 or 17:15?</p>
+
+<p>The project pins it down: <strong>forecast time is the END of the bin.</strong> This has two
+consequences, both good:</p>
+
+<ul>
+  <li>A one-step-ahead forecast is genuinely 15 minutes ahead. Under the other reading it would be
+  somewhere between 15 and 30 minutes, and every horizon label in the project would be off by one.</li>
+  <li>The current bin's demand is a <em>legal input</em> — the bin has completed. This is the single
+  most informative feature available, and the earlier phase had omitted it.</li>
+</ul>
+
+<p>This decision is written down in <code>docs/FORECAST_TIME_CONVENTION.md</code> so it can't drift.</p>
+
+<h3>9.2 The eight feature families</h3>
+
+<table>
+  <tr><th style="width:20pt">#</th><th style="width:100pt">Family</th><th class="num" style="width:50pt">Columns</th><th>What it captures</th></tr>
+  <tr><td>A</td><td>Recent demand</td><td class="num">20</td><td>Demand in this cell 1, 2, 4, 8, 12, 24, 96, 192 and 672 intervals ago, plus the just-completed bin</td></tr>
+  <tr><td>B</td><td>Calendar &amp; seasonal</td><td class="num">55</td><td>Time of day and day of week as smooth cyclical values, holidays, rush-hour flags, and demand at the same slot in previous cycles</td></tr>
+  <tr><td>C</td><td>Rolling trends</td><td class="num">49</td><td>Moving averages, sums, standard deviations and exponentially-weighted means over several windows; short-term change</td></tr>
+  <tr><td>D</td><td>Weather</td><td class="num">17</td><td>Temperature, rain, snow, wind, plus derived flags and short-term temperature change</td></tr>
+  <tr><td>E</td><td>Events</td><td class="num">6</td><td>Count and scale of permitted events active in this cell</td></tr>
+  <tr><td>F</td><td>Traffic</td><td class="num">7</td><td>Average speed and congestion on road sensors near this cell</td></tr>
+  <tr><td>G</td><td>Neighbours</td><td class="num">9</td><td>Demand in the six surrounding cells; this cell relative to its neighbourhood</td></tr>
+  <tr><td>H</td><td>Station network</td><td class="num">4</td><td>How many stations are in the cell and how busy they historically are</td></tr>
+  <tr style="font-weight:700"><td colspan="2">Total</td><td class="num">168</td><td></td></tr>
+</table>
+
+<h3>9.3 How leakage is prevented — and proved</h3>
+
+<p>Every rolling and lag feature is computed with an explicit <code>PARTITION BY region_id</code>
+over a series sorted by time, so a cell can only ever see its own past.</p>
+
+<p>But writing the code carefully isn't proof. <strong>Fifteen dedicated tests re-derive every lag
+feature using a completely independent method</strong> — a timestamp self-join, written separately
+from the production code — and assert the two agree exactly. Twenty more tests cover the advanced
+families.</p>
+
+<div class="callout">
+  <span class="tag">Why re-derivation rather than inspection</span>
+  <p>Reading code to check for leakage catches the bugs you thought of. Re-deriving the answer a
+  different way catches the ones you didn't. If a window is off by one, or a sort is wrong, or a
+  partition is missing, the two methods disagree and the test fails.</p>
+</div>
+
+<h3>9.4 Making 104 million rows fit in 16 GB</h3>
+
+<p>Computing 168 features over 104 million rows in one pass spilled 12 GB to disk and threatened to
+fill the drive.</p>
+
+<p>The fix uses a mathematical property: because every lag and rolling window is partitioned by
+cell, <strong>processing a batch of cells at a time is exactly equivalent</strong> to processing
+all of them together. It is not an approximation. Nine batches of about 12 million rows finished in
+<strong>6.4 minutes with 4 KB of spill</strong>.</p>
+
+<!-- ═══════════════════════════ 10 ═══════════════════════════ -->
+<h2 id="s10">10. Which features actually earned their place</h2>
+
+<p>Having 168 features doesn't mean they all help. More features means slower training, more
+memory, more pipeline complexity to maintain — and possibly worse accuracy, because a model with a
+fixed capacity spends some of it on noise.</p>
+
+<p>So the families were tested by <strong>ablation</strong>: start with family A alone, add B,
+measure; add C, measure; and so on. Every step gets an identical training budget and identical
+data, so the only thing changing is the feature set.</p>
+
+<h3>Results at H3 resolution 8</h3>
+
+<table>
+  <tr><th style="width:24pt">Step</th><th style="width:110pt">Family added</th><th class="num">Features</th><th class="num">Pickup MAE</th><th class="num">Dropoff MAE</th><th class="num">Change</th><th>Verdict</th></tr>
+  <tr><td>A</td><td>Recent demand</td><td class="num">21</td><td class="num">1.6944</td><td class="num">1.6675</td><td class="num">—</td><td>baseline</td></tr>
+  <tr><td>B</td><td>+ Calendar/seasonal</td><td class="num">76</td><td class="num win">1.5791</td><td class="num win">1.5606</td><td class="num win">+6.60%</td><td><strong>Helps a lot</strong></td></tr>
+  <tr><td>C</td><td>+ Rolling trends</td><td class="num">125</td><td class="num win">1.5695</td><td class="num win">1.5503</td><td class="num win">+0.64%</td><td><strong>Helps</strong></td></tr>
+  <tr><td>D</td><td>+ Weather</td><td class="num">142</td><td class="num">1.5703</td><td class="num">1.5511</td><td class="num lose">−0.05%</td><td>No benefit</td></tr>
+  <tr><td>E</td><td>+ Events</td><td class="num">148</td><td class="num">1.5702</td><td class="num">1.5516</td><td class="num lose">−0.01%</td><td>No effect</td></tr>
+  <tr><td>F</td><td>+ Traffic</td><td class="num">155</td><td class="num">1.5702</td><td class="num">1.5531</td><td class="num lose">−0.05%</td><td>No effect</td></tr>
+  <tr><td>G</td><td>+ Neighbours</td><td class="num">164</td><td class="num">1.5675</td><td class="num">1.5464</td><td class="num">+0.30%</td><td>Helps slightly</td></tr>
+  <tr><td>H</td><td>+ Station network</td><td class="num">168</td><td class="num">1.5684</td><td class="num">1.5475</td><td class="num lose">−0.07%</td><td>No benefit</td></tr>
+</table>
+
+<p><strong>The chosen feature set is A + B + C: 125 features.</strong></p>
+
+<h3>What this actually means</h3>
+
+<p>The headline finding is blunt: <strong>weather, events and traffic contribute essentially
+nothing.</strong> Nearly all the predictable signal beyond recent demand is <em>calendar and
+seasonality</em> — which makes sense for commuter cycling, and is cheap to compute.</p>
+
+<p>Three honest caveats bound how far this generalises:</p>
+
+<ol>
+  <li><strong>"Hurts" should be read as "no measurable benefit", not "actively harmful".</strong>
+  Every step gets the same fixed training budget, so adding 17 weather columns dilutes a fixed
+  capacity. A −0.05% move at this scale is dilution, not evidence that rain is anti-informative.</li>
+
+  <li><strong>Events carry a 25% geocoding hole.</strong> 74.7% of event locations resolved to
+  coordinates; the rest were free-text descriptions the geocoder couldn't place, or were rejected
+  by a borough cross-check. A better geocoder might change family E — though at ±0.01% it would
+  have to change it enormously.</li>
+
+  <li><strong>The traffic result was initially suspect, and was retested.</strong> This is covered
+  immediately below, because it is the most interesting thing in the section.</li>
+</ol>
+
+<h3>Giving traffic a fair second chance</h3>
+
+<p>The first ablation ran at H3 resolution 9, where the traffic sensor network reaches only
+<strong>76 of 1,483 cells — 5.1%</strong>. The feature is null for 95% of rows. That isn't a test of
+"does traffic help"; it's a test of "does traffic help in 5% of Manhattan".</p>
+
+<p>When resolution 8 was later chosen, traffic coverage rose to <strong>20.2% of cells — four times
+better</strong>. The entire ablation was re-run to give families D–H a fair trial rather than
+inheriting a verdict from a grid where the data barely existed.</p>
+
+<div class="callout">
+  <span class="tag">The result</span>
+  <p><strong>Quadrupling the coverage changed nothing.</strong> Traffic still contributes −0.05%.
+  That turns a weak result ("traffic didn't help, but coverage was thin") into a defensible negative
+  finding: the feature was given four times the reach and still earned nothing.</p>
+</div>
+
+<p>Family G (neighbours) was the one genuine change, moving from −0.06% at resolution 9 to +0.30% at
+resolution 8. It was still not adopted, because the ablation is cumulative — taking G would drag D,
+E and F along with it for a gain inside the noise.</p>
+
+<h3>What the model actually leans on</h3>
+
+<p>Gain-based feature importance from the final trained model confirms the ablation independently:</p>
+
+<table>
+  <tr><th>Rank</th><th>Feature</th><th>Family</th><th>What it is</th></tr>
+  <tr><td>1</td><td><code>pickups_ewm_4</code></td><td>C</td><td>Exponentially-weighted mean of recent pickups</td></tr>
+  <tr><td>2</td><td><code>pickups_roll_mean_4</code></td><td>C</td><td>Average pickups over the last hour</td></tr>
+  <tr><td>3</td><td><code>pickups_lag_0</code></td><td>A</td><td>The just-completed interval</td></tr>
+  <tr><td>4</td><td><code>pickups_slot_expanding_mean</code></td><td>B</td><td>This cell's historical average for this weekday and time slot</td></tr>
+  <tr><td>5</td><td><code>pickups_roll_sum_4</code></td><td>C</td><td>Total pickups over the last hour</td></tr>
+</table>
+
+<p>The top five features come from exactly the three families the ablation kept. Two independent
+methods agreeing is a good sign that the conclusion is real.</p>
+
+<!-- ═══════════════════════════ 11 ═══════════════════════════ -->
+<h2 id="s11" class="page-break">11. Choosing the size of a map cell</h2>
+
+<p>This is one of the two headline research results, and the interesting part is not the answer but
+the fact that <strong>the obvious way to measure it is wrong</strong>.</p>
+
+<p>Three cell sizes were tested — H3 resolutions 8, 9 and 10 — with the model, features, dates,
+training budget and metrics held identical. Only the geometry changed.</p>
+
+<table>
+  <tr><th>Resolution</th><th class="num">Cells</th><th class="num">Area (km²)</th><th class="num">% zero demand</th><th class="num">MAE</th><th class="num">WAPE</th><th class="num">Hotspot F1</th></tr>
+  <tr><td><strong>H3-8</strong></td><td class="num">321</td><td class="num">0.741</td><td class="num">47.5%</td><td class="num">1.654</td><td class="num win">0.308</td><td class="num win">0.748</td></tr>
+  <tr><td>H3-9</td><td class="num">1,483</td><td class="num">0.106</td><td class="num">71.4%</td><td class="num">0.705</td><td class="num">0.605</td><td class="num">0.590</td></tr>
+  <tr><td>H3-10</td><td class="num">2,162</td><td class="num">0.015</td><td class="num">75.6%</td><td class="num win">0.580</td><td class="num">0.731</td><td class="num">0.481</td></tr>
+</table>
+
+<h3>Why these numbers can't be compared directly</h3>
+
+<p>Look at the table again. <strong>MAE says resolution 10 is best. WAPE and Hotspot F1 say
+resolution 8 is best.</strong> They disagree completely. That total disagreement is the clue that
+none of them is measuring what we want.</p>
+
+<ul>
+  <li><strong>MAE falls automatically as cells shrink.</strong> Smaller cells hold smaller counts,
+  so absolute errors shrink mechanically. In the limit, a cell so small it always contains zero
+  bikes has near-perfect MAE and zero usefulness.</li>
+  <li><strong>WAPE falls automatically as cells grow.</strong> Aggregation smooths relative error.
+  In the limit, a single cell covering all of New York has excellent WAPE and tells you nothing.</li>
+  <li><strong>Hotspot F1 depends on how many cells exist.</strong> Identifying the top 10% of 321
+  cells is a genuinely different task from the top 10% of 2,162.</li>
+</ul>
+
+<h3>The fix: a skill score</h3>
+
+<p>The solution is to measure each resolution against <em>its own</em> naive baseline:</p>
+
+<pre><code>skill = 1 − (model MAE / Seasonal Naive MAE)</code></pre>
+
+<p>Both numbers are computed on the same grid, so whatever scale effect inflates or deflates one
+does the same to the other, and it cancels out. What remains is how much the model actually
+<em>knows</em> beyond the obvious.</p>
+
+<table>
+  <tr><th>Resolution</th><th class="num">Model MAE</th><th class="num">Naive MAE</th><th class="num">Skill</th><th>Reading</th></tr>
+  <tr><td><strong>H3-8</strong></td><td class="num">1.654</td><td class="num">2.224</td><td class="num win"><strong>0.2563</strong></td><td>Best — and least sparse</td></tr>
+  <tr><td>H3-9</td><td class="num">0.705</td><td class="num">0.873</td><td class="num">0.1920</td><td></td></tr>
+  <tr><td>H3-10</td><td class="num">0.580</td><td class="num">0.706</td><td class="num">0.1791</td><td>Lowest MAE, least skill</td></tr>
+</table>
+
+<p><strong>Resolution 8 wins</strong> — and it also wins on the secondary criterion of sparsity, at
+47.5% empty cells against 75.6% at resolution 10. A grid where three-quarters of cells are empty at
+any moment is a hard learning problem and a hard thing to act on.</p>
+
+<div class="callout">
+  <span class="tag">The transferable lesson</span>
+  <p>When comparing models across different data granularities, most accuracy metrics are
+  contaminated by the granularity itself. Always compare against a baseline computed on the same
+  granularity. If your metrics disagree with each other, that's information — it usually means
+  they're measuring the setup rather than the skill.</p>
+</div>
+
+<!-- ═══════════════════════════ 12 ═══════════════════════════ -->
+<h2 id="s12">12. Hexagons versus squares</h2>
+
+<p>H3 uses hexagons; Google's S2 uses quadrilaterals. Does the shape matter?</p>
+
+<p>To answer fairly, you need an S2 level whose cells are comparable in size to H3-8. Guessing
+would invalidate the comparison, so the level was <strong>selected by a matching procedure</strong>:
+compare candidate levels on median cell area <em>and</em> active-cell count, using a weighted
+log-ratio distance.</p>
+
+<p>Log-ratio matters: it makes "twice as coarse" and "twice as fine" cost the same. On a linear
+scale, being too coarse looks cheaper than being too fine, which would bias the choice.</p>
+
+<p><strong>S2 level 13 was selected</strong>, scoring 0.319 against 0.951 for the next-best
+candidate — a clear separation, not a close call.</p>
+
+<table>
+  <tr><th>System</th><th class="num">Cells</th><th class="num">Area (km²)</th><th class="num">% zero</th><th class="num">MAE</th><th class="num">Skill</th><th class="num">Hotspot F1</th><th class="num">Features size</th><th class="num">Train time</th></tr>
+  <tr><td>H3-8</td><td class="num">321</td><td class="num">0.741</td><td class="num">47.5%</td><td class="num">1.654</td><td class="num">0.2563</td><td class="num">0.748</td><td class="num">430 MB</td><td class="num">32 s</td></tr>
+  <tr><td>S2-13</td><td class="num">231</td><td class="num">1.088</td><td class="num">42.1%</td><td class="num">2.002</td><td class="num win">0.2741</td><td class="num win">0.769</td><td class="num win">328 MB</td><td class="num win">24 s</td></tr>
+</table>
+
+<h3>The honest reading</h3>
+
+<p>S2-13 edges H3-8 on skill, 0.274 to 0.256. But <strong>the honest conclusion is that the spatial
+system barely matters</strong>, for a specific reason: S2-13's cells are still <strong>47%
+larger</strong> than H3-8's.</p>
+
+<p>Matched granularity is not identical granularity — quadrilaterals simply cannot tile to the same
+areas as hexagons. That residual coarseness plausibly accounts for the entire 1.8-point gap.</p>
+
+<p><strong>Resolution is the decision that matters. Hexagons versus squares is close to a coin
+flip</strong>, with S2 marginally cheaper to build and store. This result was later confirmed
+independently at the final evaluation, where S2-13 scored higher skill for all three model families
+— exactly as this sweep predicted.</p>
+
+<!-- ═══════════════════════════ 13 ═══════════════════════════ -->
+<h2 id="s13" class="page-break">13. LightGBM, tuned properly</h2>
+
+<p>LightGBM is a gradient-boosted decision tree model. It builds hundreds of small decision trees in
+sequence, each one correcting the errors of the ones before it. It is the standard strong baseline
+for tabular problems, and it is fast on a CPU.</p>
+
+<h3>Three things fixed from the earlier phase</h3>
+
+<h4>The objective was tested, not assumed</h4>
+
+<p>Bike demand is a <em>count</em> — a non-negative integer, often zero. The Poisson objective is
+designed for counts; standard regression is not. Rather than assuming Poisson was better, both were
+trained and compared on validation:</p>
+
+<table>
+  <tr><th>Objective</th><th class="num">Validation MAE</th><th>Result</th></tr>
+  <tr><td>Poisson</td><td class="num win">1.5695</td><td><strong>Kept</strong></td></tr>
+  <tr><td>Regression (L1)</td><td class="num">1.5739</td><td>Discarded</td></tr>
+</table>
+
+<p>Poisson won, but only by 0.3%. Worth knowing — the theoretical argument is much stronger than
+the empirical gap.</p>
+
+<h4>The round cap was actually binding</h4>
+
+<p>In the earlier phase, every model hit the 500-round training cap without early stopping ever
+triggering. That means the models were <em>still improving</em> when training was cut off, and
+those numbers were a floor, not the model's ceiling.</p>
+
+<p>The cap was raised to 2,000 and early stopping was allowed to decide. The final models stopped
+between <strong>569 and 1,101 rounds</strong> — genuinely converged.</p>
+
+<h4>A bounded hyperparameter search</h4>
+
+<p>A 10-trial Optuna search over tree depth, leaf count, learning rate, minimum samples per leaf,
+feature and row sampling fractions, and two regularisation terms. Validation MAE improved from
+1.5695 to <strong>1.5544</strong>.</p>
+
+<p>The search was deliberately small. The ablation had already shown that the <em>feature set</em>
+matters far more than hyperparameters here, so an exhaustive sweep would burn hours to move the
+third decimal place.</p>
+
+<h3>Final model summary</h3>
+
+<table>
+  <tr><th>Property</th><th>H3-8</th><th>S2-13</th></tr>
+  <tr><td>Features</td><td>125 (families A+B+C)</td><td>125 (identical)</td></tr>
+  <tr><td>Objective</td><td>Poisson</td><td>Poisson</td></tr>
+  <tr><td>Training rows</td><td>3,757,626</td><td>2,704,086</td></tr>
+  <tr><td>Validation rows</td><td>1,879,776</td><td>1,352,736</td></tr>
+  <tr><td>Models trained</td><td>8 (2 targets × 4 horizons)</td><td>8</td></tr>
+  <tr><td>Mean validation MAE</td><td>1.5743</td><td>1.9007</td></tr>
+  <tr><td>Total training time</td><td>48 minutes on CPU</td><td>23 minutes</td></tr>
+</table>
+
+<!-- ═══════════════════════════ 14 ═══════════════════════════ -->
+<h2 id="s14">14. The two deep-learning models</h2>
+
+<p>Two neural networks were built to test whether deep learning beats gradient boosting on this
+problem. Both were written by hand rather than pulled from a library, so their internals are
+inspectable and their inputs are exactly controlled.</p>
+
+<h3>14.1 Temporal Fusion Transformer (TFT)</h3>
+
+<p>A TFT is designed for forecasting when you have three different kinds of input:</p>
+
+<ul>
+  <li><strong>Static</strong> — things that never change about a cell: its area, its station count,
+  its historical volume.</li>
+  <li><strong>Known future</strong> — things you know in advance for the time you're forecasting:
+  it will be 5pm, it will be a Wednesday, it will be a holiday. This is not leakage; a calendar is
+  genuinely known ahead of time.</li>
+  <li><strong>Observed past</strong> — things you only know up to now: recent demand, recent
+  weather.</li>
+</ul>
+
+<p>The architecture uses <em>gated residual networks</em> to let the model skip transformations it
+doesn't need, a <em>variable selection</em> layer that learns which inputs matter, an LSTM encoder
+over the last 96 intervals (24 hours), and an interpretable multi-head attention layer. Output is
+non-negative by construction. 239,688 parameters.</p>
+
+<h3>14.2 Spatio-Temporal Graph Neural Network (ST-GNN)</h3>
+
+<p>The idea here is that <strong>cells are not independent</strong>. If demand surges in one cell,
+neighbouring cells often follow. A graph neural network can model that directly.</p>
+
+<p>The graph has one node per cell and an edge between cells that physically touch — first-ring
+adjacency, both directions. Two graph-attention layers let each cell gather information from its
+neighbours, weighted by learned importance. A GRU then handles the time dimension over a 24-interval
+(6-hour) window, plus same-time-yesterday and same-time-last-week snapshots.</p>
+
+<p>The graph attention is implemented with an edge-list and a segment softmax via
+<code>index_add_</code>, which avoids building a dense adjacency matrix. Only <strong>35,432
+parameters</strong> — around one-seventh of the TFT.</p>
+
+<h3>14.3 The fairness rule</h3>
+
+<div class="callout">
+  <span class="tag">Making the comparison mean something</span>
+  <p>All three model families get access to the same <em>categories</em> of information: past
+  demand, calendar, weather, spatial structure, network statistics. No model receives privileged
+  future information. How each architecture represents that information internally is allowed to
+  differ — that's the point of comparing architectures — but the information itself is held
+  constant.</p>
+  <p>Scaling statistics are fitted on the <strong>training split only</strong> and baked into the
+  exported data bundle, so it is structurally impossible for the deep models to normalise using
+  validation or test statistics.</p>
+</div>
+
+<!-- ═══════════════════════════ 15 ═══════════════════════════ -->
+<h2 id="s15">15. Training on a free GPU</h2>
+
+<p>The laptop has an RTX 3050 Ti with 4 GB of VRAM, and the installed PyTorch was a CPU-only build.
+Training both deep models locally was estimated at several hours.</p>
+
+<p>Instead the deep half moved to <strong>Kaggle</strong>, which provides free Tesla T4 GPUs. The
+LightGBM, DuckDB and Polars stages stayed local, because they are CPU- and disk-bound and need the
+5.9 GB feature table.</p>
+
+<h3>What was uploaded</h3>
+
+<p>Only what the neural networks actually need: a compact tensor bundle per spatial system.</p>
+
+<pre><code>demand.npy      int16    [T, N, 2]   pickups + dropoffs per interval per cell
+calendar.npy    float32  [T, 8]      known-future time features
+weather.npy     float32  [T, 6]      observed at forecast time, already lagged
+edges.npy       int32    [2, E]      cell adjacency, both directions
+node_static.npy float32  [N, 5]      per-cell constants
+dst_mask.npy    bool     [T]         the DST-distorted intervals, excluded
+meta.json                            cell IDs, split boundaries, TRAIN-fitted scaling</code></pre>
+
+<p>Total 557 MB for three bundles.</p>
+
+<div class="callout">
+  <span class="tag">A precaution worth copying</span>
+  <p>The model definitions file <code>src/models/deep.py</code> was <strong>shipped with the
+  data</strong> rather than retyped into the notebook. If the Kaggle copy of the architecture had
+  drifted from the repository copy, the GPU results would not correspond to anything reproducible
+  locally — and nobody would notice. The notebook <em>refuses to run</em> if that file is missing,
+  rather than silently falling back.</p>
+</div>
+
+<h3>Results after 8 epochs (~23 GPU-minutes total)</h3>
+
+<table>
+  <tr><th>Model</th><th>Grid</th><th class="num">Parameters</th><th class="num">Best validation MAE</th><th>Converged?</th></tr>
+  <tr><td>TFT</td><td>H3-8</td><td class="num">239,688</td><td class="num win">1.6716</td><td class="lose">No — still improving</td></tr>
+  <tr><td>ST-GNN</td><td>H3-8</td><td class="num">35,432</td><td class="num">1.7646</td><td class="lose">No — still improving</td></tr>
+  <tr><td>TFT</td><td>S2-13</td><td class="num">239,688</td><td class="num">1.9674</td><td class="lose">No — still improving</td></tr>
+  <tr><td>ST-GNN</td><td>S2-13</td><td class="num">35,432</td><td class="num">2.1988</td><td class="lose">No — still improving</td></tr>
+</table>
+
+<p class="footnote">These validation figures average all four horizons and both targets, so they are
+<em>not</em> directly comparable to the horizon-specific LightGBM numbers elsewhere. Section 16 is
+the like-for-like comparison.</p>
+
+<div class="callout bug">
+  <span class="tag">A bug found in the evaluation loop</span>
+  <p>Validation was originally scored on the <em>first N anchors</em> of the validation split. The
+  split begins at midnight on 1 September, so this evaluated the model almost entirely on empty
+  overnight intervals. It reported an MAE of 0.665 where the true figure was 1.271 — nearly twice
+  as good as reality.</p>
+  <p>The fix samples anchors at a stride across the whole validation period. It was applied in both
+  the local script and the Kaggle notebook, so the two cannot diverge.</p>
+</div>
+
+<!-- ═══════════════════════════ 16 ═══════════════════════════ -->
+<h2 id="s16" class="page-break">16. The final exam: the test set</h2>
+
+<p>Everything so far was decided on the validation split. November and December 2024 had never been
+looked at. Phase 7 opened it <strong>exactly once</strong>.</p>
+
+<p>This discipline is the reason the numbers below can be trusted. If you evaluate on the test set
+repeatedly and tune based on what you see, it silently becomes a second validation set and the
+reported performance becomes optimistic.</p>
+
+<h3>16.1 Results at H3-8 (1,877,208 test rows)</h3>
+
+<table>
+  <tr><th>Model</th><th class="num">Pickup MAE</th><th class="num">Dropoff MAE</th><th class="num">WAPE</th><th class="num">RMSE</th><th class="num">Hotspot F1</th></tr>
+  <tr><td><strong>LightGBM (tuned)</strong></td><td class="num win"><strong>1.1408</strong></td><td class="num win"><strong>1.1275</strong></td><td class="num">0.3573</td><td class="num win">2.2020</td><td class="num">0.7248</td></tr>
+  <tr><td>ST-GNN</td><td class="num">1.2024</td><td class="num">1.1978</td><td class="num">0.3686</td><td class="num">2.4180</td><td class="num win">0.7260</td></tr>
+  <tr><td>TFT</td><td class="num">1.2919</td><td class="num">1.4969</td><td class="num win">0.3523</td><td class="num">2.5071</td><td>—</td></tr>
+  <tr><td>Seasonal Naive (yesterday)</td><td class="num">1.8430</td><td class="num">1.8253</td><td class="num">0.5771</td><td class="num">4.1931</td><td class="num">0.6265</td></tr>
+  <tr><td>Seasonal Naive (last week)</td><td class="num">1.9575</td><td class="num">1.9409</td><td class="num">0.6130</td><td class="num">4.4710</td><td class="num">0.6380</td></tr>
+</table>
+
+<p><strong>All three real models beat both naive baselines by 35–42%.</strong> Each one is a
+genuine model rather than a dressed-up persistence rule.</p>
+
+<h3>16.2 How accuracy degrades with horizon</h3>
+
+<table>
+  <tr><th>Horizon</th><th class="num">Pickup MAE</th><th class="num">Dropoff MAE</th><th class="num">WAPE</th><th class="num">Hotspot F1</th></tr>
+  <tr><td>15 minutes</td><td class="num">1.1408</td><td class="num">1.1275</td><td class="num">0.3573</td><td class="num">0.7248</td></tr>
+  <tr><td>30 minutes</td><td class="num">1.1696</td><td class="num">1.1549</td><td class="num">0.3663</td><td class="num">0.7224</td></tr>
+  <tr><td>45 minutes</td><td class="num">1.1879</td><td class="num">1.1739</td><td class="num">0.3720</td><td class="num">0.7220</td></tr>
+  <tr><td>60 minutes</td><td class="num">1.2088</td><td class="num">1.1934</td><td class="num">0.3786</td><td class="num">0.7216</td></tr>
+</table>
+
+<p>Degradation is mild and monotone — a one-hour forecast is only <strong>6% worse</strong> than a
+15-minute one. For an operator planning a truck route, that is the difference between a useful tool
+and a useless one.</p>
+
+<h3>16.3 The complete six-configuration matrix</h3>
+
+<p>Raw MAE is not comparable across spatial systems, for the reasons in section 11. Skill against
+Seasonal Naive on the same grid is.</p>
+
+<table>
+  <tr><th>Configuration</th><th class="num">MAE</th><th class="num">WAPE</th><th class="num">Hotspot F1</th><th class="num">Skill vs naive</th></tr>
+  <tr><td><strong>LightGBM @ S2-13</strong></td><td class="num">1.3777</td><td class="num win">0.3105</td><td class="num win">0.7485</td><td class="num win"><strong>0.4127</strong></td></tr>
+  <tr><td>LightGBM @ H3-8</td><td class="num win">1.1408</td><td class="num">0.3573</td><td class="num">0.7248</td><td class="num">0.3810</td></tr>
+  <tr><td>TFT @ S2-13</td><td class="num">1.4762</td><td class="num">0.3569</td><td>—</td><td class="num">0.3707</td></tr>
+  <tr><td>ST-GNN @ S2-13</td><td class="num">1.4817</td><td class="num">0.3269</td><td class="num">0.7449</td><td class="num">0.3683</td></tr>
+  <tr><td>ST-GNN @ H3-8</td><td class="num">1.2024</td><td class="num">0.3686</td><td class="num">0.7260</td><td class="num">0.3476</td></tr>
+  <tr><td>TFT @ H3-8</td><td class="num">1.2919</td><td class="num">0.3523</td><td>—</td><td class="num">0.2990</td></tr>
+</table>
+
+<h3>16.4 Answering RQ3 carefully</h3>
+
+<p><strong>LightGBM is first at both spatial systems.</strong> That is the answer. But two details
+deserve care, because the first one nearly produced a wrong conclusion.</p>
+
+<h4>The two deep-learning "wins" that weren't</h4>
+
+<p>At H3-8, two results looked like genuine architecture effects:</p>
+
+<ul>
+  <li><strong>TFT won WAPE</strong> (0.3523 vs 1.1408's 0.3573). WAPE weights by volume, so this
+  suggested TFT was better on the busy cells that matter operationally.</li>
+  <li><strong>ST-GNN won Hotspot F1</strong> (0.7260 vs 0.7248). Hotspot F1 ranks cells against each
+  other, which is precisely what a graph's adjacency structure exists to inform.</li>
+</ul>
+
+<p>Both were plausible. Both landed exactly where the architecture would predict. And both
+<strong>reversed at S2-13</strong>, where LightGBM took MAE, WAPE and Hotspot F1 outright.</p>
+
+<div class="callout">
+  <span class="tag">Why this matters</span>
+  <p>Two sub-1% margins that flip under a change of tiling scheme are <strong>noise, not
+  evidence</strong>. Had the project stopped at H3-8, the write-up would have claimed a nuanced
+  three-way split — a more interesting story that happens to be wrong.</p>
+  <p>Both results are still reported, because suppressing them would be selective. They are simply
+  labelled as what they are.</p>
+</div>
+
+<h4>The caveat about training budget</h4>
+
+<p>The deep models were stopped at 8 epochs, and <strong>all four were still improving on their
+final epoch</strong> — the TFT at S2-13 dropped 7% on its last epoch alone. LightGBM, by contrast,
+ran to early-stopping convergence.</p>
+
+<p>So the honest statement is: <strong>"a tuned LightGBM beats an 8-epoch TFT and ST-GNN"</strong>,
+not "gradient boosting beats deep learning on this problem". LightGBM is clearly the better
+<em>value</em> here — it converged in 48 minutes of CPU time and won — but the deep models were not
+given their best shot.</p>
+
+<!-- ═══════════════════════════ 17 ═══════════════════════════ -->
+<h2 id="s17" class="page-break">17. Where the model gets things wrong</h2>
+
+<p>An average error hides more than it reveals. This section breaks the error down to find where
+the model actually fails.</p>
+
+<h3>17.1 By time of day</h3>
+
+<table>
+  <tr><th>Local hour</th><th class="num">MAE</th><th class="num">Mean actual demand</th><th>Comment</th></tr>
+  <tr><td>16:00</td><td class="num lose">1.809</td><td class="num">6.07</td><td>Worst hour of the day</td></tr>
+  <tr><td>17:00</td><td class="num">1.768</td><td class="num">6.44</td><td>Evening commute peak</td></tr>
+  <tr><td>15:00</td><td class="num">1.699</td><td class="num">5.69</td><td></td></tr>
+  <tr><td>02:00</td><td class="num">0.348</td><td class="num">0.36</td><td></td></tr>
+  <tr><td>03:00</td><td class="num win">0.281</td><td class="num">0.26</td><td>Best hour — almost nothing happens</td></tr>
+</table>
+
+<p>Error tracks demand level almost exactly, which is expected for a count process.</p>
+
+<h3>17.2 By demand level — the sharpest result</h3>
+
+<table>
+  <tr><th>Demand band</th><th class="num">MAE</th><th class="num">Mean actual</th><th class="num">Relative error</th></tr>
+  <tr><td>Low third</td><td class="num">0.404</td><td class="num">0.00</td><td class="num">—</td></tr>
+  <tr><td>Middle third</td><td class="num">0.837</td><td class="num">1.35</td><td class="num lose">62%</td></tr>
+  <tr><td>High third</td><td class="num lose">2.746</td><td class="num">10.65</td><td class="num win">26%</td></tr>
+</table>
+
+<p><strong>Absolute error concentrates in busy cells; relative error is more than twice as bad in
+quiet ones.</strong> Which metric you quote decides which cells look broken. Both are true, and
+reporting only one would be misleading.</p>
+
+<h3>17.3 Rain — a result that is easy to misread</h3>
+
+<table>
+  <tr><th>Condition</th><th class="num">MAE</th><th class="num">Mean actual demand</th><th class="num">Rows</th></tr>
+  <tr><td>Dry</td><td class="num">1.177</td><td class="num">3.40</td><td class="num">1,665,027</td></tr>
+  <tr><td>Raining</td><td class="num win">0.853</td><td class="num">1.57</td><td class="num">206,724</td></tr>
+</table>
+
+<div class="callout warn">
+  <span class="tag">Do not read this as "the model is better in the rain"</span>
+  <p>Mean demand is 1.57 in rain against 3.40 in dry conditions. <strong>Rain suppresses
+  cycling</strong>, and a smaller count carries a smaller absolute error. The apparent improvement
+  is a demand effect, not a skill effect.</p>
+  <p>This is exactly the kind of number that gets quoted out of context as a model strength.</p>
+</div>
+
+<h3>17.4 The 100 largest errors</h3>
+
+<p>Pulling the single worst 100 predictions reveals a strikingly concentrated pattern:</p>
+
+<ul>
+  <li><strong>73% are under-forecasts</strong> — mean actual 78.6 against mean predicted 57.7</li>
+  <li><strong>38 of 100 occur at 16:00</strong>, and 18 more at 18:00</li>
+  <li>They fall in just <strong>22 distinct cells</strong> out of 321</li>
+</ul>
+
+<p>So the single characteristic failure is: <strong>the model under-predicts afternoon-rush spikes
+in a small set of very high-volume cells.</strong></p>
+
+<p>That is also the most operationally expensive place to be wrong, and it is a concrete target for
+future work — a spike-aware loss function, quantile prediction heads, or per-cell capacity terms.</p>
+
+<h3>17.5 A baseline result that flipped</h3>
+
+<p>On validation, same-week Seasonal Naive beat same-day (0.872 vs 0.899), and it was adopted as the
+primary baseline. <strong>On the test set the order reverses</strong>: same-day scores 1.8430
+against same-week's 1.9575.</p>
+
+<p>The explanation is the calendar. November and December contain Thanksgiving and Christmas, which
+break week-over-week patterns far more than they break day-over-day patterns. Both variants are
+reported rather than quietly keeping the flattering one.</p>
+
+<!-- ═══════════════════════════ 18 ═══════════════════════════ -->
+<h2 id="s18">18. Estimating how many docks exist</h2>
+
+<p>To answer "will there be a bike", you need to know how many docks a station has and how many
+bikes are currently in them. <strong>Neither number exists in any public dataset for 2023–24.</strong></p>
+
+<p>Citi Bike publishes trips. It does not publish historical dock occupancy.</p>
+
+<h3>Estimating capacity from flow</h3>
+
+<p>The approach infers capacity from behaviour. For each station and each day, compute the running
+cumulative net flow — dropoffs minus pickups. The <em>range</em> of that curve is a lower bound on
+the station's capacity: a station whose inventory swung by 30 bikes must hold at least 30 docks.</p>
+
+<p>Taking the 95th percentile of that daily range across two years gives a stable estimate.</p>
+
+<table>
+  <tr><th>Measure</th><th>Value</th></tr>
+  <tr><td>Station-days analysed</td><td>1,496,558 across 2,459 stations</td></tr>
+  <tr><td>Median estimated capacity</td><td>15 docks</td></tr>
+  <tr><td>10th / 90th percentile</td><td>8 / 53 docks</td></tr>
+  <tr><td>Sized from own flow</td><td>2,387 stations</td></tr>
+  <tr><td>Fell back to volume-decile median</td><td>72 low-volume stations</td></tr>
+</table>
+
+<h3>Reconstructing daily inventory</h3>
+
+<p>For each station-day, the starting inventory must lie in a feasible interval — high enough that
+the station never goes negative, low enough that it never overflows. Within that interval, the point
+closest to 50% of capacity is chosen.</p>
+
+<p>Inventory is <strong>reset every day rather than chained across two years</strong>, because
+errors would otherwise compound into nonsense by month three.</p>
+
+<p><strong>1.73% of station-days have no feasible starting inventory at all</strong> — meaning staff
+must have intervened that day. Those are flagged <code>inventory_unreliable</code> rather than
+forced to fit. Median fit error across all days: 0.00.</p>
+
+<div class="callout warn">
+  <span class="tag">Labelled as an approximation everywhere</span>
+  <p>Every artifact, API response and UI element carrying an inventory number also carries a flag
+  saying it is estimated. The word "capacity" here means "a statistical estimate derived from
+  observed flow", and the code says so in its own docstring.</p>
+</div>
+
+<!-- ═══════════════════════════ 19 ═══════════════════════════ -->
+<h2 id="s19" class="page-break">19. Moving bikes around, and why it didn't help</h2>
+
+<p>The final research question: does a better forecast produce better operations?</p>
+
+<h3>The simulation</h3>
+
+<p>Fourteen days of the test period, 1,348 intervals × 321 cells. A greedy rebalancer runs every
+hour: find cells projected to fall below a safety threshold, find cells above a target level, and
+move bikes from the latter to the former, nearest first, respecting capacity limits.</p>
+
+<p>Four forecast sources drive it — perfect foresight (the actual future), LightGBM, Seasonal Naive,
+and doing nothing — and <strong>all are scored against the identical actual demand</strong>.</p>
+
+<table>
+  <tr><th>Forecast</th><th class="num">Safety</th><th class="num">Service level</th><th class="num">Unserved</th><th class="num">Overflow</th><th class="num">Bikes moved</th><th class="num">Moves</th></tr>
+  <tr><td><strong>No rebalancing</strong></td><td class="num">—</td><td class="num win"><strong>0.9958</strong></td><td class="num win"><strong>8,540</strong></td><td class="num win"><strong>6,286</strong></td><td class="num">0</td><td class="num">0</td></tr>
+  <tr><td>Perfect foresight</td><td class="num">5%</td><td class="num">0.9940</td><td class="num">12,294</td><td class="num">11,432</td><td class="num">9,286</td><td class="num">2,615</td></tr>
+  <tr><td><strong>LightGBM</strong></td><td class="num">5%</td><td class="num">0.9942</td><td class="num">11,904</td><td class="num">10,782</td><td class="num">7,720</td><td class="num">2,107</td></tr>
+  <tr><td>Seasonal Naive</td><td class="num">5%</td><td class="num">0.9939</td><td class="num">12,391</td><td class="num">11,355</td><td class="num">9,531</td><td class="num">2,699</td></tr>
+  <tr><td>Perfect foresight</td><td class="num">10%</td><td class="num">0.9891</td><td class="num">22,297</td><td class="num">21,475</td><td class="num">23,383</td><td class="num">6,305</td></tr>
+  <tr><td>LightGBM</td><td class="num">10%</td><td class="num">0.9898</td><td class="num">20,957</td><td class="num">19,969</td><td class="num">20,743</td><td class="num">5,814</td></tr>
+  <tr><td>Seasonal Naive</td><td class="num">10%</td><td class="num">0.9891</td><td class="num">22,235</td><td class="num">21,291</td><td class="num">23,468</td><td class="num">6,402</td></tr>
+</table>
+
+<h3>Answer (a): among forecasts, yes — and surprisingly</h3>
+
+<p>At the 5% safety threshold, LightGBM leaves <strong>11,904</strong> pickups unserved, against
+perfect foresight's <strong>12,294</strong> and Seasonal Naive's <strong>12,391</strong>.</p>
+
+<p><strong>A real model beat a perfect forecast.</strong></p>
+
+<p>That is not a paradox once you see the mechanism. LightGBM systematically under-forecasts — 73%
+of its largest errors are under-predictions, from section 17. So it triggers fewer interventions:
+<strong>2,107 moves instead of 2,615</strong>. In a regime where moving is harmful, restraint wins.</p>
+
+<p>The phase specification had warned that "a model with slightly worse MAE can still win
+operationally". The reality turned out sharper: <em>even the perfect forecast is not the best
+rebalancer.</em></p>
+
+<h3>Answer (b): rebalancing itself does not pay here</h3>
+
+<p>Every intervention makes things worse. Unserved demand rises from 8,540 to 11,904; overflow rises
+from 6,286 to 10,782.</p>
+
+<p>The cause is <strong>granularity, not the algorithm</strong>. At H3-8, 321 cells aggregate 2,459
+stations — roughly 7.7 stations and about 115 docks per cell — against a median of about 3 trips per
+15-minute interval.</p>
+
+<div class="callout">
+  <span class="tag">The structural reason</span>
+  <p><strong>A region that large essentially cannot run dry.</strong> That is why doing nothing
+  already serves 99.58% of demand. There is almost no shortage to recover, so the greedy rule spends
+  its moves stripping bikes from cells above the target (which need them later) to top up cells below
+  the safety floor (which are empty because they have no demand).</p>
+</div>
+
+<p>The defensible conclusion: <strong>rebalancing value cannot be demonstrated at region granularity
+with estimated capacity.</strong> The bike-rebalancing problem is real, but it lives at
+<em>station</em> level, and proving it needs dock occupancy data this project does not have.</p>
+
+<p>Reporting a positive result here would have required tuning the thresholds until the sign
+flipped — which is exactly what this phase was written to prevent.</p>
+
+<!-- ═══════════════════════════ 20 ═══════════════════════════ -->
+<h2 id="s20">20. The prediction interface</h2>
+
+<p>All the research output is reduced to a single function, so a UI, a batch job and a test all
+share exactly one code path:</p>
+
+<pre><code>predict(spatial_system, model_name, forecast_time, horizon) →
+    region_id, forecast_time, horizon,
+    predicted_pickups, predicted_dropoffs,
+    projected_inventory, shortage, surplus</code></pre>
+
+<p>Design decisions it enforces:</p>
+
+<ul>
+  <li><strong>It refuses a forecast time that isn't on the 15-minute grid</strong>, rather than
+  silently rounding. Rounding would move the target without telling the caller.</li>
+  <li><strong>Projected inventory accumulates over horizons 1..h.</strong> Asking for the one-hour
+  horizon runs all four and sums them, because a cell that is fine now but empties within the hour
+  should surface <em>now</em>.</li>
+  <li><strong>Every row carries <code>inventory_estimated</code></strong>, so a caller cannot
+  mistake the operational columns for measurements.</li>
+</ul>
+
+<p>Ten tests cover the contract and the end-to-end path — including that shortage and surplus follow
+arithmetically from projected inventory, and that no cell is ever simultaneously short and in
+surplus.</p>
+
+<!-- ═══════════════════════════ 21 ═══════════════════════════ -->
+<h2 id="s21" class="page-break">21. Architecture of the app</h2>
+
+<p>The research half produces numbers. The application half makes them usable: you type "will I find
+a bike near Times Square?" and get a real answer from the trained models.</p>
+
+<pre><code>Browser  ──►  FastAPI  ──►  Assistant  ──►  Tools  ──►  Forecast engine ──► trained models
+   │                                          │
+   │                                          ├─► Gazetteer      (place lookup)
+   │                                          ├─► Station split  (cell → station)
+   │                                          ├─► Context        (explanations)
+   │                                          └─► Routing        (A* walking path)
+   │
+   └─── MapLibre GL + vector basemap + OpenStreetMap street data</code></pre>
+
+<p>Every API endpoint is a thin shim over the same tool functions the assistant calls. This is
+deliberate: <strong>the map and the chat cannot disagree with each other</strong>, because they are
+reading the same numbers from the same functions.</p>
+
+<h3>The forecast engine</h3>
+
+<p>One entry point serving all five models. It caches boosters, tensor bundles and cell mappings in
+memory, because the original interface re-read them on every call.</p>
+
+<p>The deep models needed a separate serving path, and for a real reason: LightGBM consumes
+<em>one row</em> of the feature table, while ST-GNN and TFT consume a <em>window</em> of history as a
+tensor — 24 intervals for the graph model, 96 for the transformer — plus same-time-yesterday and
+same-time-last-week slices. These genuinely differ, so they are kept separate rather than forced
+into one signature.</p>
+
+<table>
+  <tr><th>Model</th><th class="num">Response time</th><th class="num">Predicted citywide pickups</th></tr>
+  <tr><td>LightGBM</td><td class="num">1.60 s cold, ~0.3 s warm</td><td class="num win">2,862</td></tr>
+  <tr><td>ST-GNN</td><td class="num">0.17 s</td><td class="num">3,001</td></tr>
+  <tr><td>TFT</td><td class="num">0.40 s</td><td class="num">2,585</td></tr>
+  <tr><td>Seasonal Naive</td><td class="num">0.03 s</td><td class="num">2,727</td></tr>
+  <tr style="font-weight:700"><td>Actual</td><td class="num">—</td><td class="num">2,878</td></tr>
+</table>
+
+<p>LightGBM's 2,862 against an actual 2,878 is a good illustration of the test-set result in a single
+live query.</p>
+
+<!-- ═══════════════════════════ 22 ═══════════════════════════ -->
+<h2 id="s22">22. From a cell forecast to a station answer</h2>
+
+<p>Here is a genuine mismatch between what the models do and what users ask.</p>
+
+<p><strong>The models forecast cells.</strong> A user asks about a <em>station</em>. An H3-8 cell is
+about 0.74 km² and contains roughly eight Citi Bike stations. There is no per-station model anywhere
+in this project.</p>
+
+<h3>The disaggregation</h3>
+
+<p>Each station's share of its cell's forecast is its <strong>historical share of that cell's
+trips</strong>, taken from the station registry over two full years. A station that historically took
+18% of its cell's pickups is assigned 18% of the cell's forecast.</p>
+
+<p>For example, near Times Square: Broadway &amp; W 48 St takes 7.4% of its cell, W 47 St &amp; 6 Ave
+5.9%, 6 Ave &amp; W 45 St 10.4%. Shares sum to exactly 1.000 for all 321 cells — verified.</p>
+
+<div class="callout warn">
+  <span class="tag">Stated as an approximation everywhere it appears</span>
+  <p>This assumes a station's share of its neighbourhood is stable across the day, which is not
+  exactly true. A station outside an office building and one outside a bar sit in the same cell and
+  swap roles between 09:00 and 22:00.</p>
+  <p>Every station-level number carries <code>approximate: true</code> and the derivation method.
+  A <code>share_confidence</code> flag marks stations with fewer than 2,000 lifetime trips, where the
+  share is too noisy to trust. Modelling stations directly would fix this and costs a full re-run of
+  phases 2–6 at 2,459 regions.</p>
+</div>
+
+<h3>Availability without dock data</h3>
+
+<p>The user's real question is "will there be a bike", which is about <em>inventory</em>. We forecast
+<em>trips</em>. With no historical dock counts, printing a bike count would imply a measurement that
+was never made.</p>
+
+<p>Instead the app reports <strong>flow pressure</strong> — how hard a location is being drained
+relative to what is arriving:</p>
+
+<table>
+  <tr><th>Verdict</th><th>Condition</th><th>What the user sees</th></tr>
+  <tr><td>Bikes leaving fast</td><td>Net outflow &gt; 25% of activity</td><td>"Arrive early or expect a walk"</td></tr>
+  <tr><td>Slightly more departures</td><td>Net outflow 5–25%</td><td>"Usually still findable"</td></tr>
+  <tr><td>Balanced</td><td>Within ±5%</td><td>"Inflow and outflow roughly cancel"</td></tr>
+  <tr><td>More arrivals</td><td>Net inflow 5–25%</td><td>"Bikes accumulating here"</td></tr>
+  <tr><td>Docks filling up</td><td>Net inflow &gt; 25%</td><td>"Returning may be the harder problem"</td></tr>
+</table>
+
+<!-- ═══════════════════════════ 23 ═══════════════════════════ -->
+<h2 id="s23">23. Finding places without a maps API</h2>
+
+<p>To answer "I'm near Times Square", the app must convert a place name into coordinates. Normally
+this means a paid geocoding API. This project uses <strong>its own data</strong> instead.</p>
+
+<p>Two sources already existed:</p>
+
+<ul>
+  <li><strong>2,459 station names</strong> from the registry — almost all NYC intersections
+  ("W 21 St &amp; 6 Ave"), which is how people describe where they are in Manhattan.</li>
+  <li><strong>19,011 geocoded landmarks</strong> from the events pipeline — parks, plazas, venues,
+  each already resolved to a coordinate with a borough cross-check.</li>
+</ul>
+
+<p>Matching normalises the text (expanding "avenue" to "av", stripping ordinals so "21st" matches
+"21"), then scores on token overlap with a substring bonus. The whole index builds in 0.19 seconds.</p>
+
+<table>
+  <tr><th>Query</th><th>Best match</th><th>Source</th></tr>
+  <tr><td>"Times Square"</td><td>TIMES SQUARE, New York, NY</td><td>landmark</td></tr>
+  <tr><td>"W 21 St and 6 Ave"</td><td>W 21 St &amp; 6 Ave</td><td>station</td></tr>
+  <tr><td>"i am near Prospect Park"</td><td>West Drive &amp; Prospect Park West</td><td>station</td></tr>
+  <tr><td>"Wall Street"</td><td class="lose">no confident match</td><td>—</td></tr>
+</table>
+
+<div class="callout">
+  <span class="tag">Admitting the gaps</span>
+  <p>"Wall Street" genuinely fails — Citi Bike names that area differently ("Broad St &amp; Water
+  St"). Rather than returning the nearest weak match and teleporting the user to Brooklyn, matches
+  below a confidence floor are flagged, and the assistant asks the user to confirm.</p>
+  <p>A gazetteer built from station names has real holes. Saying so is better than guessing.</p>
+</div>
+
+<!-- ═══════════════════════════ 24 ═══════════════════════════ -->
+<h2 id="s24" class="page-break">24. The assistant and its tools</h2>
+
+<p>The assistant has <strong>six tools</strong> and <strong>three interchangeable brains</strong>.</p>
+
+<h3>The tools</h3>
+
+<table>
+  <tr><th>Tool</th><th>What it does</th></tr>
+  <tr><td><code>find_place</code></td><td>Locate a place from our own gazetteer</td></tr>
+  <tr><td><code>resolve_time</code></td><td>Turn "now" or a date into a valid forecast interval</td></tr>
+  <tr><td><code>station_forecast</code></td><td>Forecast the nearest stations with an availability verdict</td></tr>
+  <tr><td><code>explain_forecast</code></td><td>Why the forecast says what it does</td></tr>
+  <tr><td><code>compare_models</code></td><td>Run every model on the same instant, with the actual outcome</td></tr>
+  <tr><td><code>city_overview</code></td><td>Every cell's forecast — what the map draws</td></tr>
+  <tr><td><code>route_to_bike</code></td><td>Walking directions to the best dock</td></tr>
+</table>
+
+<h3>The three brains</h3>
+
+<ul>
+  <li><strong>Mistral</strong> (<code>mistral-large-2512</code>) — used when <code>MISTRAL_API_KEY</code>
+  is set in the environment.</li>
+  <li><strong>Claude</strong> — used when <code>ANTHROPIC_API_KEY</code> is set.</li>
+  <li><strong>A deterministic router</strong> — a keyword-based dispatcher that calls the same tools.
+  No key, no network, no cost. It can't hold a free-form conversation, but it answers the questions
+  the app exists to answer, so a fresh clone works with zero setup.</li>
+</ul>
+
+<p>All three return an identical payload shape, so the frontend never knows which one ran. If an LLM
+call fails — bad key, rate limit, network blip — it degrades to the router rather than returning an
+error page.</p>
+
+<div class="callout">
+  <span class="tag">Design rule: a tool never narrates</span>
+  <p>Each tool returns numbers <em>plus the metadata needed to describe them honestly</em> — what was
+  modelled, what was derived, what is only context. The language model does the wording; it cannot
+  invent away the caveats, because they arrive attached to the data.</p>
+</div>
+
+<h3>The honesty problem this design solves</h3>
+
+<p>The natural thing for a chatbot to say is: <em>"demand is high because there's a street fair
+nearby."</em> It sounds intelligent and helpful.</p>
+
+<p><strong>It would also be a fabrication.</strong> The ablation tested events twice — at two
+different resolutions, the second with four times the data coverage — and measured their effect at
+−0.01%. The deployed model does not use events at all. Attributing demand to a street fair would be
+inventing a cause the model never consulted.</p>
+
+<p>So the tools return two clearly separated blocks:</p>
+
+<ul>
+  <li><strong><code>drivers</code></strong> — features the model genuinely consumes. Real example
+  from the system: <em>"the last hour here averaged 91.0 pickups per 15 min, 27% above this cell's
+  usual Wednesday 17:00 level (71.5)"</em>, <em>"the same slot last week saw 151 pickups"</em>,
+  <em>"Wednesday 17:00 — evening rush, autumn"</em>.</li>
+  <li><strong><code>context</code></strong> — nearby events and weather, each carrying
+  <code>influences_forecast: false</code> and a note explaining the ablation result.</li>
+</ul>
+
+<p>The system prompt states these rules as non-negotiable, and they held in testing: the Mistral
+brain independently produced <em>"This is a flow forecast, not a live bike count. Numbers are derived
+from the cell's predicted demand split by each station's historical share."</em></p>
+
+<h3>Handling time honestly</h3>
+
+<p>The models cover January 2023 to December 2024. "Now" is outside that range. Rather than
+pretending, a request for the current time is mapped to the <strong>same weekday and clock time in
+the matching week of 2024</strong>, and labelled <code>typical_conditions</code>. That label survives
+all the way to the interface.</p>
+
+<!-- ═══════════════════════════ 25 ═══════════════════════════ -->
+<h2 id="s25">25. Walking directions with A*</h2>
+
+<p>The app answers "take me to a bike" with real walking directions. Two graphs do two different
+jobs.</p>
+
+<h3>Graph 1 — which dock should you walk to?</h3>
+
+<p>Nodes are Citi Bike stations; edges join docks within 750 m of each other, six neighbours each.
+Candidates are scored on walking distance <strong>plus a penalty derived from the demand
+forecast</strong>:</p>
+
+<pre><code>score = walking_metres + availability_penalty_metres</code></pre>
+
+<p>A dock that is draining fast costs up to 550 extra "virtual metres". So a dock 200 m further away
+with bikes actually arriving can win. <strong>This is the point of putting a forecast behind a
+router</strong> — the nearest dock is not always the right one.</p>
+
+<h3>Graph 2 — how do you actually walk there?</h3>
+
+<p>The first implementation drew a straight line between docks, which cut across buildings. That was
+honest but not useful.</p>
+
+<p>The real fix pulls the <strong>walkable street network from OpenStreetMap</strong> via the Overpass
+API — every road in a small bounding box, minus motorways and anything tagged <code>foot=no</code> or
+access-restricted. Each consecutive pair of nodes in a way becomes a bidirectional edge weighted by
+true ground distance.</p>
+
+<p>That graph is fed to <strong>the same A* implementation</strong>. Identical algorithm, real edges.</p>
+
+<table>
+  <tr><th>Measure</th><th>Straight line (old)</th><th>Street network (now)</th></tr>
+  <tr><td>Times Sq → W 45 St &amp; 8 Ave</td><td>387 m estimated</td><td class="win">303 m measured</td></tr>
+  <tr><td>Waypoints</td><td>2</td><td class="win">17, following real streets</td></tr>
+  <tr><td>First request in an area</td><td>instant</td><td>~4 s (1.3 MB from Overpass)</td></tr>
+  <tr><td>Cached repeat</td><td>—</td><td class="win">0.11 s</td></tr>
+</table>
+
+<p>Notice the old distance was also <em>wrong</em> — the straight-line-times-1.3 estimate had
+overstated it by 28%.</p>
+
+<h3>Why A* and not Dijkstra</h3>
+
+<p>A* is Dijkstra plus a heuristic that estimates remaining distance to the goal, so the search
+expands nodes toward the destination instead of in all directions. The heuristic here is
+great-circle distance, which is <strong>admissible</strong> — it can never overestimate, because no
+real path is shorter than a straight line. Admissibility is what guarantees A* still finds the
+optimal path.</p>
+
+<p>This is the same family of algorithm Google Maps uses; production systems add contraction
+hierarchies, which is an index over the same shortest-path problem.</p>
+
+<div class="callout">
+  <span class="tag">Graceful degradation</span>
+  <p>No network, an Overpass rate limit, or a point with no mapped streets nearby all fall back to
+  the straight-line path with <code>follows_streets: false</code>. That flag reaches the interface. A
+  straight line drawn as if it were a walking route is the kind of small lie that makes everything
+  else look untrustworthy.</p>
+</div>
+
+<!-- ═══════════════════════════ 26 ═══════════════════════════ -->
+<h2 id="s26" class="page-break">26. The interface</h2>
+
+<p>The layout follows ride-hailing and delivery apps: the map fills the screen, and a bottom sheet
+slides up with results.</p>
+
+<h3>Components</h3>
+
+<ul>
+  <li><strong>Floating search bar</strong> with live suggestions from the offline gazetteer.</li>
+  <li><strong>Bottom sheet</strong> that expands and collapses, holding forecast cards and the chat.</li>
+  <li><strong>Selector chips</strong> for model, spatial grid, forecast horizon, and time.</li>
+  <li><strong>Station cards</strong> showing predicted pickups and returns, a colour-coded
+  availability pill, and a footer stating the derivation method.</li>
+  <li><strong>Model comparison bars</strong> including the actual outcome as a black bar.</li>
+</ul>
+
+<h3>The map</h3>
+
+<p>Three problems were fixed here, and two shared a cause.</p>
+
+<p><strong>Vector tiles, not raster.</strong> The original raster basemap meant blurry text on zoom
+and — critically — the demand overlay had to sit <em>on top of everything</em>. With vector styles the
+choropleth is inserted <em>beneath the label layers</em>, so street and place names stay readable on
+top of the data.</p>
+
+<p><strong>Four basemaps, no API key required:</strong> OpenFreeMap Liberty (full detail),
+CARTO Positron, Voyager and Dark Matter. Setting <code>MAPTILER_KEY</code> or <code>STADIA_KEY</code>
+unlocks those providers, but nothing breaks without them.</p>
+
+<p><strong>The demand grid is off by default.</strong> Originally the hexagons covered the map at 55%
+opacity, hiding the buildings, shop names and street labels that make a map worth looking at. Now the
+choropleth is a lens you turn on. Searching a place pulses just that one cell translucently.</p>
+
+<p><strong>Real stations on the map.</strong> 2,391 Citi Bike docks — dots from zoom 12.5, real names
+from zoom 14.6, drawn above the street labels so a dock is never hidden. Click one to forecast it.</p>
+
+<h3>Motion</h3>
+
+<p>When a route is found, the map <em>pulls back first</em> so the whole path enters frame from a
+wider view, then flies in to fit the route. The path draws with a soft glow underneath and an
+animated dashed overlay showing direction of travel.</p>
+
+<!-- ═══════════════════════════ 27 ═══════════════════════════ -->
+<h2 id="s27">27. Bugs worth remembering</h2>
+
+<p>These are included because they are the most instructive part of the project. Each was caught by
+a check that existed specifically to catch that class of problem.</p>
+
+<h3>1. The silent-drop bug in de-duplication</h3>
+
+<p>The de-duplication step used <code>WHERE key NOT IN (SELECT ...)</code>. In SQL, when the probed
+key is NULL this evaluates to <strong>NULL, not TRUE</strong> — so any row with a NULL key was
+filtered out with <strong>no rule attributed to it</strong>.</p>
+
+<p>That is precisely the unattributed silent drop the cleaning phase was designed to forbid.</p>
+
+<p><strong>How it was caught:</strong> the traffic cleaning waterfall failed to reconcile — 7 + 3 did
+not equal 12. The arithmetic identity that every removed row must be attributed to exactly one rule
+is what exposed it.</p>
+
+<p>It was latent in the trips pipeline too, and only escaped notice there because <code>ride_id</code>
+happened to have zero nulls in this particular dataset.</p>
+
+<h3>2. Daylight saving bucketing in the wrong timezone</h3>
+
+<p><code>date_trunc('hour', started_at)</code> truncates in the database <em>session</em> timezone.
+Set to <code>America/New_York</code>, it folded both passes of the repeated autumn hour onto one
+label and shifted the reported counts by an hour — making the quality report contradict the
+(correct) pipeline. Fixed by bucketing explicitly via <code>AT TIME ZONE 'UTC'</code>.</p>
+
+<h3>3. The partitioned write that silently discarded 97% of the data</h3>
+
+<p>Polars' <code>write_parquet(partition_by=...)</code> names every output file
+<code>00000000.parquet</code> and rewrites the directory. Each batch therefore <strong>silently
+replaced the previous one</strong>. Only 35 of 1,483 cells survived.</p>
+
+<p>Writes now go through DuckDB with a per-batch filename pattern, and the script asserts that the
+row and cell counts <em>on disk</em> match what was handed to the writer.</p>
+
+<h3>4. Evaluating on the wrong slice of validation</h3>
+
+<p>Covered in section 15: scoring on the first N anchors meant scoring on empty overnight intervals,
+reporting an MAE of 0.665 where the truth was 1.271.</p>
+
+<h3>5. Comparing a station forecast against a cell actual</h3>
+
+<p>The model comparison tool showed 9 predicted against 105 actual, which looked like a catastrophic
+model failure. It was a units bug: the prediction was <em>station-level and cumulative</em>, the
+actual was <em>cell-level and single-interval</em>. Two mismatches at once, understating every model
+roughly fourfold. All figures are now the same granularity and the same interval.</p>
+
+<h3>6. A stray word teleporting the user to Queens</h3>
+
+<p>Asking "why is that the case?" made the assistant answer about a station in Queens. The
+place-extractor stripped filler words, leaving "case", which confidently matched
+<strong>"Case St &amp; 94 St"</strong>.</p>
+
+<p>Follow-up openers now require a much stronger match to override the place already under
+discussion — while still allowing "and what about Prospect Park?" to move correctly.</p>
+
+<h3>7. Station shares all computing to exactly zero</h3>
+
+<p>The station registry stores trip counts as <code>Decimal(scale=0)</code>. Dividing two of those
+keeps scale 0, so <code>302999 / 2034403</code> truncated to <strong>0</strong>. Every station share
+was zero and every station forecast was zero. Fixed by casting to float before any arithmetic.</p>
+
+<h3>8. Arguments parsed but never applied</h3>
+
+<p>Two scripts accepted a <code>--resolution</code> flag and never used it, so they would silently
+evaluate H3-9 while being asked for H3-8. Found by reading the code before running an expensive
+job.</p>
+
+<!-- ═══════════════════════════ 28 ═══════════════════════════ -->
+<h2 id="s28" class="page-break">28. Honest limitations</h2>
+
+<p>Everything below is a real constraint on what this project can claim.</p>
+
+<h3>Data limitations</h3>
+
+<ul>
+  <li><strong>No dock occupancy data exists</strong> for 2023–24. Capacity and inventory are
+  statistical estimates from flow. Every number derived from them is flagged.</li>
+  <li><strong>Traffic coverage is thin and biased.</strong> The sensor network covers arterials,
+  highways and bridges. Only 46 of 128 links sit within 500 m of any Citi Bike station. Manhattan is
+  well covered; Queens barely. All 27 Staten Island links are irrelevant — no Citi Bike service.</li>
+  <li><strong>The traffic feed has real multi-day outages</strong> — 45 days with zero readings,
+  6.2% of the window. Carried as an explicit missing-data flag, never imputed as free-flowing.</li>
+  <li><strong>24.6% of traffic readings are invalid</strong> (status −101, filler speed 0) and are
+  dropped by a named rule. Keeping them would drag every average toward zero.</li>
+  <li><strong>Events are permits only</strong> — no ticketed arena events at Madison Square Garden or
+  Barclays Center, which are plausibly the events that would matter most.</li>
+  <li><strong>25% of event locations could not be geocoded</strong> from free text.</li>
+  <li><strong>255 stations that really operated</strong> in 2023–24 are missing from the official
+  roster snapshot, which is why the station registry is derived from trip activity instead.</li>
+</ul>
+
+<h3>Modelling limitations</h3>
+
+<ul>
+  <li><strong>The deep models are undertrained.</strong> Eight epochs, all still improving. The RQ3
+  result is "LightGBM beats an 8-epoch TFT and ST-GNN", not a general claim about deep learning.</li>
+  <li><strong>Training subsamples.</strong> 104 million rows do not fit in 16 GB as a dense matrix, so
+  training uses a fraction of rows. Validation and test are always scored in full.</li>
+  <li><strong>No per-station model.</strong> Station answers are disaggregated from cell forecasts.</li>
+  <li><strong>MAPE is deliberately absent.</strong> Most cells are zero at any moment, and every
+  workaround for dividing by zero changes what is being measured.</li>
+</ul>
+
+<h3>Application limitations</h3>
+
+<ul>
+  <li><strong>Nothing is live.</strong> The models cover 2023–24. "Now" maps to the equivalent 2024
+  weekday and time and is labelled as typical conditions.</li>
+  <li><strong>The gazetteer has real holes</strong> — it is built from station names, so areas
+  without stations are missing.</li>
+  <li><strong>The first route in a new area takes ~4 seconds</strong> while OpenStreetMap responds.
+  Cached thereafter.</li>
+  <li><strong>Not deployed to a public server.</strong> It runs locally.</li>
+</ul>
+
+<h3>What would make this materially better</h3>
+
+<ol>
+  <li><strong>Live GBFS feed.</strong> Citi Bike publishes real-time station status — bikes and docks
+  available — free and without a key. That would turn availability from an inference into a
+  measurement, and is the single highest-value addition.</li>
+  <li><strong>Train the deep models to convergence</strong> and settle RQ3 properly.</li>
+  <li><strong>Station-level modelling</strong> to remove the disaggregation approximation and make
+  the rebalancing question answerable.</li>
+  <li><strong>A spike-aware loss</strong> targeting the one characteristic failure mode: under-
+  forecasting afternoon-rush peaks in high-volume cells.</li>
+</ol>
+
+<!-- ═══════════════════════════ 29 ═══════════════════════════ -->
+<h2 id="s29">29. How to run everything</h2>
+
+<h3>The application</h3>
+
+<pre><code># from the repository root
+python -m uvicorn app.server:app --port 8000
+# then open http://127.0.0.1:8000</code></pre>
+
+<p>It runs with no configuration at all — the deterministic router answers questions, and all four
+basemaps are keyless. To enable a language-model brain, set a key in the environment
+<strong>before</strong> starting the server (never in the repository):</p>
+
+<pre><code>export MISTRAL_API_KEY="..."       # or ANTHROPIC_API_KEY
+export MAPTILER_KEY="..."          # optional, extra basemaps</code></pre>
+
+<h3>Reproducing the research</h3>
+
+<pre><code>scripts/01_ingest.py            → typed Parquet from the raw CSVs
+scripts/02_clean.py             → cleaning waterfall + quality report
+scripts/03_fetch_weather.py     → hourly weather
+scripts/04_prepare_events.py    → event permits
+scripts/07_fetch_traffic.py     → traffic via the Socrata API
+scripts/09_phase1_check.py      → verifies phase 1 against the artifacts
+
+scripts/10_build_panel.py       → the dense 104M-row panel
+scripts/12_build_features.py    → basic features
+scripts/13_train_baseline.py    → Seasonal Naive + LightGBM
+scripts/14_phase3_check.py      → the stop-and-verify gate
+
+scripts/15_geocode_events.py    → geocode event locations
+scripts/17_build_features_full.py → all 168 features
+scripts/18_ablation.py          → the A–H family ablation
+scripts/19_spatial_experiment.py  → resolution sweep + S2 matching
+
+scripts/20_export_deep_bundle.py  → tensors for the GPU
+scripts/22_train_final.py       → tuned LightGBM
+scripts/23_evaluate_test.py     → the single test-set evaluation
+scripts/24_operations.py        → capacity, inventory, rebalancing</code></pre>
+
+<h3>Tests</h3>
+
+<pre><code>python -m pytest tests/ -q      # 166 passing</code></pre>
+
+<table>
+  <tr><th>Test file</th><th>Covers</th></tr>
+  <tr><td><code>test_features.py</code></td><td>15 leakage tests re-deriving every lag independently</td></tr>
+  <tr><td><code>test_advanced_features.py</code></td><td>20 tests over the eight feature families</td></tr>
+  <tr><td><code>test_timezone.py</code></td><td>DST handling at all four transitions</td></tr>
+  <tr><td><code>test_clean_rules.py</code></td><td>Every cleaning rule and waterfall reconciliation</td></tr>
+  <tr><td><code>test_panel.py</code></td><td>Density, target shifts, active-region selection</td></tr>
+  <tr><td><code>test_spatial.py</code></td><td>H3 and S2 indexers agree with reference implementations</td></tr>
+  <tr><td><code>test_serving.py</code></td><td>The prediction interface contract</td></tr>
+  <tr><td><code>test_streets.py</code></td><td>Street graph construction, offline</td></tr>
+</table>
+
+<!-- ═══════════════════════════ 30 ═══════════════════════════ -->
+<h2 id="s30">30. Glossary</h2>
+
+<table>
+  <tr><th style="width:110pt">Term</th><th>Meaning</th></tr>
+  <tr><td><strong>MAE</strong></td><td>Mean Absolute Error. Average size of the mistake, in bikes per interval. Lower is better.</td></tr>
+  <tr><td><strong>RMSE</strong></td><td>Root Mean Squared Error. Like MAE but punishes large mistakes more.</td></tr>
+  <tr><td><strong>WAPE</strong></td><td>Weighted Absolute Percentage Error. Total error divided by total demand — a relative measure that survives zeros.</td></tr>
+  <tr><td><strong>Hotspot F1</strong></td><td>How well the model identifies the busiest 10% of cells at each moment. Combines precision and recall.</td></tr>
+  <tr><td><strong>Skill score</strong></td><td>1 − (model error / baseline error). How much better than the obvious guess, on a scale that survives changes in cell size.</td></tr>
+  <tr><td><strong>Data leakage</strong></td><td>Accidentally giving a model information from the future. Produces great scores and useless models.</td></tr>
+  <tr><td><strong>Ablation</strong></td><td>Adding or removing feature groups one at a time to measure what each contributes.</td></tr>
+  <tr><td><strong>H3</strong></td><td>Uber's hexagonal grid system for dividing the world into cells.</td></tr>
+  <tr><td><strong>S2</strong></td><td>Google's equivalent, using quadrilaterals.</td></tr>
+  <tr><td><strong>Panel</strong></td><td>The dense table with one row per cell per time interval.</td></tr>
+  <tr><td><strong>Parquet</strong></td><td>A compressed columnar file format. Reading two columns doesn't touch the rest of the file.</td></tr>
+  <tr><td><strong>LightGBM</strong></td><td>Gradient-boosted decision trees — many small trees, each correcting the last.</td></tr>
+  <tr><td><strong>TFT</strong></td><td>Temporal Fusion Transformer. A neural network for forecasting with static, known-future and observed-past inputs.</td></tr>
+  <tr><td><strong>ST-GNN</strong></td><td>Spatio-Temporal Graph Neural Network. Models cells as a graph so neighbours can inform each other.</td></tr>
+  <tr><td><strong>Poisson objective</strong></td><td>A loss function designed for count data — non-negative integers, often zero.</td></tr>
+  <tr><td><strong>A*</strong></td><td>A pathfinding algorithm: Dijkstra plus a heuristic that steers the search toward the goal.</td></tr>
+  <tr><td><strong>Admissible heuristic</strong></td><td>One that never overestimates remaining distance. Required for A* to find the true shortest path.</td></tr>
+  <tr><td><strong>Overpass API</strong></td><td>A query service for OpenStreetMap data.</td></tr>
+  <tr><td><strong>GBFS</strong></td><td>General Bikeshare Feed Specification — the live standard Citi Bike publishes station status in.</td></tr>
+</table>
+
+<div class="callout" style="margin-top:22pt">
+  <span class="tag">In closing</span>
+  <p>The most valuable output of this project is not the 1.14 MAE. It is the set of decisions where
+  the honest answer was less impressive than the available one: reporting that rebalancing didn't
+  help, that two apparent deep-learning wins were noise, that traffic and weather and events earned
+  nothing across two separate tests, and that we cannot tell you how many bikes are at a dock because
+  nobody published that data.</p>
+  <p>A forecasting system is only worth building if people can trust its numbers. Every caveat in
+  this report is there so that the numbers which <em>are</em> claimed can be relied on.</p>
+</div>
+
+</body>
+</html>

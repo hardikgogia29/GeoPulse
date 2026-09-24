@@ -1,0 +1,14 @@
+{
+  "tag": "h39",
+  "best_naive_variant": "same_week",
+  "naive_variant_mean_mae": {
+    "same_day": 0.9911370087099709,
+    "same_week": 0.9229553957042365
+  },
+  "targets_won": 8,
+  "targets_total": 8,
+  "train_rows": 848448,
+  "validate_rows": 276924,
+  "train_sample_frac": 1.0,
+  "gate_passed": true
+}

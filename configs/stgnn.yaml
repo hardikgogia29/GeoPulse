@@ -1,0 +1,33 @@
+# Spatio-Temporal GNN config (Phase 6 Step 3). Not used before Phase 6.
+graph:
+  edge_type: spatial_adjacency   # first-ring H3 / edge-neighbour S2
+  add_self_loops: true
+  use_od_flow_edges: false       # stretch goal only, TRAIN-only flows if enabled
+
+model:
+  gat_layers: 2
+  gat_hidden: 64
+  gat_heads: 4
+  gru_layers: 1
+  gru_hidden: 64
+  mlp_hidden: 128
+  output_horizons: 4
+  output_targets: 2              # pickup, dropoff
+  output_activation: softplus
+  loss: poisson_nll              # alt: huber; pick by validation metric
+
+temporal:
+  window_steps: 24               # 6h
+  window_candidates: [24, 48]
+  aux_inputs: [same_time_yesterday, same_time_last_week, calendar, weather]
+
+train:
+  max_epochs: 50
+  batch_size: 32
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 7
+  scaler_fit_on: train_only
+
+predict:
+  clip_min: 0.0

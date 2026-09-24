@@ -1,0 +1,52 @@
+{
+  "model": "tft",
+  "tag": "s213",
+  "device": "cuda",
+  "gpu": "Tesla T4 15.6GB",
+  "parameters": 239688,
+  "epochs": 8,
+  "best_valid_mae": 1.967380166053772,
+  "still_improving_at_last_epoch": true,
+  "history": [
+    {
+      "epoch": 1,
+      "valid_mae": 3.2268929481506348,
+      "seconds": 71.8
+    },
+    {
+      "epoch": 2,
+      "valid_mae": 2.708066463470459,
+      "seconds": 71.9
+    },
+    {
+      "epoch": 3,
+      "valid_mae": 2.4051177501678467,
+      "seconds": 71.8
+    },
+    {
+      "epoch": 4,
+      "valid_mae": 2.4138545989990234,
+      "seconds": 71.7
+    },
+    {
+      "epoch": 5,
+      "valid_mae": 2.304076910018921,
+      "seconds": 71.9
+    },
+    {
+      "epoch": 6,
+      "valid_mae": 2.1370303630828857,
+      "seconds": 72.0
+    },
+    {
+      "epoch": 7,
+      "valid_mae": 2.1119799613952637,
+      "seconds": 71.8
+    },
+    {
+      "epoch": 8,
+      "valid_mae": 1.967380166053772,
+      "seconds": 71.8
+    }
+  ]
+}

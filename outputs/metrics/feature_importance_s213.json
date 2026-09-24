@@ -1,0 +1,502 @@
+[
+  {
+    "feature": "pickups_ewm_4",
+    "gain": 72425513.4463582
+  },
+  {
+    "feature": "pickups_roll_mean_4",
+    "gain": 26400629.2101326
+  },
+  {
+    "feature": "pickups_lag_0",
+    "gain": 8809348.676877975
+  },
+  {
+    "feature": "pickups_roll_sum_4",
+    "gain": 2703635.9821629524
+  },
+  {
+    "feature": "pickups_slot_expanding_mean",
+    "gain": 1832729.6037108898
+  },
+  {
+    "feature": "dropoffs_ewm_4",
+    "gain": 1523634.4188460112
+  },
+  {
+    "feature": "pickups_ewm_12",
+    "gain": 794769.4392457008
+  },
+  {
+    "feature": "dropoffs_roll_mean_4",
+    "gain": 686481.0295813084
+  },
+  {
+    "feature": "region_idx",
+    "gain": 448730.2663321495
+  },
+  {
+    "feature": "tod_cos",
+    "gain": 342236.8247489929
+  },
+  {
+    "feature": "pickups_seasonal_last_week_h2",
+    "gain": 338270.8684859276
+  },
+  {
+    "feature": "tod_sin",
+    "gain": 288526.9748597145
+  },
+  {
+    "feature": "pickups_seasonal_last_week_h1",
+    "gain": 286899.46247524023
+  },
+  {
+    "feature": "pickups_seasonal_last_week_h4",
+    "gain": 283377.42382383347
+  },
+  {
+    "feature": "dropoffs_lag_0",
+    "gain": 249042.24175167084
+  },
+  {
+    "feature": "pickups_seasonal_last_week_h3",
+    "gain": 226512.18182468414
+  },
+  {
+    "feature": "pickups_seasonal_yesterday_h1",
+    "gain": 179693.9760658741
+  },
+  {
+    "feature": "dropoffs_ewm_96",
+    "gain": 175836.68754434586
+  },
+  {
+    "feature": "pickups_roll_mean_12",
+    "gain": 151294.75845694542
+  },
+  {
+    "feature": "pickups_seasonal_yesterday_h4",
+    "gain": 116297.47469210625
+  },
+  {
+    "feature": "doy_cos",
+    "gain": 96509.99154478312
+  },
+  {
+    "feature": "pickups_seasonal_yesterday_h2",
+    "gain": 89621.19946050644
+  },
+  {
+    "feature": "dropoffs_roll_mean_96",
+    "gain": 84386.31876897812
+  },
+  {
+    "feature": "pickups_seasonal_yesterday_h3",
+    "gain": 78811.14284276962
+  },
+  {
+    "feature": "target_hour_h4",
+    "gain": 61875.963913202286
+  },
+  {
+    "feature": "hour",
+    "gain": 60340.89873600006
+  },
+  {
+    "feature": "target_hour_h1",
+    "gain": 55348.8371925354
+  },
+  {
+    "feature": "dropoffs_ewm_12",
+    "gain": 50088.73560523987
+  },
+  {
+    "feature": "dropoffs_roll_sum_4",
+    "gain": 46459.33518123627
+  },
+  {
+    "feature": "dropoffs_roll_sum_96",
+    "gain": 46288.96097922325
+  },
+  {
+    "feature": "target_hour_h3",
+    "gain": 41104.028787612915
+  },
+  {
+    "feature": "doy_sin",
+    "gain": 38660.493242025375
+  },
+  {
+    "feature": "target_hour_h2",
+    "gain": 35802.079573869705
+  },
+  {
+    "feature": "pickups_ewm_96",
+    "gain": 35258.23244547844
+  },
+  {
+    "feature": "day_of_week",
+    "gain": 32446.026129722595
+  },
+  {
+    "feature": "pickups_lag_1",
+    "gain": 31583.34660100937
+  },
+  {
+    "feature": "is_business_day",
+    "gain": 30832.49056482315
+  },
+  {
+    "feature": "dropoffs_slot_expanding_mean",
+    "gain": 27156.12126505375
+  },
+  {
+    "feature": "pickups_roll_sum_12",
+    "gain": 26202.792160511017
+  },
+  {
+    "feature": "day_of_month",
+    "gain": 25819.650442123413
+  },
+  {
+    "feature": "dropoffs_hour_over_hour",
+    "gain": 23895.347113847733
+  },
+  {
+    "feature": "target_tod_cos_h3",
+    "gain": 23400.052382946014
+  },
+  {
+    "feature": "target_tod_cos_h1",
+    "gain": 22922.681834697723
+  },
+  {
+    "feature": "pickups_hour_over_hour",
+    "gain": 19660.11220884323
+  },
+  {
+    "feature": "dropoffs_roll_mean_12",
+    "gain": 19014.983517169952
+  },
+  {
+    "feature": "week_of_year",
+    "gain": 16978.59439253807
+  },
+  {
+    "feature": "pickups_roll_mean_96",
+    "gain": 16592.523422002792
+  },
+  {
+    "feature": "dropoffs_roll_std_96",
+    "gain": 15975.04725074768
+  },
+  {
+    "feature": "target_tod_sin_h1",
+    "gain": 15099.751487314701
+  },
+  {
+    "feature": "dropoffs_roll_mean_672",
+    "gain": 14325.83171248436
+  },
+  {
+    "feature": "dropoff_pickup_ratio_1h",
+    "gain": 13898.4126663208
+  },
+  {
+    "feature": "dow_sin",
+    "gain": 13792.183891534805
+  },
+  {
+    "feature": "dropoffs_lag_672",
+    "gain": 13191.15529513359
+  },
+  {
+    "feature": "target_is_rush_h4",
+    "gain": 12464.228212356567
+  },
+  {
+    "feature": "pickups_roll_mean_672",
+    "gain": 12233.40810406208
+  },
+  {
+    "feature": "pickups_delta_4",
+    "gain": 12221.167792320251
+  },
+  {
+    "feature": "target_tod_sin_h3",
+    "gain": 12217.941410303116
+  },
+  {
+    "feature": "target_tod_sin_h2",
+    "gain": 12051.97791171074
+  },
+  {
+    "feature": "target_weekday_h1",
+    "gain": 11674.958060264587
+  },
+  {
+    "feature": "dropoffs_delta_4",
+    "gain": 11197.248341083527
+  },
+  {
+    "feature": "pickups_lag_96",
+    "gain": 11008.121350288391
+  },
+  {
+    "feature": "target_tod_cos_h4",
+    "gain": 10705.548166275024
+  },
+  {
+    "feature": "minute",
+    "gain": 10426.028719902039
+  },
+  {
+    "feature": "dropoffs_roll_std_672",
+    "gain": 10208.613951683044
+  },
+  {
+    "feature": "target_tod_cos_h2",
+    "gain": 10094.492422580719
+  },
+  {
+    "feature": "dow_cos",
+    "gain": 10020.124697208405
+  },
+  {
+    "feature": "target_tod_sin_h4",
+    "gain": 9651.678875923157
+  },
+  {
+    "feature": "target_weekday_h4",
+    "gain": 9581.240285396576
+  },
+  {
+    "feature": "net_flow_roll_sum_24",
+    "gain": 9386.060320138931
+  },
+  {
+    "feature": "net_flow_lag_0",
+    "gain": 9329.463549613953
+  },
+  {
+    "feature": "target_weekday_h3",
+    "gain": 9138.901755809784
+  },
+  {
+    "feature": "target_weekday_h2",
+    "gain": 8944.509524822235
+  },
+  {
+    "feature": "dropoffs_lag_24",
+    "gain": 8544.390012264252
+  },
+  {
+    "feature": "dropoffs_roll_sum_672",
+    "gain": 8425.473135650158
+  },
+  {
+    "feature": "net_flow_roll_sum_4",
+    "gain": 8171.03427028656
+  },
+  {
+    "feature": "pickups_lag_24",
+    "gain": 8138.785816669464
+  },
+  {
+    "feature": "pickups_delta_1",
+    "gain": 8121.438293218613
+  },
+  {
+    "feature": "pickups_roll_std_4",
+    "gain": 8036.973031044006
+  },
+  {
+    "feature": "dropoffs_lag_1",
+    "gain": 8014.453105926514
+  },
+  {
+    "feature": "dropoffs_roll_mean_24",
+    "gain": 7955.575585603714
+  },
+  {
+    "feature": "pickups_delta_2",
+    "gain": 7807.999174118042
+  },
+  {
+    "feature": "dropoffs_roll_std_12",
+    "gain": 7354.2670612335205
+  },
+  {
+    "feature": "pickups_lag_192",
+    "gain": 6988.929368495941
+  },
+  {
+    "feature": "target_is_rush_h3",
+    "gain": 6553.520528316498
+  },
+  {
+    "feature": "pickups_roll_std_12",
+    "gain": 6520.418861150742
+  },
+  {
+    "feature": "dropoffs_roll_sum_12",
+    "gain": 6406.279053688049
+  },
+  {
+    "feature": "dropoffs_lag_96",
+    "gain": 6095.819140434265
+  },
+  {
+    "feature": "pickups_lag_672",
+    "gain": 6000.793386459351
+  },
+  {
+    "feature": "dropoffs_roll_std_24",
+    "gain": 5870.6741988658905
+  },
+  {
+    "feature": "pickups_lag_4",
+    "gain": 5399.615257263184
+  },
+  {
+    "feature": "month_of_year",
+    "gain": 5043.503245830536
+  },
+  {
+    "feature": "pickups_roll_std_672",
+    "gain": 5028.802419185638
+  },
+  {
+    "feature": "dropoffs_seasonal_yesterday_h4",
+    "gain": 4987.68097281456
+  },
+  {
+    "feature": "dropoffs_seasonal_last_week_h4",
+    "gain": 4947.1763870716095
+  },
+  {
+    "feature": "is_holiday",
+    "gain": 4919.482796192169
+  },
+  {
+    "feature": "pickups_roll_std_96",
+    "gain": 4818.63439655304
+  },
+  {
+    "feature": "pickups_roll_sum_672",
+    "gain": 4344.612221240997
+  },
+  {
+    "feature": "dropoffs_seasonal_last_week_h1",
+    "gain": 4240.088468313217
+  },
+  {
+    "feature": "net_flow_lag_1",
+    "gain": 4208.368358135223
+  },
+  {
+    "feature": "dropoffs_lag_12",
+    "gain": 4043.7378516197205
+  },
+  {
+    "feature": "pickups_roll_mean_24",
+    "gain": 4016.6347193717957
+  },
+  {
+    "feature": "dropoffs_seasonal_last_week_h2",
+    "gain": 3989.2544697523117
+  },
+  {
+    "feature": "dropoffs_seasonal_last_week_h3",
+    "gain": 3903.821020126343
+  },
+  {
+    "feature": "pickups_roll_std_24",
+    "gain": 3855.843824863434
+  },
+  {
+    "feature": "pickups_lag_2",
+    "gain": 3775.487181663513
+  },
+  {
+    "feature": "is_weekend",
+    "gain": 3575.603024959564
+  },
+  {
+    "feature": "dropoffs_roll_sum_24",
+    "gain": 3465.08135843277
+  },
+  {
+    "feature": "dropoffs_lag_8",
+    "gain": 3422.72899889946
+  },
+  {
+    "feature": "dropoffs_roll_std_4",
+    "gain": 3326.664975166321
+  },
+  {
+    "feature": "dropoffs_lag_192",
+    "gain": 3248.0896124839783
+  },
+  {
+    "feature": "dropoffs_seasonal_yesterday_h1",
+    "gain": 3230.351842880249
+  },
+  {
+    "feature": "dropoffs_lag_4",
+    "gain": 3034.6133489608765
+  },
+  {
+    "feature": "dropoffs_delta_2",
+    "gain": 2981.8631494045258
+  },
+  {
+    "feature": "dropoffs_seasonal_yesterday_h3",
+    "gain": 2960.312862634659
+  },
+  {
+    "feature": "dropoffs_delta_1",
+    "gain": 2847.9118859767914
+  },
+  {
+    "feature": "is_morning_rush",
+    "gain": 2780.1245980262756
+  },
+  {
+    "feature": "pickups_roll_sum_24",
+    "gain": 2693.2216296195984
+  },
+  {
+    "feature": "pickups_lag_8",
+    "gain": 2670.5246992111206
+  },
+  {
+    "feature": "target_is_rush_h2",
+    "gain": 2625.2930026054382
+  },
+  {
+    "feature": "target_is_rush_h1",
+    "gain": 2611.7466044425964
+  },
+  {
+    "feature": "dropoffs_seasonal_yesterday_h2",
+    "gain": 2591.1802270412445
+  },
+  {
+    "feature": "pickups_lag_12",
+    "gain": 2508.824210166931
+  },
+  {
+    "feature": "dropoffs_lag_2",
+    "gain": 2165.716329574585
+  },
+  {
+    "feature": "pickups_roll_sum_96",
+    "gain": 1975.220046043396
+  },
+  {
+    "feature": "is_evening_rush",
+    "gain": 1581.4911489486694
+  }
+]

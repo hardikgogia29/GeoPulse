@@ -1,0 +1,12 @@
+# H3 spatial indexing config (Phase 2, swept in Phase 5 Part A)
+spatial:
+  system: h3
+  resolution: 9              # default working resolution; Phase 5 sweeps 8/9/10
+  sweep_resolutions: [8, 9, 10]
+  neighbor_ring: 1           # first-ring neighbours for spatial features
+  test_second_ring: false    # Phase 4 experiment only
+
+active_region:
+  # A region counts as active only from actual trip activity, never a station roster.
+  min_trips_total: 500       # over the whole 2023-2024 window
+  min_active_days: 180       # days with >= 1 trip

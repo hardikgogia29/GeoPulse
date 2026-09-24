@@ -1,0 +1,23 @@
+# Temporal Fusion Transformer config (Phase 6 Step 2). Not used before Phase 6.
+model:
+  encoder_length: 96         # 24h of 15-min steps
+  encoder_length_candidates: [48, 96, 192]
+  decoder_length: 4          # h1..h4
+  hidden_size: 64
+  attention_head_size: 4
+  dropout: 0.1
+  hidden_continuous_size: 32
+  loss: negative_binomial    # -> poisson -> quantile fallback; document the choice
+  separate_pickup_dropoff_models: true
+
+train:
+  max_epochs: 30
+  batch_size: 256
+  learning_rate: 0.003
+  gradient_clip_val: 0.1
+  early_stopping_patience: 5
+  scaler_fit_on: train_only
+  log1p_skewed_inputs: true
+
+predict:
+  clip_min: 0.0

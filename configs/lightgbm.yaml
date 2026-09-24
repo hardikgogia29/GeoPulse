@@ -1,0 +1,34 @@
+# LightGBM config. Phase 3 = baseline (untuned). Phase 6 = Optuna-tuned.
+baseline:
+  objective: poisson         # Phase 6 Step 1 tests poisson vs regression_l1
+  metric: mae
+  n_estimators: 500
+  learning_rate: 0.05
+  num_leaves: 63
+  max_depth: -1
+  min_data_in_leaf: 100
+  feature_fraction: 0.9
+  bagging_fraction: 0.8
+  bagging_freq: 1
+  lambda_l1: 0.0
+  lambda_l2: 0.0
+  n_jobs: -1
+  verbose: -1
+  early_stopping_rounds: 50
+
+tuning:
+  enabled: false             # turned on in Phase 6
+  n_trials: 40
+  timeout_seconds: 7200
+  search_space:
+    num_leaves: {low: 31, high: 255}
+    max_depth: {low: 4, high: 12}
+    learning_rate: {low: 0.01, high: 0.15, log: true}
+    min_data_in_leaf: {low: 20, high: 500}
+    feature_fraction: {low: 0.5, high: 1.0}
+    bagging_fraction: {low: 0.5, high: 1.0}
+    lambda_l1: {low: 0.0, high: 5.0}
+    lambda_l2: {low: 0.0, high: 5.0}
+
+predict:
+  clip_min: 0.0

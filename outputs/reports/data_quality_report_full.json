@@ -1,0 +1,380 @@
+{
+  "total_rows": 79410195,
+  "null_counts": {
+    "ride_id": 0,
+    "rideable_type": 0,
+    "started_at": 0,
+    "ended_at": 0,
+    "start_station_name": 48033,
+    "start_station_id": 48033,
+    "end_station_name": 214452,
+    "end_station_id": 222480,
+    "start_lat": 48033,
+    "start_lng": 48033,
+    "end_lat": 221610,
+    "end_lng": 221610,
+    "member_casual": 0
+  },
+  "distinct_ride_ids": 79410195,
+  "duplicate_ride_id_extra_rows": 0,
+  "invalid_timestamps": {
+    "null_started_at": 0,
+    "null_ended_at": 0,
+    "end_le_start": 643,
+    "end_eq_start": 0
+  },
+  "duration_distribution_seconds": {
+    "min": -3478,
+    "p01": 81.0,
+    "p25": 317.0,
+    "median": 552.0,
+    "p75": 966.0,
+    "p99": 4054.0,
+    "p999": 28349.417999982834,
+    "max": 10038455,
+    "mean": 862.471050763696,
+    "under_60s": 825,
+    "over_24h": 37708
+  },
+  "coordinate_ranges": {
+    "start_lat_min": 40.633385,
+    "start_lat_max": 40.8863,
+    "start_lng_min": -74.0867006778717,
+    "start_lng_max": -73.84672,
+    "end_lat_min": 0.0,
+    "end_lat_max": 40.8863,
+    "end_lng_min": -74.0867006778717,
+    "end_lng_max": 0.0
+  },
+  "coords_outside_bbox": 187,
+  "rides_per_month": [
+    {
+      "month": "2022-12",
+      "rides": 276
+    },
+    {
+      "month": "2023-01",
+      "rides": 1795329
+    },
+    {
+      "month": "2023-02",
+      "rides": 1696101
+    },
+    {
+      "month": "2023-03",
+      "rides": 2119314
+    },
+    {
+      "month": "2023-04",
+      "rides": 2749360
+    },
+    {
+      "month": "2023-05",
+      "rides": 3453576
+    },
+    {
+      "month": "2023-06",
+      "rides": 3451869
+    },
+    {
+      "month": "2023-07",
+      "rides": 3659372
+    },
+    {
+      "month": "2023-08",
+      "rides": 3964206
+    },
+    {
+      "month": "2023-09",
+      "rides": 3471658
+    },
+    {
+      "month": "2023-10",
+      "rides": 3724615
+    },
+    {
+      "month": "2023-11",
+      "rides": 2816850
+    },
+    {
+      "month": "2023-12",
+      "rides": 2204870
+    },
+    {
+      "month": "2024-01",
+      "rides": 1887908
+    },
+    {
+      "month": "2024-02",
+      "rides": 2121506
+    },
+    {
+      "month": "2024-03",
+      "rides": 2663416
+    },
+    {
+      "month": "2024-04",
+      "rides": 3216957
+    },
+    {
+      "month": "2024-05",
+      "rides": 4135049
+    },
+    {
+      "month": "2024-06",
+      "rides": 4782935
+    },
+    {
+      "month": "2024-07",
+      "rides": 4722952
+    },
+    {
+      "month": "2024-08",
+      "rides": 4603942
+    },
+    {
+      "month": "2024-09",
+      "rides": 4997288
+    },
+    {
+      "month": "2024-10",
+      "rides": 5150717
+    },
+    {
+      "month": "2024-11",
+      "rides": 3709229
+    },
+    {
+      "month": "2024-12",
+      "rides": 2310900
+    }
+  ],
+  "rides_per_day_summary": {
+    "n_days": 735,
+    "min": 1,
+    "median": 110799.0,
+    "mean": 108041.08163265306,
+    "max": 194315,
+    "first_day": "2022-12-14",
+    "last_day": "2024-12-31"
+  },
+  "category_mix": {
+    "rideable_type": [
+      {
+        "rideable_type": "electric_bike",
+        "n": 46901076
+      },
+      {
+        "rideable_type": "classic_bike",
+        "n": 32509119
+      }
+    ],
+    "member_casual": [
+      {
+        "member_casual": "member",
+        "n": 64260069
+      },
+      {
+        "member_casual": "casual",
+        "n": 15150126
+      }
+    ]
+  },
+  "station_completeness": {
+    "null_start_station_id": 48033,
+    "null_end_station_id": 222480,
+    "null_either_station_id": 242748,
+    "distinct_start_station_ids": 2453,
+    "distinct_end_station_ids": 2459
+  },
+  "dst_hour_profile": [
+    {
+      "utc_hour": "2023-03-12 04:00:00",
+      "rides": 1389,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-03-12 05:00:00",
+      "rides": 1048,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-03-12 06:00:00",
+      "rides": 781,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-03-12 07:00:00",
+      "rides": 617,
+      "expected_effect": "shifted_in"
+    },
+    {
+      "utc_hour": "2023-03-12 08:00:00",
+      "rides": 406,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-03-12 09:00:00",
+      "rides": 236,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-11-05 03:00:00",
+      "rides": 3132,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-11-05 04:00:00",
+      "rides": 2437,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-11-05 05:00:00",
+      "rides": 2921,
+      "expected_effect": "over_filled"
+    },
+    {
+      "utc_hour": "2023-11-05 06:00:00",
+      "rides": 0,
+      "expected_effect": "empty"
+    },
+    {
+      "utc_hour": "2023-11-05 07:00:00",
+      "rides": 755,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2023-11-05 08:00:00",
+      "rides": 521,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-03-10 04:00:00",
+      "rides": 509,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-03-10 05:00:00",
+      "rides": 666,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-03-10 06:00:00",
+      "rides": 695,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-03-10 07:00:00",
+      "rides": 582,
+      "expected_effect": "shifted_in"
+    },
+    {
+      "utc_hour": "2024-03-10 08:00:00",
+      "rides": 404,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-03-10 09:00:00",
+      "rides": 288,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-11-03 03:00:00",
+      "rides": 3711,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-11-03 04:00:00",
+      "rides": 3010,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-11-03 05:00:00",
+      "rides": 3534,
+      "expected_effect": "over_filled"
+    },
+    {
+      "utc_hour": "2024-11-03 06:00:00",
+      "rides": 0,
+      "expected_effect": "empty"
+    },
+    {
+      "utc_hour": "2024-11-03 07:00:00",
+      "rides": 948,
+      "expected_effect": "-"
+    },
+    {
+      "utc_hour": "2024-11-03 08:00:00",
+      "rides": 580,
+      "expected_effect": "-"
+    }
+  ],
+  "outside_project_window": 276,
+  "cleaning_waterfall": [
+    {
+      "rule": "duplicate_ride_id",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "null_ride_id",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "null_timestamp",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "outside_project_window",
+      "rows_removed": 276,
+      "pct_of_raw": 0.0003
+    },
+    {
+      "rule": "end_before_start",
+      "rows_removed": 643,
+      "pct_of_raw": 0.0008
+    },
+    {
+      "rule": "duration_too_short",
+      "rows_removed": 182,
+      "pct_of_raw": 0.0002
+    },
+    {
+      "rule": "duration_too_long",
+      "rows_removed": 37627,
+      "pct_of_raw": 0.0474
+    },
+    {
+      "rule": "missing_coords",
+      "rows_removed": 206222,
+      "pct_of_raw": 0.2597
+    },
+    {
+      "rule": "coords_out_of_bbox",
+      "rows_removed": 178,
+      "pct_of_raw": 0.0002
+    },
+    {
+      "rule": "TOTAL REMOVED",
+      "rows_removed": 245128,
+      "pct_of_raw": 0.3087
+    },
+    {
+      "rule": "KEPT",
+      "rows_removed": 79165067,
+      "pct_of_raw": 99.6913
+    }
+  ],
+  "sort_verification": {
+    "rows": 79165067,
+    "row_groups": 80,
+    "rowgroup_stat_violations": 0,
+    "pairwise_inversions": 0,
+    "is_sorted": true,
+    "first_started_at": "2023-01-01 05:00:13.021000+00:00",
+    "last_started_at": "2025-01-01 04:57:46.390000+00:00",
+    "file_size_mb": 2416.1
+  }
+}

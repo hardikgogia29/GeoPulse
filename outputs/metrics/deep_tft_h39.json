@@ -1,0 +1,36 @@
+{
+  "model": "tft",
+  "tag": "h39",
+  "device": "cpu",
+  "parameters": 239688,
+  "window": 96,
+  "batch_size": 256,
+  "epochs": 1,
+  "best_valid_mean_mae": 0.9695114567875862,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5342956215143204,
+      "valid_mean_mae": 0.9695114567875862,
+      "per_horizon": {
+        "h1": {
+          "pickup_mae": 0.9382593035697937,
+          "dropoff_mae": 0.9606272578239441
+        },
+        "h2": {
+          "pickup_mae": 0.9446142315864563,
+          "dropoff_mae": 0.9511928558349609
+        },
+        "h3": {
+          "pickup_mae": 0.9648857116699219,
+          "dropoff_mae": 0.9757694005966187
+        },
+        "h4": {
+          "pickup_mae": 1.0153906345367432,
+          "dropoff_mae": 1.005352258682251
+        }
+      },
+      "seconds": 10.1
+    }
+  ]
+}

@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>GeoPulse — Project Description</title>
+<style>
+  @page { size: A4; margin: 15mm 14mm 16mm; }
+  :root {
+    --ink:#14181c; --ink-2:#4a555e; --ink-3:#77848d; --line:#d8dee2;
+    --brand:#0b7a5a; --brand-soft:#eef7f3; --hot:#c2410c;
+    --warn-soft:#fdf6e6; --warn-line:#e3b341; --code-bg:#f4f6f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",-apple-system,Roboto,sans-serif;
+       font-size:9.4pt;line-height:1.5;color:var(--ink)}
+  h1,h2,h3{line-height:1.2;margin:0;font-weight:700}
+  h1{font-size:23pt;letter-spacing:-.02em}
+  h2{font-size:13pt;margin:16pt 0 6pt;padding-bottom:3pt;
+     border-bottom:2px solid var(--brand);color:var(--brand);break-after:avoid}
+  h3{font-size:10.2pt;margin:11pt 0 4pt;break-after:avoid}
+  p{margin:0 0 6pt}
+  ul,ol{margin:0 0 6pt;padding-left:15pt}
+  li{margin-bottom:2pt}
+  code{font-family:Consolas,monospace;font-size:8.3pt;background:var(--code-bg);
+       padding:1px 3px;border-radius:2px;color:#0f3d2e}
+  pre{background:var(--code-bg);border-left:2.5px solid var(--brand);padding:6pt 8pt;
+      font-family:Consolas,monospace;font-size:7.9pt;line-height:1.4;margin:0 0 7pt;
+      break-inside:avoid;border-radius:0 2px 2px 0}
+  pre code{background:none;padding:0}
+  table{width:100%;border-collapse:collapse;margin:0 0 8pt;font-size:8.4pt;
+        break-inside:avoid}
+  th{background:var(--brand-soft);color:#0a5c44;text-align:left;padding:4pt 6pt;
+     font-weight:650;border-bottom:1.2px solid var(--brand);font-size:8pt}
+  td{padding:3.5pt 6pt;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fafbfb}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .win{color:var(--brand);font-weight:700}
+  .lose{color:var(--hot)}
+  .hdr{border-bottom:3px solid var(--brand);padding-bottom:9pt;margin-bottom:12pt}
+  .hdr .eyebrow{font-size:8pt;letter-spacing:.2em;text-transform:uppercase;
+                color:var(--brand);font-weight:650}
+  .hdr .sub{font-size:11pt;color:var(--ink-2);font-weight:300;margin-top:3pt}
+  .hdr .meta{font-size:8.2pt;color:var(--ink-3);margin-top:6pt}
+  .box{background:var(--brand-soft);border-left:3px solid var(--brand);
+       padding:6pt 9pt;margin:0 0 8pt;break-inside:avoid;border-radius:0 3px 3px 0}
+  .box.warn{background:var(--warn-soft);border-left-color:var(--warn-line)}
+  .box p:last-child{margin-bottom:0}
+  .box .tag{display:block;font-size:7.2pt;letter-spacing:.1em;text-transform:uppercase;
+            font-weight:700;color:var(--brand);margin-bottom:2pt}
+  .box.warn .tag{color:#8a6116}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:6pt;margin-bottom:9pt}
+  .kpi{border:1px solid var(--line);border-radius:4px;padding:6pt 7pt}
+  .kpi .v{font-size:14pt;font-weight:700;color:var(--brand);line-height:1.05;
+          font-variant-numeric:tabular-nums}
+  .kpi .k{font-size:7pt;color:var(--ink-3);text-transform:uppercase;
+          letter-spacing:.04em;margin-top:1pt}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:0 14pt}
+  .pb{break-before:page}
+  .fn{font-size:7.8pt;color:var(--ink-3)}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="eyebrow">Machine Learning Research Project</div>
+  <h1>GeoPulse</h1>
+  <div class="sub">End-to-end ML system: 79M-row spatiotemporal forecasting pipeline,
+    four model families, and an agentic map application</div>
+  <div class="meta">Python · Polars · DuckDB · LightGBM · PyTorch · FastAPI · MapLibre ·
+    79,410,195 trips · 11,238 lines of code · 166 tests passing</div>
+</div>
+
+<h2>1. What it does</h2>
+
+<p>New York's Citi Bike has ~2,400 docking stations. Bikes pile up where people ride
+<em>to</em> and vanish from where people ride <em>from</em> — every weekday morning thousands
+flow into Midtown, leaving residential docks empty. <strong>GeoPulse predicts that flow before it
+happens</strong>, then makes the forecast usable: a map app where you ask "will I find a bike near
+Times Square?" and get a real answer with walking directions and an explanation.</p>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">1.14</div><div class="k">Test MAE (bikes / 15 min)</div></div>
+  <div class="kpi"><div class="v">38%</div><div class="k">Better than baseline</div></div>
+  <div class="kpi"><div class="v">0.72</div><div class="k">Hotspot F1</div></div>
+  <div class="kpi"><div class="v">166</div><div class="k">Tests passing</div></div>
+</div>
+
+<h3>Technical stack</h3>
+<table>
+  <tr><th style="width:78pt">Layer</th><th>Technologies and why</th></tr>
+  <tr><td>Data engineering</td><td><strong>Polars</strong> (streaming CSV→Parquet, 15 GB → 2.5 GB in
+    2 min), <strong>DuckDB</strong> (out-of-core SQL, window functions, hive-partitioned writes),
+    <strong>Parquet</strong> throughout — pandas deliberately avoided at scale</td></tr>
+  <tr><td>Spatial</td><td><strong>Uber H3</strong> (hexagonal indexing, resolutions 8–10),
+    <strong>Google S2</strong> (level 13), custom <code>SpatialIndexer</code> protocol so both are
+    interchangeable</td></tr>
+  <tr><td>Modelling</td><td><strong>LightGBM</strong> (Poisson objective, Optuna tuning),
+    <strong>PyTorch</strong> — hand-written Temporal Fusion Transformer and Spatio-Temporal GNN with
+    graph attention via edge-list segment softmax</td></tr>
+  <tr><td>Serving</td><td><strong>FastAPI</strong>, Pydantic, in-process model/tensor caching,
+    tool-calling agent over <strong>Mistral</strong> / <strong>Claude</strong> APIs with a
+    dependency-free deterministic fallback</td></tr>
+  <tr><td>Frontend</td><td><strong>MapLibre GL JS</strong> with vector basemaps, hand-written CSS,
+    no framework — map-first layout with a sliding bottom sheet</td></tr>
+  <tr><td>Algorithms</td><td><strong>A*</strong> with an admissible haversine heuristic over an
+    OpenStreetMap walking graph; greedy constrained rebalancing simulation</td></tr>
+  <tr><td>Engineering</td><td><strong>pytest</strong> (166 tests incl. 35 leakage tests), YAML-driven
+    configuration, phase gates verified by scripts against artifacts, git history one commit per
+    phase</td></tr>
+</table>
+
+<h2>2. The four research questions</h2>
+
+<table>
+  <tr><th style="width:24pt">#</th><th style="width:120pt">Question</th><th>Answer</th></tr>
+  <tr><td><strong>RQ1</strong></td><td>How big should a map cell be?</td>
+    <td><strong>H3 resolution 8</strong> (~0.74 km²). Chosen by <em>skill score</em>, because every
+    ordinary metric is biased by cell size and the three we tried disagreed completely.</td></tr>
+  <tr><td><strong>RQ2</strong></td><td>Hexagons or squares?</td>
+    <td><strong>Near coin flip.</strong> S2-13 scores slightly higher skill, but its cells are 47%
+    larger — which plausibly explains the whole gap. Size matters; shape barely does.</td></tr>
+  <tr><td><strong>RQ3</strong></td><td>Do deep models beat gradient boosting?</td>
+    <td><strong>No.</strong> Tuned LightGBM won at both grids. Two apparent deep-learning wins at
+    H3-8 reversed at S2-13, so they were noise. Caveat in §7.</td></tr>
+  <tr><td><strong>RQ4</strong></td><td>Do better forecasts improve operations?</td>
+    <td><strong>Yes between forecasts, no in absolute terms.</strong> LightGBM beat even a
+    <em>perfect</em> forecast at rebalancing — but rebalancing itself didn't help. §8.</td></tr>
+</table>
+
+<h2>3. Pipeline</h2>
+
+<pre><code>90 CSVs (15 GB) ──► Parquet (2.5 GB, 2 min)      Polars streaming, never pandas
+      │
+      ├─► Clean: 9 named rules, 245,128 removed (0.309%), counts reconcile exactly
+      ├─► Timestamps → UTC (daylight-saving safe), 4 distorted hours flagged
+      ├─► Index 79M trips → H3 cells in 0.8 s (only 3,230 distinct coordinates exist)
+      ├─► Panel: 104,071,008 rows = 1,483 cells × 70,176 intervals, exactly dense
+      ├─► Features: 168 columns across 8 families, 15 leakage tests
+      ├─► Models: Seasonal Naive · LightGBM · TFT · ST-GNN, × 2 spatial systems
+      └─► TEST (Nov–Dec 2024) opened exactly once ──► App</code></pre>
+
+<p>Each phase had a written Definition of Done, verified <strong>by scripts reading the actual
+output files</strong> — not by ticking boxes. That caught several bugs that would have silently
+corrupted everything downstream (§9).</p>
+
+<h2>4. Data and cleaning</h2>
+
+<p>Four sources: <strong>Citi Bike trips</strong> (90 monthly CSVs), <strong>weather</strong>
+(Open-Meteo hourly, 17,544 rows, no gaps), <strong>events</strong> (557,674 NYC permit records) and
+<strong>traffic</strong> (Socrata API, 23,758,184 readings).</p>
+
+<div class="box warn">
+  <span class="tag">A false start worth recording</span>
+  <p>The traffic CSV downloaded from the NYC Open Data web UI opened cleanly and looked correct. It
+  had been <strong>silently row-capped</strong> and contained only five days from July 2018 — zero
+  overlap with the project window. Caught only because a check compared the file's date range against
+  the project's. Refetched via the Socrata API, paginating by time window rather than row offset, and
+  completeness was <em>proved</em> against a server-side <code>count(1)</code>.</p>
+</div>
+
+<h3>The cleaning waterfall</h3>
+
+<p>Nine named rules, applied in order; each removed row attributed to the <strong>first</strong> rule
+it violates, so counts sum exactly to the total. A quality report is produced <em>before</em>
+anything is deleted.</p>
+
+<table>
+  <tr><th>Rule</th><th class="num">Removed</th><th>Rule</th><th class="num">Removed</th></tr>
+  <tr><td>duplicate_ride_id</td><td class="num">0</td><td>duration_too_long (&gt;24 h)</td><td class="num">37,627</td></tr>
+  <tr><td>null_ride_id / null_timestamp</td><td class="num">0</td><td>missing_coords</td><td class="num">206,222</td></tr>
+  <tr><td>outside_project_window</td><td class="num">276</td><td>coords_out_of_bbox</td><td class="num">178</td></tr>
+  <tr><td>end_before_start</td><td class="num">643</td><td><strong>Total removed</strong></td><td class="num"><strong>245,128 (0.309%)</strong></td></tr>
+  <tr><td>duration_too_short (&lt;60 s)</td><td class="num">182</td><td><strong>Kept</strong></td><td class="num"><strong>79,165,067</strong></td></tr>
+</table>
+
+<h3>Daylight saving — the problem nobody expects</h3>
+
+<p>Citi Bike publishes <strong>naive local time</strong>. In November the 1–2 am hour happens twice,
+written identically both times; bin it in local time and one interval gets double demand. In March
+that hour doesn't exist. Everything is stored in <strong>UTC</strong> instead, and the damage was
+<em>measured</em> rather than assumed:</p>
+
+<table>
+  <tr><th>UTC hour</th><th class="num">Rides</th><th>Meaning</th></tr>
+  <tr><td>2023-11-05 05:00</td><td class="num">2,921</td><td>Both passes collapsed together</td></tr>
+  <tr><td>2023-11-05 06:00</td><td class="num">0</td><td>The unreachable second pass</td></tr>
+  <tr><td>2024-11-03 05:00 / 06:00</td><td class="num">3,534 / 0</td><td>Same pattern next year</td></tr>
+</table>
+
+<p>Four affected hours are flagged <code>dst_unreliable</code> and excluded from every model, so
+nothing learns the artificial collapse.</p>
+
+<h3>Sorting 79 million rows</h3>
+
+<p>A global <code>ORDER BY</code> spilled 8 GB and hadn't finished after an hour. Because the data is
+already partitioned by month, sorting each month (~3M rows, in memory) and concatenating in month
+order gives the <em>identical</em> ordering — 90 seconds. Verified two independent ways:
+<strong>0 inversions across 79,165,067 rows</strong>.</p>
+
+<h2 class="pb">5. The panel and the features</h2>
+
+<p>The panel is <strong>exactly one row per cell per 15-minute interval</strong>, no gaps. A cell
+with no trips gets a <strong>0</strong>, not a missing row — because "four rows back" only means
+"one hour ago" if every interval is guaranteed present.</p>
+
+<table>
+  <tr><th style="width:90pt">Property</th><th>Value</th></tr>
+  <tr><td>Rows</td><td>104,071,008 = 1,483 cells × 70,176 intervals — exactly dense</td></tr>
+  <tr><td>Reconciliation</td><td>Panel pickups 79,150,890 — matches trips in active cells exactly</td></tr>
+  <tr><td>Active cells</td><td>1,483 of 1,570 touched, carrying <strong>99.98% of all endpoints</strong></td></tr>
+  <tr><td>Targets</td><td>15/30/45/60 min ahead × pickups/dropoffs, re-derived by independent join</td></tr>
+  <tr><td>End of series</td><td>NULL, never 0 — a zero teaches a phantom demand collapse</td></tr>
+</table>
+
+<h3>Preventing leakage</h3>
+
+<p><strong>Forecast time is pinned to the END of an interval.</strong> That makes a one-step forecast
+genuinely 15 minutes ahead, and makes the just-completed interval a legal input — the single most
+informative feature, which an earlier phase had omitted.</p>
+
+<div class="box">
+  <span class="tag">Proof, not inspection</span>
+  <p>15 tests <strong>re-derive every lag feature by an independent timestamp self-join</strong> and
+  assert agreement; 20 more cover the advanced families. Reading code catches the bugs you thought
+  of; re-deriving the answer a different way catches the ones you didn't.</p>
+</div>
+
+<h3>Which features earned their place — the ablation</h3>
+
+<table>
+  <tr><th>Family added</th><th class="num">Features</th><th class="num">Pickup MAE</th><th class="num">Change</th><th>Verdict</th></tr>
+  <tr><td>A — recent demand</td><td class="num">21</td><td class="num">1.6944</td><td class="num">—</td><td>baseline</td></tr>
+  <tr><td>B — calendar/seasonal</td><td class="num">76</td><td class="num win">1.5791</td><td class="num win">+6.60%</td><td><strong>Helps a lot</strong></td></tr>
+  <tr><td>C — rolling trends</td><td class="num">125</td><td class="num win">1.5695</td><td class="num win">+0.64%</td><td><strong>Helps</strong></td></tr>
+  <tr><td>D — weather</td><td class="num">142</td><td class="num">1.5703</td><td class="num lose">−0.05%</td><td>No benefit</td></tr>
+  <tr><td>E — events</td><td class="num">148</td><td class="num">1.5702</td><td class="num lose">−0.01%</td><td>No effect</td></tr>
+  <tr><td>F — traffic</td><td class="num">155</td><td class="num">1.5702</td><td class="num lose">−0.05%</td><td>No effect</td></tr>
+  <tr><td>G — neighbours</td><td class="num">164</td><td class="num">1.5675</td><td class="num">+0.30%</td><td>Slight</td></tr>
+  <tr><td>H — station network</td><td class="num">168</td><td class="num">1.5684</td><td class="num lose">−0.07%</td><td>No benefit</td></tr>
+</table>
+
+<p><strong>Final feature set: A + B + C, 125 features.</strong> Weather, events and traffic
+contribute essentially nothing — nearly all signal beyond recent demand is calendar and seasonality,
+which is intuitive for commuter cycling and cheap.</p>
+
+<div class="box">
+  <span class="tag">Traffic got a fair second chance</span>
+  <p>The first ablation ran at H3-9, where traffic sensors reach only <strong>5.1% of cells</strong>
+  — that tests "traffic in 5% of Manhattan", not "traffic". At H3-8 coverage is <strong>20.2%, four
+  times better</strong>, so the whole ablation was re-run. <strong>Quadrupling coverage changed
+  nothing</strong> (still −0.05%). That turns a weak result into a defensible negative finding.</p>
+</div>
+
+<p class="fn">Gain-based importance from the trained model agrees independently: the top five features
+are <code>pickups_ewm_4</code>, <code>pickups_roll_mean_4</code>, <code>pickups_lag_0</code>,
+<code>pickups_slot_expanding_mean</code>, <code>pickups_roll_sum_4</code> — all from families A, B and C.</p>
+
+<h2>6. Choosing the cell size — and why the obvious metric lies</h2>
+
+<table>
+  <tr><th>Resolution</th><th class="num">Cells</th><th class="num">Area km²</th><th class="num">% zero</th><th class="num">MAE</th><th class="num">WAPE</th><th class="num">Hotspot F1</th><th class="num">Skill</th></tr>
+  <tr><td><strong>H3-8</strong></td><td class="num">321</td><td class="num">0.741</td><td class="num">47.5%</td><td class="num">1.654</td><td class="num win">0.308</td><td class="num win">0.748</td><td class="num win"><strong>0.2563</strong></td></tr>
+  <tr><td>H3-9</td><td class="num">1,483</td><td class="num">0.106</td><td class="num">71.4%</td><td class="num">0.705</td><td class="num">0.605</td><td class="num">0.590</td><td class="num">0.1920</td></tr>
+  <tr><td>H3-10</td><td class="num">2,162</td><td class="num">0.015</td><td class="num">75.6%</td><td class="num win">0.580</td><td class="num">0.731</td><td class="num">0.481</td><td class="num">0.1791</td></tr>
+</table>
+
+<p><strong>MAE says resolution 10. WAPE and Hotspot F1 say resolution 8.</strong> That total
+disagreement is the clue that none of them measures skill:</p>
+
+<ul>
+  <li><strong>MAE falls automatically as cells shrink</strong> — smaller cells hold smaller counts.
+  In the limit, a cell that always contains zero has perfect MAE and zero use.</li>
+  <li><strong>WAPE falls automatically as cells grow</strong> — aggregation smooths relative error.
+  In the limit, one cell covering all of NYC scores beautifully and says nothing.</li>
+  <li><strong>Hotspot F1 depends on cell count</strong> — top 10% of 321 is a different task from
+  top 10% of 2,162.</li>
+</ul>
+
+<p>The fix is a <strong>skill score</strong>: <code>1 − model_MAE / naive_MAE</code>, both computed
+on the same grid, so the scale effect cancels. <strong>Resolution 8 wins</strong>, and also wins on
+sparsity (47.5% empty vs 75.6%).</p>
+
+<p><strong>RQ2:</strong> S2 level 13 was selected by a matching procedure (weighted log-ratio distance
+on area and cell count; score 0.319 vs 0.951 for the next candidate), not guessed. It edges H3-8 on
+skill (0.274 vs 0.256) — but its cells are still <strong>47% larger</strong>, which plausibly
+accounts for the entire gap. <em>Resolution is the decision that matters.</em></p>
+
+<h2 class="pb">7. Models and the test set</h2>
+
+<p><strong>LightGBM</strong> — objective tested not assumed (Poisson 1.5695 beat L1 1.5739); the old
+500-round cap was genuinely binding, so it was raised and early stopping allowed to decide (final
+models stopped at 569–1,101 rounds); 10-trial Optuna search improved validation 1.5695 → 1.5544.</p>
+
+<p><strong>TFT</strong> (239,688 params) — gated residual networks, variable selection, LSTM encoder
+over 96 intervals, interpretable attention. <strong>ST-GNN</strong> (35,432 params) — 2 graph-attention
+layers over first-ring cell adjacency + GRU over 24 intervals. Both hand-written, trained on a free
+Kaggle T4 in ~23 GPU-minutes. Scaling statistics fitted on TRAIN only and baked into the exported
+bundle, so leaking through normalisation is structurally impossible.</p>
+
+<h3>TEST — opened exactly once (Nov–Dec 2024, 1,877,208 rows)</h3>
+
+<table>
+  <tr><th>Model @ H3-8</th><th class="num">Pickup MAE</th><th class="num">Dropoff MAE</th><th class="num">WAPE</th><th class="num">Hotspot F1</th></tr>
+  <tr><td><strong>LightGBM (tuned)</strong></td><td class="num win"><strong>1.1408</strong></td><td class="num win"><strong>1.1275</strong></td><td class="num">0.3573</td><td class="num">0.7248</td></tr>
+  <tr><td>ST-GNN</td><td class="num">1.2024</td><td class="num">1.1978</td><td class="num">0.3686</td><td class="num win">0.7260</td></tr>
+  <tr><td>TFT</td><td class="num">1.2919</td><td class="num">1.4969</td><td class="num win">0.3523</td><td>—</td></tr>
+  <tr><td>Seasonal Naive (yesterday)</td><td class="num">1.8430</td><td class="num">1.8253</td><td class="num">0.5771</td><td class="num">0.6265</td></tr>
+  <tr><td>Seasonal Naive (last week)</td><td class="num">1.9575</td><td class="num">1.9409</td><td class="num">0.6130</td><td class="num">0.6380</td></tr>
+</table>
+
+<p>All three real models beat both baselines by <strong>35–42%</strong>. Degradation with horizon is
+mild: a one-hour forecast is only <strong>6% worse</strong> than a 15-minute one.</p>
+
+<h3>Answering RQ3 carefully</h3>
+
+<p>At H3-8, TFT won WAPE (0.3523 vs 0.3573) and ST-GNN won Hotspot F1 (0.7260 vs 0.7248) — both
+landing exactly where their architectures predict. <strong>Both reversed at S2-13</strong>, where
+LightGBM took MAE, WAPE and Hotspot F1 outright.</p>
+
+<div class="box">
+  <span class="tag">Why that matters</span>
+  <p>Two sub-1% margins that flip under a change of tiling scheme are <strong>noise, not
+  evidence</strong>. Stopping at H3-8 would have produced a more interesting story that happens to be
+  wrong. Both are still reported — suppressing them would be selective.</p>
+</div>
+
+<div class="box warn">
+  <span class="tag">The honest caveat</span>
+  <p>The deep models were stopped at <strong>8 epochs and all four were still improving</strong> on
+  their final epoch. LightGBM ran to convergence. So the claim is <em>"a tuned LightGBM beats an
+  8-epoch TFT and ST-GNN"</em>, not "gradient boosting beats deep learning". LightGBM is clearly the
+  better <em>value</em> — 48 minutes of CPU and it won — but the deep models weren't given their best
+  shot.</p>
+</div>
+
+<h3>Where the model fails</h3>
+
+<table>
+  <tr><th>Breakdown</th><th>Finding</th></tr>
+  <tr><td>By hour</td><td>Worst at 16:00 (MAE 1.809), best at 03:00 (0.281). Error tracks demand level.</td></tr>
+  <tr><td>By demand tercile</td><td>MAE 0.40 low / 0.84 mid / <strong>2.75 high</strong> — but <em>relative</em> error is 62% mid vs 26% high. Which metric you quote decides which cells look broken.</td></tr>
+  <tr><td>Rain</td><td>MAE 0.85 wet vs 1.18 dry — <strong>not skill</strong>. Mean demand is 1.57 wet vs 3.40 dry; rain suppresses cycling, and smaller counts carry smaller errors.</td></tr>
+  <tr><td>Top-100 errors</td><td><strong>73% are under-forecasts</strong>; 38 occur at 16:00; all fall in just <strong>22 of 321 cells</strong>. The one characteristic failure: under-predicting afternoon-rush spikes in high-volume cells.</td></tr>
+</table>
+
+<p class="fn">On validation, same-week Seasonal Naive beat same-day and was adopted as the baseline. On
+TEST the order <em>reverses</em> — Nov–Dec contains Thanksgiving and Christmas, which break weekly
+patterns more than daily ones. Both are reported.</p>
+
+<h2>8. Operations — and a negative result</h2>
+
+<p>No dock-occupancy data exists for 2023–24, so capacity is estimated from the 95th percentile of
+daily cumulative net-flow range: <strong>median 15 docks</strong> across 1,496,558 station-days. 1.73%
+of station-days are infeasible without assuming staff intervened, and are flagged rather than forced
+to fit.</p>
+
+<table>
+  <tr><th>Forecast driving the rebalancer</th><th class="num">Service level</th><th class="num">Unserved</th><th class="num">Moves</th></tr>
+  <tr><td><strong>No rebalancing</strong></td><td class="num win"><strong>0.9958</strong></td><td class="num win"><strong>8,540</strong></td><td class="num">0</td></tr>
+  <tr><td>Perfect foresight</td><td class="num">0.9940</td><td class="num">12,294</td><td class="num">2,615</td></tr>
+  <tr><td><strong>LightGBM</strong></td><td class="num">0.9942</td><td class="num">11,904</td><td class="num">2,107</td></tr>
+  <tr><td>Seasonal Naive</td><td class="num">0.9939</td><td class="num">12,391</td><td class="num">2,699</td></tr>
+</table>
+
+<p><strong>(a) Among forecasts, LightGBM beat even perfect foresight</strong> — 11,904 unserved vs
+12,294. Not a paradox: LightGBM under-forecasts (73% of its worst errors), so it triggers
+<strong>2,107 moves instead of 2,615</strong>. Where moving is harmful, restraint wins.</p>
+
+<p><strong>(b) Rebalancing itself doesn't pay</strong>, and the cause is granularity. 321 cells
+aggregate 2,459 stations — ~115 docks per cell against ~3 trips per interval. <strong>A cell that
+large cannot run dry</strong>, so doing nothing already serves 99.58% and every move strips bikes from
+cells that need them later. Proving rebalancing value needs <em>station-level</em> inventory data that
+doesn't exist. Reporting a positive result here would have required tuning thresholds until the sign
+flipped.</p>
+
+<h2 class="pb">9. System architecture</h2>
+
+<h3>Layered view</h3>
+<pre><code>┌─ PRESENTATION ────────────────────────────────────────────────────┐
+│  MapLibre GL (vector basemap · H3/S2 choropleth · route · docks)  │
+│  Bottom sheet: forecast cards · model comparison · chat           │
+└────────────────────────────┬──────────────────────────────────────┘
+                             │ REST/JSON
+┌─ API  app/server.py ───────┴──────────────────────────────────────┐
+│  /api/config  /geojson  /overview  /stations  /place              │
+│  /station_forecast  /explain  /compare  /route  /chat             │
+│  Every endpoint is a thin shim over the SAME tool functions       │
+└────────────────────────────┬──────────────────────────────────────┘
+┌─ AGENT  src/agent/ ────────┴──────────────────────────────────────┐
+│  assistant.py   3 interchangeable brains: Mistral · Claude ·      │
+│                 deterministic router (no key, no network)         │
+│  tools.py       7 tools returning data + honesty metadata         │
+│  gazetteer.py   offline place lookup, 21,470 entries              │
+└────────────────────────────┬──────────────────────────────────────┘
+┌─ SERVING  src/serving/ ────┴──────────────────────────────────────┐
+│  engine.py    one entry point, all 5 models, cached in-process    │
+│  stations.py  cell forecast → station via historical share        │
+│  context.py   explanations: model drivers vs non-causal context   │
+│  routing.py   A* dock selection weighted by forecast              │
+│  streets.py   A* over the OpenStreetMap pedestrian network        │
+│  predict.py   the Phase-8 contract, 10 tests                      │
+└────────────────────────────┬──────────────────────────────────────┘
+┌─ MODELS  outputs/models/ ──┴──────────────────────────────────────┐
+│  16 LightGBM boosters (2 grids × 2 targets × 4 horizons)          │
+│  4 PyTorch checkpoints (TFT + ST-GNN × 2 grids)                   │
+│  Seasonal Naive (computed from lag columns, no artifact)          │
+└────────────────────────────┬──────────────────────────────────────┘
+┌─ DATA  data/ ──────────────┴──────────────────────────────────────┐
+│  features4_{tag}/   22.5M rows × 182 cols, hive-partitioned       │
+│  panel_{tag}/       104M rows, dense (cell × interval)            │
+│  deep_bundle_{tag}/ tensors for the neural nets                   │
+│  spatial/           station registry · region metadata            │
+└───────────────────────────────────────────────────────────────────┘</code></pre>
+
+<h3>Request path — "will I find a bike near Times Square?"</h3>
+<pre><code>1  POST /api/chat                         browser sends message + UI selections
+2  Assistant.reply()                      picks brain; router or LLM tool-loop
+3  find_place("Times Square")             offline gazetteer → 40.756, −73.987
+4  resolve_time("now")                    maps to equivalent 2024 weekday/time
+5  station_forecast(lat, lng, …)
+      ├ engine.forecast()                 LightGBM: 1 feature row → 321 cells
+      ├ nearest_stations()                haversine over 2,391 docks
+      ├ split_to_station()                cell forecast × historical share
+      └ availability_verdict()            flow pressure, not a bike count
+6  route_to_bike()                        A* dock choice + A* over OSM streets
+7  response                               prose + raw tool payloads
+8  frontend                               renders cards, draws route, pulses cell</code></pre>
+
+<p>Because the API endpoints and the assistant call the <strong>same tool functions</strong>, the map
+and the chat can never show different numbers.</p>
+
+<p>All five models serve from one engine — LightGBM 0.3 s warm, ST-GNN 0.17 s, TFT 0.40 s.
+The deep models need a separate serving path because they consume a <em>tensor window</em> of
+history (24 intervals for the graph model, 96 for the transformer), not a single feature row.</p>
+
+<h3>Three approximations, each labelled in the UI</h3>
+
+<ul>
+  <li><strong>Cell → station.</strong> Models forecast ~0.74 km² cells holding ~8 stations. Station
+  numbers are the cell forecast × that station's historical share of its cell's trips. Shares sum to
+  exactly 1.000 across all 321 cells. Flagged <code>approximate: true</code> everywhere.</li>
+  <li><strong>Demand, not availability.</strong> We forecast <em>trips</em>, not dock occupancy, so
+  the app reports <strong>flow pressure</strong> ("bikes leaving fast" / "balanced" / "docks filling
+  up") rather than inventing a bike count.</li>
+  <li><strong>Nothing is live.</strong> Models cover 2023–24, so "now" maps to the equivalent 2024
+  weekday and time, labelled <em>typical conditions</em>.</li>
+</ul>
+
+<h3>Places without a maps API</h3>
+
+<p>Geocoding uses <strong>our own data</strong>: 2,459 station names (mostly NYC intersections) plus
+19,011 landmarks already geocoded by the events pipeline. Index builds in 0.19 s. Matches below a
+confidence floor are flagged — "Wall Street" genuinely fails, because Citi Bike names that area
+differently, and admitting that beats teleporting the user to Brooklyn.</p>
+
+<h3>The honesty rule in the assistant</h3>
+
+<div class="box">
+  <span class="tag">Why the chatbot won't blame a street fair</span>
+  <p>The natural thing for a chatbot to say is <em>"demand is high because there's a festival
+  nearby"</em>. That would be a <strong>fabrication</strong> — the ablation tested events twice, the
+  second time with 4× the coverage, and measured −0.01%. The deployed model doesn't use events at
+  all.</p>
+  <p>So tools return <code>drivers</code> (features the model genuinely uses) separately from
+  <code>context</code> (events, weather — each carrying <code>influences_forecast: false</code>). A
+  real explanation reads: <em>"the last hour averaged 91.0 pickups per 15 min, 27% above this cell's
+  usual Wednesday 17:00 level; the same slot last week saw 151."</em></p>
+</div>
+
+<p>Three interchangeable brains — <strong>Mistral</strong>, <strong>Claude</strong>, or a
+<strong>deterministic router</strong> that needs no key so a fresh clone works with zero setup. All
+return the same payload shape; the LLM paths degrade to the router on any failure.</p>
+
+<h3>Walking directions — two graphs, two jobs</h3>
+
+<p><strong>Which dock?</strong> A station graph where candidates are scored on
+<code>walking_metres + availability_penalty</code> — a draining dock costs up to 550 virtual metres,
+so a dock 200 m further with bikes arriving can win. <em>That is the point of putting a forecast
+behind a router.</em></p>
+
+<p><strong>How do you walk there?</strong> The walkable street network pulled from
+<strong>OpenStreetMap</strong> via Overpass, fed to the <em>same A*</em>. Identical algorithm, real
+edges. The heuristic is great-circle distance — <strong>admissible</strong>, so A* still finds the
+optimal path.</p>
+
+<table>
+  <tr><th>Times Sq → W 45 St &amp; 8 Ave</th><th>Straight line (before)</th><th>Street network (now)</th></tr>
+  <tr><td>Distance</td><td>387 m estimated</td><td class="win">303 m measured</td></tr>
+  <tr><td>Waypoints</td><td>2</td><td class="win">17, following real streets</td></tr>
+  <tr><td>Timing</td><td>instant</td><td>~4 s first, <strong>0.11 s cached</strong></td></tr>
+</table>
+
+<p class="fn">The old estimate was also <em>wrong</em> — straight-line × 1.3 overstated by 28%. If
+Overpass is unreachable it falls back with <code>follows_streets: false</code>, and that flag reaches
+the UI.</p>
+
+<h3>Interface</h3>
+
+<p>Map-first with a sliding bottom sheet. Four keyless vector basemaps (OpenFreeMap Liberty by
+default — full buildings and POIs); <code>MAPTILER_KEY</code> unlocks more. Vector rather than raster
+specifically so the demand overlay sits <em>beneath the label layers</em> and street names stay
+readable. The heatmap is <strong>off by default</strong> — searching pulses just the one cell — and
+2,391 real Citi Bike docks are drawn with their names.</p>
+
+<h2>10. Bugs worth remembering</h2>
+
+<table>
+  <tr><th style="width:130pt">Bug</th><th>What happened and how it was caught</th></tr>
+  <tr><td><strong>Silent-drop in de-duplication</strong></td>
+    <td><code>WHERE key NOT IN (…)</code> evaluates to NULL — not TRUE — for a NULL key, so those rows
+    were dropped with <strong>no rule attributed</strong>. Caught by the waterfall failing to
+    reconcile: 7 + 3 ≠ 12.</td></tr>
+  <tr><td><strong>Partitioned write discarded 97%</strong></td>
+    <td>Polars names every partition file <code>00000000.parquet</code> and rewrites the directory, so
+    each batch replaced the last — only 35 of 1,483 cells survived. Now writes via DuckDB and asserts
+    on-disk counts match.</td></tr>
+  <tr><td><strong>Validation on the wrong slice</strong></td>
+    <td>Scoring the first N anchors meant scoring empty overnight intervals — reported MAE 0.665 where
+    truth was 1.271.</td></tr>
+  <tr><td><strong>Units mismatch in comparison</strong></td>
+    <td>Showed 9 predicted vs 105 actual: station-level cumulative against cell-level single-interval.
+    Two mismatches at once, understating every model ~4×.</td></tr>
+  <tr><td><strong>Station shares all zero</strong></td>
+    <td>Registry stores counts as <code>Decimal(scale=0)</code>, so <code>302999/2034403</code>
+    truncated to 0. Every station forecast was zero.</td></tr>
+  <tr><td><strong>A stray word to Queens</strong></td>
+    <td>"why is that the case?" left the word "case", which matched <strong>"Case St &amp; 94 St"</strong>.
+    Follow-ups now need a strong match to move the location.</td></tr>
+</table>
+
+<h2>11. Limitations</h2>
+
+<div class="two">
+<div>
+<p><strong>Data</strong></p>
+<ul>
+  <li>No dock occupancy exists — capacity and inventory are estimates, flagged everywhere.</li>
+  <li>Traffic covers arterials only; 46 of 128 links within 500 m of a station. 45 days of outages.</li>
+  <li>Events are permits only — no MSG or Barclays; 25% of locations couldn't be geocoded.</li>
+  <li>255 stations that really operated are missing from the official roster.</li>
+</ul>
+</div>
+<div>
+<p><strong>Models &amp; app</strong></p>
+<ul>
+  <li>Deep models undertrained (8 epochs, still improving).</li>
+  <li>Training subsamples rows; validation and test never do.</li>
+  <li>No per-station model — station answers are disaggregated.</li>
+  <li>MAPE deliberately absent: most cells are zero.</li>
+  <li>Nothing live; runs locally, not deployed.</li>
+</ul>
+</div>
+</div>
+
+<p><strong>Highest-value next step:</strong> wire in Citi Bike's live <strong>GBFS feed</strong> —
+free, no key, gives real bikes-available per station. That converts availability from an inference
+into a measurement. Then train the deep models to convergence to settle RQ3 properly.</p>
+
+<h2>12. Running it</h2>
+
+<pre><code>python -m uvicorn app.server:app --port 8000     # → http://127.0.0.1:8000
+python -m pytest tests/ -q                       # 166 passing
+
+# optional — set in the environment, never in the repo
+export MISTRAL_API_KEY="..."    # or ANTHROPIC_API_KEY; else the router answers
+export MAPTILER_KEY="..."       # optional extra basemaps</code></pre>
+
+<div class="box">
+  <span class="tag">In closing</span>
+  <p>The most valuable output isn't the 1.14 MAE. It's the decisions where the honest answer was less
+  impressive than the available one: that rebalancing didn't help, that two apparent deep-learning
+  wins were noise, that traffic and weather and events earned nothing across two separate tests, and
+  that we can't tell you how many bikes are at a dock because nobody published that data.</p>
+  <p>Every caveat here exists so the numbers that <em>are</em> claimed can be relied on.</p>
+</div>
+
+<h2>13. Summary for a CV</h2>
+
+<h3>One-line version</h3>
+<p><em>Built an end-to-end spatiotemporal ML system forecasting NYC bike-share demand from 79M trips,
+benchmarking gradient boosting against a Transformer and a Graph Neural Network across two spatial
+indexing schemes, and deployed it as an agentic map application with A* routing.</em></p>
+
+<h3>Bullet version</h3>
+<ul>
+  <li>Built a <strong>79M-row spatiotemporal forecasting pipeline</strong> (Polars + DuckDB +
+  Parquet) processing 15 GB of raw trip data into a dense 104M-row panel; achieved
+  <strong>1.14 MAE on a held-out test set, 38% better than the seasonal baseline</strong>.</li>
+
+  <li>Trained and benchmarked <strong>four model families across two spatial systems</strong> —
+  LightGBM (Optuna-tuned, Poisson objective), a hand-written Temporal Fusion Transformer, a
+  Spatio-Temporal Graph Neural Network with graph attention, and Seasonal Naive — on a six-config
+  matrix over Uber H3 and Google S2 grids.</li>
+
+  <li>Identified that <strong>standard accuracy metrics are invalid for comparing spatial
+  resolutions</strong> (MAE, WAPE and Hotspot-F1 gave three different winners) and introduced a
+  baseline-relative skill score that removes the scale effect.</li>
+
+  <li>Designed a <strong>feature ablation over 168 features in 8 families</strong>, proving that
+  weather, events and traffic contribute ~0% — re-running the study at 4× traffic coverage to
+  confirm the negative result rather than accept it at face value.</li>
+
+  <li>Prevented data leakage with <strong>35 automated tests that re-derive every lag feature by an
+  independent join</strong>; 166 tests total, with phase gates verified by scripts reading the
+  produced artifacts.</li>
+
+  <li>Deployed a <strong>FastAPI + MapLibre application with an LLM tool-calling agent</strong>
+  (Mistral / Claude, plus a dependency-free deterministic fallback), including <strong>A* pathfinding
+  with an admissible heuristic over an OpenStreetMap walking graph</strong>.</li>
+
+  <li>Trained deep models on a <strong>free Kaggle T4 GPU</strong> by exporting a 557 MB tensor
+  bundle, shipping the model definitions alongside the data so the remote run could not diverge from
+  the repository.</li>
+</ul>
+
+<h3>What this demonstrates</h3>
+<table>
+  <tr><th style="width:100pt">Area</th><th>Evidence in this project</th></tr>
+  <tr><td>Data engineering at scale</td><td>15 GB → 2.5 GB in 2 min; 104M-row panel built in region
+    batches with 4 KB spill instead of 12 GB; out-of-core SQL throughout on a 16 GB machine</td></tr>
+  <tr><td>ML fundamentals</td><td>Chronological splits, a test set opened exactly once, leakage tests
+    by independent re-derivation, objective selection by experiment, metric validity analysis</td></tr>
+  <tr><td>Deep learning</td><td>TFT and ST-GNN implemented from scratch in PyTorch — gated residual
+    networks, variable selection, graph attention via edge-list segment softmax</td></tr>
+  <tr><td>Software engineering</td><td>Config-driven, protocol-based spatial abstraction, 166 tests,
+    one commit per phase, scripts that verify their own outputs</td></tr>
+  <tr><td>Product sense</td><td>Turning a cell-level forecast into a station-level answer with the
+    approximation labelled; reporting flow pressure rather than inventing a bike count</td></tr>
+  <tr><td>Scientific integrity</td><td>Published four negative or partial results — rebalancing did
+    not help, two deep-learning wins were noise, external features earned nothing — rather than tuning
+    until they looked good</td></tr>
+</table>
+
+<h3>Talking points for an interview</h3>
+<ul>
+  <li><strong>"Why is MAE the wrong metric here?"</strong> — the cross-resolution analysis in §6 is
+  the strongest single result and shows metric literacy beyond running <code>sklearn.metrics</code>.</li>
+  <li><strong>"Tell me about a bug you found."</strong> — the NULL-key silent drop (§10) was caught by
+  an arithmetic identity deliberately built into the cleaning step, not by luck.</li>
+  <li><strong>"When did the data surprise you?"</strong> — LightGBM out-performing a <em>perfect</em>
+  forecast at rebalancing (§8), because under-forecasting made it act less often.</li>
+  <li><strong>"How do you keep an LLM honest?"</strong> — tools return caveats attached to the data,
+  so the model cannot describe events as a cause when the ablation measured them at −0.01%.</li>
+</ul>
+
+<p class="fn" style="margin-top:10pt">A 43-page version with full derivations, all eight feature
+families, complete metric tables and a glossary is available as
+<code>docs/GeoPulse_Report.pdf</code>.</p>
+
+</body>
+</html>

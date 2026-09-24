@@ -1,0 +1,22 @@
+{
+  "spatial_system": "h3",
+  "resolution": 8,
+  "grid_start_utc": "2023-01-01 05:00:00+00:00",
+  "grid_end_utc": "2025-01-01 05:00:00+00:00",
+  "bins": 70176,
+  "regions_touched": 348,
+  "regions_active": 321,
+  "min_trips_total": 500,
+  "min_active_days": 180,
+  "threshold_scale": 1.0,
+  "distinct_coords": 3230,
+  "endpoint_coverage_pct": 99.9969,
+  "rows": 22526496,
+  "regions": 321,
+  "total_pickups": 79163736,
+  "total_dropoffs": 79161426,
+  "zero_pickup_share": 0.4751900606290477,
+  "zero_dropoff_share": 0.4708803357610522,
+  "dst_unreliable_bins": 7704,
+  "null_pickup_h1": 321
+}

@@ -1,0 +1,128 @@
+{
+  "total_rows": 242341,
+  "distinct_links": 121,
+  "completeness": {
+    "null_timestamp": 0,
+    "null_link_id": 0,
+    "null_speed": 0,
+    "null_travel_time": 0,
+    "first_reading": "2024-06-03 00:03:03-04:00",
+    "last_reading": "2024-06-09 23:59:09-04:00"
+  },
+  "status_mix": [
+    {
+      "status": "0",
+      "rows": 187575,
+      "mean_speed": 36.924
+    },
+    {
+      "status": "-101",
+      "rows": 54766,
+      "mean_speed": 4.773
+    }
+  ],
+  "speed_distribution_valid_only": {
+    "min": 0.62,
+    "p25": 21.74,
+    "median": 41.01,
+    "p75": 51.57,
+    "p99": 62.75,
+    "max": 90.72,
+    "mean": 36.923563801146024
+  },
+  "readings_per_day": [
+    {
+      "day": "2024-06-03",
+      "rows": 34226,
+      "links": 121
+    },
+    {
+      "day": "2024-06-04",
+      "rows": 34848,
+      "links": 121
+    },
+    {
+      "day": "2024-06-05",
+      "rows": 34364,
+      "links": 121
+    },
+    {
+      "day": "2024-06-06",
+      "rows": 34848,
+      "links": 121
+    },
+    {
+      "day": "2024-06-07",
+      "rows": 34606,
+      "links": 121
+    },
+    {
+      "day": "2024-06-08",
+      "rows": 34843,
+      "links": 121
+    },
+    {
+      "day": "2024-06-09",
+      "rows": 34606,
+      "links": 121
+    }
+  ],
+  "cleaning_waterfall": [
+    {
+      "rule": "duplicate_link_timestamp",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "null_timestamp",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "null_link_id",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "outside_project_window",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "invalid_status",
+      "rows_removed": 54766,
+      "pct_of_raw": 22.5987
+    },
+    {
+      "rule": "speed_out_of_range",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "travel_time_nonpositive",
+      "rows_removed": 0,
+      "pct_of_raw": 0.0
+    },
+    {
+      "rule": "TOTAL REMOVED",
+      "rows_removed": 54766,
+      "pct_of_raw": 22.5987
+    },
+    {
+      "rule": "KEPT",
+      "rows_removed": 187575,
+      "pct_of_raw": 77.4013
+    }
+  ],
+  "missing_days": [],
+  "sort_verification": {
+    "rows": 187575,
+    "row_groups": 1,
+    "rowgroup_stat_violations": 0,
+    "pairwise_inversions": 0,
+    "is_sorted": true,
+    "first_data_as_of": "2024-06-03 04:03:03+00:00",
+    "last_data_as_of": "2024-06-10 03:59:09+00:00",
+    "file_size_mb": 0.6
+  }
+}

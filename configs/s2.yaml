@@ -1,0 +1,20 @@
+# S2 spatial indexing config (Phase 5 Part B/C). level is CHOSEN by the matching
+# procedure, not guessed - the value below is a placeholder until that runs.
+spatial:
+  system: s2
+  level: 13                  # CHOSEN by the Phase 5 matching procedure against
+                             # H3-8 (score 0.319 on weighted log-ratio of median
+                             # cell area and active-cell count) - not guessed
+  candidate_levels: [12, 13, 14, 15, 16]
+  neighbor_ring: 1
+  test_second_ring: false
+
+matching:
+  # Pick the S2 level minimising a weighted log-ratio distance to the winning H3 res.
+  area_weight: 0.5
+  active_cell_count_weight: 0.5
+  use_log_ratio: true
+
+active_region:
+  min_trips_total: 500
+  min_active_days: 180
